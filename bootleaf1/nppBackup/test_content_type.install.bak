@@ -1,0 +1,15 @@
+﻿<?php
+/**
+ * Removed Test Text 2
+ */
+function test_content_type_update_7007(&$sandbox) {
+  features_revert_module('test_content_type');
+	// Remove the field.
+	// Removes ALL instances of a field in ALL content types!!!
+  field_delete_field("field_test_text"); 
+	// Removes an instance of a field in 
+	//if ($instance = field_info_instance('node', 'field_test_text_2', 'test')) {
+    field_delete_instance($instance);
+  //}
+}
+?>

@@ -1,0 +1,11 @@
+﻿[db_general]
+driver = "mysql"
+user = "webapp"
+password "cT1w3bApP#!"
+
+; DSN
+; see http://www.php.net/manual/en/pdo.drivers.php
+[db_data_source_name]
+host = "localhost"
+port = 3306
+dbname = "cti2"

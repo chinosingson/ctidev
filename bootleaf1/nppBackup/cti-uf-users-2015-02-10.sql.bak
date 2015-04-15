@@ -1,0 +1,64 @@
+/*
+SQLyog Ultimate v10.00 Beta1
+MySQL - 5.5.27 : Database - cti2
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`cti2` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `jctimap_bl`;
+
+/*Table structure for table `uf_user_group_matches` */
+
+DROP TABLE IF EXISTS `uf_user_group_matches`;
+
+CREATE TABLE `uf_user_group_matches` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+
+/*Data for the table `uf_user_group_matches` */
+
+insert  into `uf_user_group_matches`(`id`,`user_id`,`group_id`) values (1,1,1),(2,1,2),(10,7,5),(11,8,1),(12,9,5),(13,10,5),(14,11,1),(15,12,1),(16,13,1),(17,14,1),(18,15,1),(19,16,1),(20,17,1),(21,18,1),(22,19,2);
+
+/*Table structure for table `uf_users` */
+
+DROP TABLE IF EXISTS `uf_users`;
+
+CREATE TABLE `uf_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(50) NOT NULL,
+  `display_name` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `activation_token` varchar(225) NOT NULL,
+  `last_activation_request` int(11) NOT NULL,
+  `lost_password_request` tinyint(1) NOT NULL,
+  `lost_password_timestamp` int(11) DEFAULT NULL,
+  `active` tinyint(1) NOT NULL,
+  `title` varchar(150) NOT NULL,
+  `sign_up_stamp` int(11) NOT NULL,
+  `last_sign_in_stamp` int(11) NOT NULL,
+  `enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Specifies if the account is enabled.  Disabled accounts cannot be logged in to, but they retain all of their data and settings.',
+  `primary_group_id` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Specifies the primary group for the user.',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+
+/*Data for the table `uf_users` */
+
+insert  into `uf_users`(`id`,`user_name`,`display_name`,`password`,`email`,`activation_token`,`last_activation_request`,`lost_password_request`,`lost_password_timestamp`,`active`,`title`,`sign_up_stamp`,`last_sign_in_stamp`,`enabled`,`primary_group_id`) values (1,'administrator','Administrator','$2y$10$LCvIpv6/tEyT28hGiN7e5.afMBIn9F2yIxcRV4RYLYJuOqooPGvie','webmaster@ctimap.org','d3ea309f0342c2a081450a63571da32b',1422492417,0,1422492417,1,'Master Account',1422492417,1423503768,1,2),(7,'christine','Christine Casal','$2y$10$tB1bwvTIYFxY0QCx4mKRnuFStY.49pqzxszMWJDHyI9bnQy.cf1s6','christinevcasal@gmail.com','42fbd13840d2ae63453f433e986ea118',1423500301,0,1423500301,1,'Editor',1423500301,1423503371,1,5),(8,'mamaf','MAMAF','$2y$10$f8U/HpKdbhsa0UFWfsexPerzAEhf87wOUvyUR59mdkPI1GNGXXcZS','ncc.indonesia@cticff.org','9d5b68851627ac3ab9edebcef4d587a0',1423501847,0,1423501847,1,'Contributor',1423501847,1423503423,1,1),(9,'emongmorales','Emong Morales','$2y$10$wQddBa7KCoAKJ8L2zIHIMuBIuK7fWlEJk7uvx0oNBRlwsz8YnTUhm','emongmorales@gmail.com','9d08fbce72ca90d3fe029624c727bac6',1423503962,0,1423503962,1,'Editor',1423503962,0,1,1),(10,'lourdes','Lourdes Caballero','$2y$10$HOw4NAdF1jJgko2U8spTKeLM.1Kh0aVqF4dHyE7Yg9KiJwHRVzPBu','lourdesmargarita.caballero@gmail.com','1c5d6c45866e8a7bc03d230e207acc96',1423504046,0,1423504046,1,'Editor',1423504046,0,1,5),(11,'aecom','AECOM','$2y$10$bzr677KSXRXDbBvzvhtrpurasrxTJJTOH7O3wuPJgFpiLDCWl60fy','stacey.tighe@gmail.com','2731f5752af3b1145807f0598f51927a',1423504213,0,1423504213,1,'Contributor',1423504213,0,1,1),(12,'usaid','USAID','$2y$10$FPQgMQ546Z83AZTxzLvPn.ReAPbAQyQdo66a6oG/d1yxubi4npvn.','racosta@usaid.gov','acacadc17302a46fa03c63b34a021a82',1423504377,0,1423504377,1,'Contributor',1423504377,0,1,1),(13,'upmsi','UPMSI','$2y$10$B.cztU26odzadTZBInANQu4aUmhaEFg5zgyuEI7FrC57AHxNJvya.','kubi.follosco@gmail.com','07679fbe2dda87e1bc60c72cbdac9b30',1423504457,0,1423504457,1,'Contributor',1423504457,0,1,1),(14,'bfar','BFAR','$2y$10$MlfV/6sU0AGgBTtf4.gBIe7LuEJ31pwq0/Ug7Ru89CBxZSV72tkiy','smalvas.bfar@gmail.com','6a2d3ec94fa43892b67fa699ac2d5ee2',1423504553,0,1423504553,1,'Contributor',1423504553,0,1,1),(15,'jeavelino','jeavelino','$2y$10$TfcPXa4kiLAeNvYBPHriM.khEFTWNS4i64CKaTdhHVu4p/3WATqAS','jeavelino@yahoo.com.ph','346f0d97879d71ea06fc4f190632e3d4',1423504651,0,1423504651,1,'Contributor',1423504651,0,1,1),(16,'ajblumba','ajblumba','$2y$10$MFVqMxhDRTQrsgXJmBY3wOPTDYGpJuLwo0D.ZWEsQ3QgwbZvLtAky','ajblumba@gmail.com','982014a41d2c50c8256a8fe715b7c4bd',1423504854,0,1423504854,1,'Contributor',1423504854,0,1,1),(17,'radentomi','radentomi','$2y$10$hy/p0jnOjQ9VOPMFisdBSOnLIUtI58m8Den6sTm0.1cZ/fxb3mvNe','radentomi@gmail.com','57f3724c16f3c4b3969430941d960cb5',1423504931,0,1423504931,1,'Contributor',1423504931,0,1,1),(18,'ejsaleh','ejsaleh','$2y$10$LajG6Z9t8XWTV6wq/V.J..3kgW43W.SiVCPwZa/uZa3wSNBZ7PiSC','ejsaleh@ums.edu.my','3392897d57c4d3ec508fd9214e952e9d',1423505006,0,1423505006,1,'Contributor',1423505006,0,1,1),(19,'lotharlinde','Lothar Linde','$2y$10$rG7nf16q5og5/wq6uiDTGeypVd1u5OVSWaKr46D6MtejGwHorMSZe','lothar.linde@yahoo.de','23f2df7a190fde87cff13d2c54055e0c',1423505398,0,1423505398,1,'Administrator',1423505398,0,1,2);
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

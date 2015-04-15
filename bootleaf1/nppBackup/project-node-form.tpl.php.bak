@@ -1,0 +1,89 @@
+<div id="project-node-form-custom-wrapper">
+	<div class="project-node-form location-form">
+		<?php $node = menu_get_object(); 
+		@$nid = $node->nid;
+		
+		if ($nid){
+			$action = "Step 2: Edit Project Details";
+			$form['actions']['submit']['#value'] = t('Save');
+		} else {
+			$action = "Step 1: Project Details";
+			$form['actions']['submit']['#value'] = t('Step 2: Project Location');
+		}
+		?>
+		<?php
+		  //$block =block_load('block',4);
+		  //$output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
+		  //print $output;
+		?>
+	</div>
+	<div class="project-node-form non-location-forms">
+		<div>
+			<h2 id="page-title-add-project" class="block-title"><?php print $action ?></h1>
+		</div>
+		<div class="project-node-form non-location-forms-wrapper">
+			<div>   
+				<?php print drupal_render($form['title']); ?>
+			</div>
+			<div class="form-row">
+				<div class="form-cell" id="duration">
+					<div id="start-date">123<label class="date-form-label">Start</label>
+						<div class="date-form month"><?php print drupal_render($form['field_start_date']['und'][0]['value']['month']) ?></div>
+						<div class="date-form year"><?php print drupal_render($form['field_start_date']['und'][0]['value']['year']) ?></div>
+					</div>
+					<div id="end-date"><label class="date-form-label">End</label>
+						<div class="date-form month"><?php print drupal_render($form['field_end']['und'][0]['value']['month']) ?></div>
+						<div class="date-form year"><?php print drupal_render($form['field_end']['und'][0]['value']['year']) ?></div>
+					</div>
+				</div>
+				<div class="form-cell">   
+					<?php print drupal_render($form['field_countries']); ?>   
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-cell">   
+					<?php print drupal_render($form['field_funder']); ?>
+				</div>
+				<div class="form-cell">   
+					<?php print drupal_render($form['field_amount']); ?>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-cell">   
+					<?php print drupal_render($form['field_implementer']); ?>
+				</div>
+				<div class="form-cell">   
+					<?php print drupal_render($form['field_website']); ?>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-cell">   
+					<?php print drupal_render($form['field_principal_contact']); ?>
+				</div>
+				<div class="form-cell">   
+					<?php print drupal_render($form['field_position']); ?>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-cell">   
+					<?php print drupal_render($form['field_email']); ?>
+				</div>
+				<div class="form-cell">   
+					<?php print drupal_render($form['field_phone']); ?>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-cell">   
+					<?php print drupal_render($form['field_major_goal']); ?>			
+				</div>
+				<div class="form-cell">   
+					<?php print drupal_render($form['field_remarks']); ?>			
+				</div>
+			</div>
+			<div class="form-row edit-actions"><?php print drupal_render($form['actions']); ?></div>
+			<div>   
+				<?php print drupal_render_children($form); ?>
+			</div>
+		</div>
+	</div>
+</div>

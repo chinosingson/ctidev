@@ -1,0 +1,77 @@
+﻿for map layer cleanup:
+
+
+
+map - base map
+
+ctiProjectLocations - ALL project locations 
+currentProjectLocations - current project locations
+
+on zoom,
+
+currentProjectLocations -> get locations from php
+if (length > 0) {
+	ctiProjectLocations.removeLayer();			// hide all other locations
+	currentProjectLocations.addData(data);	// add locations to the layer
+	map.fitBounds(currentProjectLocations.getBounds(), {	// zoom to the bounds
+		maxzoom: 10
+	});
+	
+	
+// ON ZOOM
+
+get locations from php
+if (length > 0)
+else
+
+
+on zoom
+
+if PROJECTID passed
+	get locations from php
+		if length > 0
+		- HIDE all layers
+		- populate currentProject layer
+		- add currentProject layer to map
+		- get currentProject bounds
+		- do zoom to currentProject bounds
+		else
+		
+else
+- (load all projects ?)
+- do not clear layers
+- do not get currentProject bounds
+- do not do zoom to currentProject bounds
+
+
+
+		/*currentProjectLayer.clearLayers();
+		if (data.features.length > 0){
+			// hide map layers
+			markerClustersCurrent.clearLayers();
+			map.removeLayer(assetLayerGroup); //.clearLayers();
+			map.removeLayer(ctiProjectLocations); //.clearLayers();
+			map.removeLayer(markerClusters);
+			map.removeLayer(ctiLayer);
+			if (drawControlAdded) {
+				map.removeLayer(drawnItems); //.clearLayers();
+			}
+			
+			// zoom to current location
+			currentProjectLayer.addData(data);	// add locations to the layer
+			markerClustersCurrent.addLayer(currentProjectLayer);
+			map.addLayer(markerClustersCurrent);
+			//map.addLayer(currentProjectLayer);
+			map.fitBounds(currentProjectLayer.getBounds(), {	// zoom to the bounds
+				maxzoom: 10
+			});		
+		} else {
+			console.log('This project currently has no locations.\nConsider adding one or more locations to this project.');
+			//currentProjectLayer.addData(null);
+			markerClustersCurrent.clearLayers();
+			map.removeLayer(markerClustersCurrent);
+			map.addLayer(assetLayerGroup);
+			map.addLayer(ctiProjectLocations);
+			map.addLayer(ctiLayer);
+			map.addLayer(markerClusters);
+		}*/

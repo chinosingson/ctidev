@@ -1,0 +1,10 @@
+﻿<?php
+	error_reporting(E_ALL);
+	ini_set('display_errors', TRUE);
+	ini_set('display_startup_errors', TRUE);
+	
+	//module_invoke_all('better_highcharts_hook');
+	
+	function better_highcharts($path, $arg) {
+	
+	}

@@ -1,0 +1,39 @@
+<?php 
+define('DRUPAL_ROOT', getcwd());
+
+require_once DRUPAL_ROOT . '/includes/bootstrap.inc';
+drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
+
+$i=1;
+
+$file = "location.csv";
+
+print $file . "<br/>";
+
+$file_handle2 = fopen($file, "r");
+  while (($data = fgetcsv($file_handle2, 8000, ",")) !== FALSE) {
+
+  $nid = $data[0];
+  $lat = $data[1];
+  $long = $data[2];
+  
+
+  $node = node_load($nid, $nid, FALSE);
+
+  /* Drupal Node fields */
+
+  $node->field_coordinates['und'][0]['lat'] = $lat;
+
+  $node->field_coordinates['und'][0]['lng'] = $long;
+
+
+  print $i . " - " . $nid . " - " . $lat . " - " . $long . "<br/ >";
+  node_save($node); // save the data through drupal save node
+
+
+$i++; 
+ 
+      }
+      
+  
+?>

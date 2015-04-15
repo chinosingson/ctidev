@@ -1,0 +1,7 @@
+﻿<?php
+	// GMS
+	// test template for project nodes
+?>
+<div class="container-fluid">
+	<div class="well"><?php print $node->nid;?></div>
+</div>

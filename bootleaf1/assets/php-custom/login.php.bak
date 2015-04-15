@@ -1,0 +1,55 @@
+<?php 
+
+	//include_once('../userfrosting/api/load_current_user.php');
+	//session_unset();
+	//session_start();
+	echo "<pre>";
+	//echo print_r($_SESSION,1)."<br/>";
+	//echo @print_r($loggedInUser,1);
+	$currUserInfo = @fetchUser($loggedInUser->user_id);
+	echo @print_r($currUserInfo,1)."<br/>";
+	echo "</pre>";
+	
+	if (isset($loggedInUser)){
+		$alerts = $loggedInUser->alerts;
+		if (count($alerts) > 0){
+			$alertLast = end($alerts);
+			echo "<div class='alert alert-".$alertLast['type']."'><b>".$alertLast['message']."</b></div>";
+		}
+		echo "<h5>Hello, ".$loggedInUser->displayname."</h5><br/>";
+		echo '<button id="btn-log-out" type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top" title="Sign out of CTI Mapping Tool">Log Out</button>';
+	//}
+	} else { ?><form class='form-horizontal' role='form' name='login' id='user-login'>
+						<div class="row">
+							<div id='display-alerts' class="col-lg-12">
+								<h5>Sign in to the CTI Mapping tool</h5>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-12">
+								<!--input type="text" class="form-control" id="inputUserName" placeholder="<?php echo $user_email_placeholder; ?>" name = 'username' value=''-->
+								<input type="text" class="form-control input-sm" id="inputUserName" placeholder="Username" name = 'username' value=''>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-12">
+								<input type="password" class="form-control input-sm" id="inputPassword" placeholder="Password" name='password'>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-12">
+								<button id="login-submit" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Sign into CTI Mapping Tool">Log In</button>
+							</div>
+						</div>
+						<div class="jumbotron-links">
+							<a href="#">Register</a><br/>
+							<a href="#">Forgot your password?</a>
+						</div>		  
+					</form>
+<?php
+		//echo "wala<br/>";
+	}
+	//if (array_search('success', $alerts)) echo "SUCCESS!";
+	//else echo "WALA.";
+	//session_write_close();
+?>

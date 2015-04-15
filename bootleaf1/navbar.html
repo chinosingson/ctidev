@@ -1,0 +1,40 @@
+			<ul class="nav navbar-nav">
+				<li><!-- Login -->
+					<a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="sidebar.open('login'); return false;"><i class="fa fa-user" style="color: white"></i>&nbsp;&nbsp;Login</a>
+				</li><!-- Login -->
+				
+				<li class="dropdown"><!-- Database -->
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-folder-open" style="color: white"></i>&nbsp;&nbsp;Database <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<!-- browse -->
+						<li><a href="#" onclick="sidebar.open('database'); $('#projectsTabs a[href=\'#projects\']').tab('show'); return false;" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-search"></i>&nbsp;&nbsp;<b>Search</b></a></li>
+						<!-- add -->
+						<li><a href="#" onclick="sidebar.open('database'); $('#projectsTabs a[href=\'#projects-add\']').tab('show'); return false;" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add</a></li>
+						<li class="divider"></li>
+						<li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Download XLS</a></li>
+					</ul>
+				</li><!-- Database -->
+				
+				<li class="dropdown"><!-- Map -->
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-map-marker" style="color: white"></i>&nbsp;&nbsp;Map <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#" onclick="sidebar.open('locations'); return false;" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;<b>Browse</b></a></li>
+						<li><a href="#" onclick="sidebar.open('locations'); return false;" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add</a></li>
+						<li><a href="#" onclick="sidebar.open('locations'); return false;" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-edit"></i>&nbsp;&nbsp;Edit</a></li>
+						<li class="divider"></li>
+						<li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Download KML</a></li>
+					</ul>
+				</li><!-- Map -->
+				
+				<li><!-- Monitor -->
+					<a href="#" onclick="sidebar.open('monitor'); return false;"><i class="fa fa-tasks" style="color: white"></i>&nbsp;&nbsp;Monitor</a>
+				</li><!-- Monitor -->
+				
+				<!--li><a href="#" onclick="sidebar.hide(); sidebarMap.hide(); sidebarMonitor.toggle(); return false;">Monitor</a></li-->
+				
+				<li><!-- Help -->
+					<a href="#" onclick="sidebar.open('help'); return false;"><span class="glyphicon glyphicon-question-sign" style="color: white"></span>&nbsp;&nbsp;Help</a>
+				</li><!-- Help -->
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+			</ul>

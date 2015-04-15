@@ -1,0 +1,8 @@
+﻿<?php
+  /**
+ * Add date field to content type Foo.
+ */
+function test_content_type_update_7002(&$sandbox) {
+  features_revert_module('test_content_type');
+}
+?>

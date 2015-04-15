@@ -1,0 +1,539 @@
+ID,Lng,Lat,Title,NID,LocTitle
+252,100.153351,25.697758,Yunnan Expressway,2952,Location - 1 - Yunnan Expressway
+252,100.55451,25.45282,Yunnan Expressway,2952,Location - 2 - Yunnan Expressway
+252,101.26067,25.21685,Yunnan Expressway,2952,Location - 3 - Yunnan Expressway
+252,101.540283,25.033356,Yunnan Expressway,2952,Location - 4 - Yunnan Expressway
+253,104.562397,18.260455,Theun Hinboun Hydropower,2928,Location - 1 - Theun Hinboun Hydropower
+254,106.753879,10.823443,Saigon Port,2853,Location - 1 - Saigon Port
+255,105.654039,15.120087,Champassak Road Improvement,2521,Location - 1 - Champassak Road Improvement
+255,105.882759,14.503284,Champassak Road Improvement,2521,Location - 2 - Champassak Road Improvement
+255,105.91378,14.986418,Champassak Road Improvement,2521,Location - 3 - Champassak Road Improvement
+255,105.919991,14.207338,Champassak Road Improvement,2521,Location - 4 - Champassak Road Improvement
+256,108.35,21.75,Fangcheng Port Project,2579,Location - 1 - Fangcheng Port Project
+257,102.949,18.4367,Nam Leuk Hydropower Development,2786,Location - 1 - Nam Leuk Hydropower Development
+258,105.850828,21.032761,Second Road Improvement,2869,Location - 1 - Second Road Improvement
+258,105.910311,22.363453,Second Road Improvement,2869,Location - 2 - Second Road Improvement
+258,106.056038,21.183901,Second Road Improvement,2869,Location - 3 - Second Road Improvement
+258,106.183022,21.286579,Second Road Improvement,2869,Location - 4 - Second Road Improvement
+258,106.261917,22.673513,Second Road Improvement,2869,Location - 5 - Second Road Improvement
+258,106.694382,21.936174,Second Road Improvement,2869,Location - 6 - Second Road Improvement
+258,106.777527,21.856678,Second Road Improvement,2869,Location - 7 - Second Road Improvement
+259,103.81284,13.410666,Siem Reap Airport,2873,Location - 1 - Siem Reap Airport
+260,104.968283,11.556383,Phnom Penh - Ho Chi Minh City Highway,2797,Location - 1 - Phnom Penh - Ho Chi Minh City Highway
+260,105.468651,11.144822,Phnom Penh - Ho Chi Minh City Highway,2797,Location - 2 - Phnom Penh - Ho Chi Minh City Highway
+260,106.143867,11.065555,Phnom Penh - Ho Chi Minh City Highway,2797,Location - 3 - Phnom Penh - Ho Chi Minh City Highway
+261,106.225014,11.080474,Phnom Penh - Ho Chi Minh City Highway,2798,Location - 4 - Phnom Penh - Ho Chi Minh City Highway
+261,106.578247,10.981679,Phnom Penh - Ho Chi Minh City Highway,2798,Location - 5 - Phnom Penh - Ho Chi Minh City Highway
+261,106.75312,10.842044,Phnom Penh - Ho Chi Minh City Highway,2798,Location - 6 - Phnom Penh - Ho Chi Minh City Highway
+262,101.11216,23.109844,Southern Yunnan Road Development,2879,Location - 1 - Southern Yunnan Road Development
+262,101.345252,23.304967,Southern Yunnan Road Development,2879,Location - 2 - Southern Yunnan Road Development
+262,101.675336,23.446862,Southern Yunnan Road Development,2879,Location - 3 - Southern Yunnan Road Development
+262,101.961111,23.640671,Southern Yunnan Road Development,2879,Location - 4 - Southern Yunnan Road Development
+263,104.771402,16.594204,East-West Corridor Project,2559,Location - 1 - East-West Corridor Project
+263,105.219557,16.705923,East-West Corridor Project,2559,Location - 2 - East-West Corridor Project
+263,105.724506,16.559991,East-West Corridor Project,2559,Location - 3 - East-West Corridor Project
+263,106.164905,16.718586,East-West Corridor Project,2559,Location - 4 - East-West Corridor Project
+263,106.573162,16.624887,East-West Corridor Project,2559,Location - 5 - East-West Corridor Project
+264,106.594484,16.624973,East-West Corridor Project,2560,Location - 6 - East-West Corridor Project
+264,107.081696,16.799831,East-West Corridor Project,2560,Location - 7 - East-West Corridor Project
+264,107.541298,16.46566,East-West Corridor Project,2560,Location - 8 - East-West Corridor Project
+264,108.190285,16.04442,East-West Corridor Project,2560,Location - 9 - East-West Corridor Project
+265,106.717407,22.004993,Guangxi Roads Development,2722,Location - 1 - Guangxi Roads Development
+265,107.005836,22.325951,Guangxi Roads Development,2722,Location - 2 - Guangxi Roads Development
+265,107.378181,22.48741,Guangxi Roads Development,2722,Location - 3 - Guangxi Roads Development
+265,107.914932,22.581244,Guangxi Roads Development,2722,Location - 4 - Guangxi Roads Development
+265,108.295593,22.838318,Guangxi Roads Development,2722,Location - 5 - Guangxi Roads Development
+266,102.641747,13.626776,GMS: Cambodia Road Improvement,2649,Location - 1 - GMS: Cambodia Road Improvement
+266,102.968857,13.59046,GMS: Cambodia Road Improvement,2649,Location - 2 - GMS: Cambodia Road Improvement
+266,103.114583,13.147917,GMS: Cambodia Road Improvement,2649,Location - 3 - GMS: Cambodia Road Improvement
+266,103.19375,13.610417,GMS: Cambodia Road Improvement,2649,Location - 4 - GMS: Cambodia Road Improvement
+266,103.344577,13.591683,GMS: Cambodia Road Improvement,2649,Location - 5 - GMS: Cambodia Road Improvement
+266,103.402083,12.839583,GMS: Cambodia Road Improvement,2649,Location - 6 - GMS: Cambodia Road Improvement
+266,103.422083,13.577083,GMS: Cambodia Road Improvement,2649,Location - 7 - GMS: Cambodia Road Improvement
+266,103.51875,13.539583,GMS: Cambodia Road Improvement,2649,Location - 8 - GMS: Cambodia Road Improvement
+266,103.637489,12.675627,GMS: Cambodia Road Improvement,2649,Location - 9 - GMS: Cambodia Road Improvement
+266,103.70625,13.439583,GMS: Cambodia Road Improvement,2649,Location - 10 - GMS: Cambodia Road Improvement
+266,103.861656,13.358998,GMS: Cambodia Road Improvement,2649,Location - 11 - GMS: Cambodia Road Improvement
+266,103.909187,12.53315,GMS: Cambodia Road Improvement,2649,Location - 12 - GMS: Cambodia Road Improvement
+266,103.996193,13.339351,GMS: Cambodia Road Improvement,2649,Location - 13 - GMS: Cambodia Road Improvement
+266,104.00625,12.527083,GMS: Cambodia Road Improvement,2649,Location - 14 - GMS: Cambodia Road Improvement
+266,104.322917,13.11875,GMS: Cambodia Road Improvement,2649,Location - 15 - GMS: Cambodia Road Improvement
+266,104.49375,12.385417,GMS: Cambodia Road Improvement,2649,Location - 16 - GMS: Cambodia Road Improvement
+266,104.562263,12.950822,GMS: Cambodia Road Improvement,2649,Location - 17 - GMS: Cambodia Road Improvement
+266,104.663269,12.166076,GMS: Cambodia Road Improvement,2649,Location - 18 - GMS: Cambodia Road Improvement
+266,104.722282,11.850718,GMS: Cambodia Road Improvement,2649,Location - 19 - GMS: Cambodia Road Improvement
+266,104.72594,12.27607,GMS: Cambodia Road Improvement,2649,Location - 20 - GMS: Cambodia Road Improvement
+266,104.821053,11.812775,GMS: Cambodia Road Improvement,2649,Location - 21 - GMS: Cambodia Road Improvement
+266,104.822917,12.79375,GMS: Cambodia Road Improvement,2649,Location - 22 - GMS: Cambodia Road Improvement
+266,104.852083,11.68125,GMS: Cambodia Road Improvement,2649,Location - 23 - GMS: Cambodia Road Improvement
+266,108.172396,23.908754,GMS: Cambodia Road Improvement,2649,Location - 24 - GMS: Cambodia Road Improvement
+267,103.861656,13.358998,GMS: Mekong Tourism Development,2659,Location - 1 - GMS: Mekong Tourism Development
+267,104.909325,11.562013,GMS: Mekong Tourism Development,2659,Location - 2 - GMS: Mekong Tourism Development
+267,106.03125,13.689583,GMS: Mekong Tourism Development,2659,Location - 3 - GMS: Mekong Tourism Development
+267,107.030055,14.188561,GMS: Mekong Tourism Development,2659,Location - 4 - GMS: Mekong Tourism Development
+268,101.211939,20.92845,GMS: Mekong Tourism Development,2660,Location - 5 - GMS: Mekong Tourism Development
+268,102.141563,19.884102,GMS: Mekong Tourism Development,2660,Location - 6 - GMS: Mekong Tourism Development
+268,104.760883,17.956546,GMS: Mekong Tourism Development,2660,Location - 7 - GMS: Mekong Tourism Development
+268,105.8,14.83333,GMS: Mekong Tourism Development,2660,Location - 8 - GMS: Mekong Tourism Development
+269,105.027169,10.512241,GMS: Mekong Tourism Development,2661,Location - 9 - GMS: Mekong Tourism Development
+269,106.337379,10.364807,GMS: Mekong Tourism Development,2661,Location - 10 - GMS: Mekong Tourism Development
+270,100.492804,20.278657,GMS: Northern Economic Corridor Project,2662,Location - 1 - GMS: Northern Economic Corridor Project
+270,101.061215,20.684883,GMS: Northern Economic Corridor Project,2662,Location - 2 - GMS: Northern Economic Corridor Project
+270,101.412892,20.93084,GMS: Northern Economic Corridor Project,2662,Location - 3 - GMS: Northern Economic Corridor Project
+270,101.671344,21.162383,GMS: Northern Economic Corridor Project,2662,Location - 4 - GMS: Northern Economic Corridor Project
+271,98.69093,24.59012,Western Yunnan Roads Development,2948,Location - 1 - Western Yunnan Roads Development
+271,98.89087,24.71727,Western Yunnan Roads Development,2948,Location - 2 - Western Yunnan Roads Development
+271,99.06084,24.91209,Western Yunnan Roads Development,2948,Location - 3 - Western Yunnan Roads Development
+271,99.16763,25.1155,Western Yunnan Roads Development,2948,Location - 4 - Western Yunnan Roads Development
+272,102.89751,13.66726,Cambodia: GMS Transmission Project,2511,Location - 1 - Cambodia: GMS Transmission Project
+272,103.859722,13.362222,Cambodia: GMS Transmission Project,2511,Location - 2 - Cambodia: GMS Transmission Project
+272,104.917445,11.558831,Cambodia: GMS Transmission Project,2511,Location - 3 - Cambodia: GMS Transmission Project
+272,105.219481,12.90616,Cambodia: GMS Transmission Project,2511,Location - 4 - Cambodia: GMS Transmission Project
+272,105.465401,11.99141,Cambodia: GMS Transmission Project,2511,Location - 5 - Cambodia: GMS Transmission Project
+272,105.95095,12.765638,Cambodia: GMS Transmission Project,2511,Location - 6 - Cambodia: GMS Transmission Project
+272,105.969988,13.576473,Cambodia: GMS Transmission Project,2511,Location - 7 - Cambodia: GMS Transmission Project
+272,106.29688,13.59216,Cambodia: GMS Transmission Project,2511,Location - 8 - Cambodia: GMS Transmission Project
+275,106.620293,23.905104,Guangxi Roads Development II,2723,Location - 1 - Guangxi Roads Development II
+275,107.00298,23.64471,Guangxi Roads Development II,2723,Location - 2 - Guangxi Roads Development II
+275,107.50842,23.36104,Guangxi Roads Development II,2723,Location - 3 - Guangxi Roads Development II
+275,108.03131,23.25976,Guangxi Roads Development II,2723,Location - 4 - Guangxi Roads Development II
+275,108.32687,22.85635,Guangxi Roads Development II,2723,Location - 5 - Guangxi Roads Development II
+276,100.153351,25.697758,Dali-Lijang Railway Project (Yunnan Province),2546,Location - 1 - Dali-Lijang Railway Project (Yunnan Province)
+276,100.231483,26.873297,Dali-Lijang Railway Project (Yunnan Province),2546,Location - 2 - Dali-Lijang Railway Project (Yunnan Province)
+277,104.952,17.9991,Nam Theun 2 Hydroelectric Project,2790,Location - 1 - Nam Theun 2 Hydroelectric Project
+278,104.174019,10.605683,GMS-CAM: Regional Communicable Diseases Control,2666,Location - 1 - GMS-CAM: Regional Communicable Diseases Control
+278,104.785744,10.983893,GMS-CAM: Regional Communicable Diseases Control,2666,Location - 2 - GMS-CAM: Regional Communicable Diseases Control
+278,105.960442,13.519261,GMS-CAM: Regional Communicable Diseases Control,2666,Location - 3 - GMS-CAM: Regional Communicable Diseases Control
+278,106.977737,13.733486,GMS-CAM: Regional Communicable Diseases Control,2666,Location - 4 - GMS-CAM: Regional Communicable Diseases Control
+278,107.18513,12.430843,GMS-CAM: Regional Communicable Diseases Control,2666,Location - 5 - GMS-CAM: Regional Communicable Diseases Control
+279,100.479744,20.309038,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 1 - GMS-LAO: Regional Communicable Diseases Control
+279,101.401993,20.946892,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 2 - GMS-LAO: Regional Communicable Diseases Control
+279,101.719607,19.276541,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 3 - GMS-LAO: Regional Communicable Diseases Control
+279,101.995739,20.691903,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 4 - GMS-LAO: Regional Communicable Diseases Control
+279,102.141602,19.8841,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 5 - GMS-LAO: Regional Communicable Diseases Control
+279,102.19487,21.74478,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 6 - GMS-LAO: Regional Communicable Diseases Control
+279,102.537437,18.429174,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 7 - GMS-LAO: Regional Communicable Diseases Control
+279,102.639023,17.976719,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 8 - GMS-LAO: Regional Communicable Diseases Control
+279,103.792582,18.364839,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 9 - GMS-LAO: Regional Communicable Diseases Control
+279,104.754707,16.548525,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 10 - GMS-LAO: Regional Communicable Diseases Control
+279,104.81295,17.389631,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 11 - GMS-LAO: Regional Communicable Diseases Control
+279,105.802109,15.114467,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 12 - GMS-LAO: Regional Communicable Diseases Control
+279,106.427353,15.716257,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 13 - GMS-LAO: Regional Communicable Diseases Control
+279,106.698807,15.411507,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 14 - GMS-LAO: Regional Communicable Diseases Control
+279,106.838943,14.807581,GMS-LAO: Regional Communicable Diseases Control,2669,Location - 15 - GMS-LAO: Regional Communicable Diseases Control
+280,105.091812,10.013304,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 1 - GMS-VIE: Regional Communicable Diseases Control
+280,105.427996,10.343164,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 2 - GMS-VIE: Regional Communicable Diseases Control
+280,105.588873,10.558962,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 3 - GMS-VIE: Regional Communicable Diseases Control
+280,105.656395,18.672817,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 4 - GMS-VIE: Regional Communicable Diseases Control
+280,105.772263,21.017355,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 5 - GMS-VIE: Regional Communicable Diseases Control
+280,105.782084,20.82704,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 6 - GMS-VIE: Regional Communicable Diseases Control
+280,105.787331,10.039924,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 7 - GMS-VIE: Regional Communicable Diseases Control
+280,105.788033,19.780634,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 8 - GMS-VIE: Regional Communicable Diseases Control
+280,105.885612,18.322769,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 9 - GMS-VIE: Regional Communicable Diseases Control
+280,106.069138,11.30115,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 10 - GMS-VIE: Regional Communicable Diseases Control
+280,106.329848,9.984851,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 11 - GMS-VIE: Regional Communicable Diseases Control
+280,106.529986,10.132951,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 12 - GMS-VIE: Regional Communicable Diseases Control
+280,107.081696,16.799831,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 13 - GMS-VIE: Regional Communicable Diseases Control
+280,108.034859,12.680061,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 14 - GMS-VIE: Regional Communicable Diseases Control
+280,108.190285,16.04442,GMS-VIE: Regional Communicable Diseases Control,2670,Location - 15 - GMS-VIE: Regional Communicable Diseases Control
+282,103.506721,10.629956,Second Power Transmission and Distribution,2868,Location - 1 - Second Power Transmission and Distribution
+282,104.174019,10.605683,Second Power Transmission and Distribution,2868,Location - 2 - Second Power Transmission and Distribution
+283,102.645287,13.63876,GMS Rehabilitation of the Railway in Cambodia,2626,Location - 1 - GMS Rehabilitation of the Railway in Cambodia
+283,102.686493,13.619925,GMS Rehabilitation of the Railway in Cambodia,2626,Location - 2 - GMS Rehabilitation of the Railway in Cambodia
+283,102.968857,13.59046,GMS Rehabilitation of the Railway in Cambodia,2626,Location - 3 - GMS Rehabilitation of the Railway in Cambodia
+283,103.212326,13.075084,GMS Rehabilitation of the Railway in Cambodia,2626,Location - 4 - GMS Rehabilitation of the Railway in Cambodia
+283,103.506721,10.629956,GMS Rehabilitation of the Railway in Cambodia,2626,Location - 5 - GMS Rehabilitation of the Railway in Cambodia
+283,103.557457,10.703927,GMS Rehabilitation of the Railway in Cambodia,2626,Location - 6 - GMS Rehabilitation of the Railway in Cambodia
+283,103.909187,12.53315,GMS Rehabilitation of the Railway in Cambodia,2626,Location - 7 - GMS Rehabilitation of the Railway in Cambodia
+283,103.974968,12.483853,GMS Rehabilitation of the Railway in Cambodia,2626,Location - 8 - GMS Rehabilitation of the Railway in Cambodia
+283,104.174019,10.605683,GMS Rehabilitation of the Railway in Cambodia,2626,Location - 9 - GMS Rehabilitation of the Railway in Cambodia
+283,104.437073,10.560264,GMS Rehabilitation of the Railway in Cambodia,2626,Location - 10 - GMS Rehabilitation of the Railway in Cambodia
+283,104.785744,10.983893,GMS Rehabilitation of the Railway in Cambodia,2626,Location - 11 - GMS Rehabilitation of the Railway in Cambodia
+283,104.816406,11.56496,GMS Rehabilitation of the Railway in Cambodia,2626,Location - 12 - GMS Rehabilitation of the Railway in Cambodia
+283,104.909325,11.562013,GMS Rehabilitation of the Railway in Cambodia,2626,Location - 13 - GMS Rehabilitation of the Railway in Cambodia
+285,103.98513,22.487101,GMS Kunming-Haiphong Transport Corridor: Yen Vien-Lao Cai Railway Upgrading Project (ADF),2607,Location - 1 - GMS Kunming-Haiphong Transport Corridor: Yen Vien-Lao Cai Railway Upgrading Project (ADF)
+285,104.609459,21.957285,GMS Kunming-Haiphong Transport Corridor: Yen Vien-Lao Cai Railway Upgrading Project (ADF),2607,Location - 2 - GMS Kunming-Haiphong Transport Corridor: Yen Vien-Lao Cai Railway Upgrading Project (ADF)
+285,105.239128,21.403711,GMS Kunming-Haiphong Transport Corridor: Yen Vien-Lao Cai Railway Upgrading Project (ADF),2607,Location - 3 - GMS Kunming-Haiphong Transport Corridor: Yen Vien-Lao Cai Railway Upgrading Project (ADF)
+285,105.85331,21.15452,GMS Kunming-Haiphong Transport Corridor: Yen Vien-Lao Cai Railway Upgrading Project (ADF),2607,Location - 4 - GMS Kunming-Haiphong Transport Corridor: Yen Vien-Lao Cai Railway Upgrading Project (ADF)
+287,105.16412,24.64204,Western Guangxi Roads Development Project,2947,Location - 1 - Western Guangxi Roads Development Project
+287,105.37709,24.75608,Western Guangxi Roads Development Project,2947,Location - 2 - Western Guangxi Roads Development Project
+287,105.44105,24.62522,Western Guangxi Roads Development Project,2947,Location - 3 - Western Guangxi Roads Development Project
+287,105.56646,24.58032,Western Guangxi Roads Development Project,2947,Location - 4 - Western Guangxi Roads Development Project
+287,105.6378,24.7323,Western Guangxi Roads Development Project,2947,Location - 5 - Western Guangxi Roads Development Project
+287,105.89965,24.60193,Western Guangxi Roads Development Project,2947,Location - 6 - Western Guangxi Roads Development Project
+287,106.078506,24.425747,Western Guangxi Roads Development Project,2947,Location - 7 - Western Guangxi Roads Development Project
+287,106.218552,24.295298,Western Guangxi Roads Development Project,2947,Location - 8 - Western Guangxi Roads Development Project
+287,106.32384,22.89072,Western Guangxi Roads Development Project,2947,Location - 9 - Western Guangxi Roads Development Project
+287,106.35535,23.00699,Western Guangxi Roads Development Project,2947,Location - 10 - Western Guangxi Roads Development Project
+287,106.35674,24.48544,Western Guangxi Roads Development Project,2947,Location - 11 - Western Guangxi Roads Development Project
+287,106.41475,23.14203,Western Guangxi Roads Development Project,2947,Location - 12 - Western Guangxi Roads Development Project
+287,106.46977,24.09737,Western Guangxi Roads Development Project,2947,Location - 13 - Western Guangxi Roads Development Project
+287,106.49099,24.65879,Western Guangxi Roads Development Project,2947,Location - 14 - Western Guangxi Roads Development Project
+287,106.549049,24.782354,Western Guangxi Roads Development Project,2947,Location - 15 - Western Guangxi Roads Development Project
+287,106.620293,23.905104,Western Guangxi Roads Development Project,2947,Location - 16 - Western Guangxi Roads Development Project
+287,106.69806,23.64457,Western Guangxi Roads Development Project,2947,Location - 17 - Western Guangxi Roads Development Project
+287,106.85858,23.53011,Western Guangxi Roads Development Project,2947,Location - 18 - Western Guangxi Roads Development Project
+287,106.88908,23.74812,Western Guangxi Roads Development Project,2947,Location - 19 - Western Guangxi Roads Development Project
+290,104.493629,10.376146,GMS Southern Coastal Corridor,2633,Location - 1 - GMS Southern Coastal Corridor
+290,105,8.768371,GMS Southern Coastal Corridor,2633,Location - 2 - GMS Southern Coastal Corridor
+290,105.04792,10.069207,GMS Southern Coastal Corridor,2633,Location - 3 - GMS Southern Coastal Corridor
+290,105.143794,9.178573,GMS Southern Coastal Corridor,2633,Location - 4 - GMS Southern Coastal Corridor
+290,105.359657,9.61775,GMS Southern Coastal Corridor,2633,Location - 5 - GMS Southern Coastal Corridor
+291,102.962844,11.679856,GMS Southern Coastal Corridor,2634,Location - 6 - GMS Southern Coastal Corridor
+291,103.394127,11.179327,GMS Southern Coastal Corridor,2634,Location - 7 - GMS Southern Coastal Corridor
+291,103.798653,11.041563,GMS Southern Coastal Corridor,2634,Location - 8 - GMS Southern Coastal Corridor
+291,104.050598,10.565998,GMS Southern Coastal Corridor,2634,Location - 9 - GMS Southern Coastal Corridor
+291,104.44146,10.453392,GMS Southern Coastal Corridor,2634,Location - 10 - GMS Southern Coastal Corridor
+293,102.962844,11.679856,GMS Southern Coastal Corridor (ADF),2636,Location - 1 - GMS Southern Coastal Corridor (ADF)
+293,103.394127,11.179327,GMS Southern Coastal Corridor (ADF),2636,Location - 2 - GMS Southern Coastal Corridor (ADF)
+293,103.798653,11.041563,GMS Southern Coastal Corridor (ADF),2636,Location - 3 - GMS Southern Coastal Corridor (ADF)
+293,104.050598,10.565998,GMS Southern Coastal Corridor (ADF),2636,Location - 4 - GMS Southern Coastal Corridor (ADF)
+293,104.44146,10.453392,GMS Southern Coastal Corridor (ADF),2636,Location - 5 - GMS Southern Coastal Corridor (ADF)
+294,103.959442,22.482872,Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (OCR),2714,Location - 1 - Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (OCR)
+294,104.510323,22.207993,Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (OCR),2714,Location - 2 - Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (OCR)
+294,104.934311,21.759041,Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (OCR),2714,Location - 3 - Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (OCR)
+294,105.268501,21.316826,Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (OCR),2714,Location - 4 - Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (OCR)
+294,105.8,21.22,Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (OCR),2714,Location - 5 - Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (OCR)
+295,103.959442,22.482872,Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (ADF),2713,Location - 1 - Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (ADF)
+295,104.510323,22.207993,Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (ADF),2713,Location - 2 - Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (ADF)
+295,104.934311,21.759041,Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (ADF),2713,Location - 3 - Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (ADF)
+295,105.268501,21.316826,Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (ADF),2713,Location - 4 - Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (ADF)
+295,105.8,21.22,Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (ADF),2713,Location - 5 - Greater Mekong Subregion: Kunming–Hai Phong Transport Corridor—Noi Bai–Lao Cai Highway Project (ADF)
+296,102.46303,25.56195,Central Yunnan Roads Development (OCR),2519,Location - 1 - Central Yunnan Roads Development (OCR)
+296,102.46811,25.26184,Central Yunnan Roads Development (OCR),2519,Location - 2 - Central Yunnan Roads Development (OCR)
+296,102.702133,25.051033,Central Yunnan Roads Development (OCR),2519,Location - 3 - Central Yunnan Roads Development (OCR)
+297,100.479744,20.309038,Greater Mekong Subregion: Sustainable Tourism Development,2716,Location - 1 - Greater Mekong Subregion: Sustainable Tourism Development
+297,101.401993,20.946892,Greater Mekong Subregion: Sustainable Tourism Development,2716,Location - 2 - Greater Mekong Subregion: Sustainable Tourism Development
+297,101.719607,19.276541,Greater Mekong Subregion: Sustainable Tourism Development,2716,Location - 3 - Greater Mekong Subregion: Sustainable Tourism Development
+297,101.995739,20.691903,Greater Mekong Subregion: Sustainable Tourism Development,2716,Location - 4 - Greater Mekong Subregion: Sustainable Tourism Development
+297,102.614429,17.962769,Greater Mekong Subregion: Sustainable Tourism Development,2716,Location - 5 - Greater Mekong Subregion: Sustainable Tourism Development
+297,104.042107,20.417807,Greater Mekong Subregion: Sustainable Tourism Development,2716,Location - 6 - Greater Mekong Subregion: Sustainable Tourism Development
+297,104.754707,16.548525,Greater Mekong Subregion: Sustainable Tourism Development,2716,Location - 7 - Greater Mekong Subregion: Sustainable Tourism Development
+297,105.802109,15.114467,Greater Mekong Subregion: Sustainable Tourism Development,2716,Location - 8 - Greater Mekong Subregion: Sustainable Tourism Development
+297,106.427353,15.716257,Greater Mekong Subregion: Sustainable Tourism Development,2716,Location - 9 - Greater Mekong Subregion: Sustainable Tourism Development
+298,105.910311,22.363453,Greater Mekong Subregion: Sustainable Tourism Development (ADF),2717,Location - 1 - Greater Mekong Subregion: Sustainable Tourism Development (ADF)
+298,106.595871,17.443748,Greater Mekong Subregion: Sustainable Tourism Development (ADF),2717,Location - 2 - Greater Mekong Subregion: Sustainable Tourism Development (ADF)
+298,107.081696,16.799831,Greater Mekong Subregion: Sustainable Tourism Development (ADF),2717,Location - 3 - Greater Mekong Subregion: Sustainable Tourism Development (ADF)
+298,107.541298,16.46566,Greater Mekong Subregion: Sustainable Tourism Development (ADF),2717,Location - 4 - Greater Mekong Subregion: Sustainable Tourism Development (ADF)
+299,105.772263,21.017355,"GMS: Ha Noi-Lang Son, GMS: Ha Long-Mong Cai, and Ben Luc-Long Thanh Expressways Technical Assistance (ADF)",2655,"Location - 1 - GMS: Ha Noi-Lang Son, GMS: Ha Long-Mong Cai, and Ben Luc-Long Thanh Expressways Technical Assistance (ADF)"
+299,106.49,10.63,"GMS: Ha Noi-Lang Son, GMS: Ha Long-Mong Cai, and Ben Luc-Long Thanh Expressways Technical Assistance (ADF)",2655,"Location - 2 - GMS: Ha Noi-Lang Son, GMS: Ha Long-Mong Cai, and Ben Luc-Long Thanh Expressways Technical Assistance (ADF)"
+299,106.777527,21.856678,"GMS: Ha Noi-Lang Son, GMS: Ha Long-Mong Cai, and Ben Luc-Long Thanh Expressways Technical Assistance (ADF)",2655,"Location - 3 - GMS: Ha Noi-Lang Son, GMS: Ha Long-Mong Cai, and Ben Luc-Long Thanh Expressways Technical Assistance (ADF)"
+299,107.01,10.795,"GMS: Ha Noi-Lang Son, GMS: Ha Long-Mong Cai, and Ben Luc-Long Thanh Expressways Technical Assistance (ADF)",2655,"Location - 4 - GMS: Ha Noi-Lang Son, GMS: Ha Long-Mong Cai, and Ben Luc-Long Thanh Expressways Technical Assistance (ADF)"
+299,107.102623,20.966169,"GMS: Ha Noi-Lang Son, GMS: Ha Long-Mong Cai, and Ben Luc-Long Thanh Expressways Technical Assistance (ADF)",2655,"Location - 5 - GMS: Ha Noi-Lang Son, GMS: Ha Long-Mong Cai, and Ben Luc-Long Thanh Expressways Technical Assistance (ADF)"
+299,107.918839,21.54977,"GMS: Ha Noi-Lang Son, GMS: Ha Long-Mong Cai, and Ben Luc-Long Thanh Expressways Technical Assistance (ADF)",2655,"Location - 6 - GMS: Ha Noi-Lang Son, GMS: Ha Long-Mong Cai, and Ben Luc-Long Thanh Expressways Technical Assistance (ADF)"
+300,101.337433,19.701737,GMS-LAO: GMS Northern Power Transmission (ADF),2667,Location - 1 - GMS-LAO: GMS Northern Power Transmission (ADF)
+300,101.712523,19.255736,GMS-LAO: GMS Northern Power Transmission (ADF),2667,Location - 2 - GMS-LAO: GMS Northern Power Transmission (ADF)
+300,102.141602,19.8841,GMS-LAO: GMS Northern Power Transmission (ADF),2667,Location - 3 - GMS-LAO: GMS Northern Power Transmission (ADF)
+300,102.712194,18.286166,GMS-LAO: GMS Northern Power Transmission (ADF),2667,Location - 4 - GMS-LAO: GMS Northern Power Transmission (ADF)
+300,104.046,20.415,GMS-LAO: GMS Northern Power Transmission (ADF),2667,Location - 5 - GMS-LAO: GMS Northern Power Transmission (ADF)
+300,104.95284,17.996561,GMS-LAO: GMS Northern Power Transmission (ADF),2667,Location - 6 - GMS-LAO: GMS Northern Power Transmission (ADF)
+301,102.968857,13.59046,GMS: Cambodia Northwest Provincial Road Improvement (ADF),2648,Location - 1 - GMS: Cambodia Northwest Provincial Road Improvement (ADF)
+301,103.004494,13.871275,GMS: Cambodia Northwest Provincial Road Improvement (ADF),2648,Location - 2 - GMS: Cambodia Northwest Provincial Road Improvement (ADF)
+301,103.104317,14.070763,GMS: Cambodia Northwest Provincial Road Improvement (ADF),2648,Location - 3 - GMS: Cambodia Northwest Provincial Road Improvement (ADF)
+301,103.319422,14.138354,GMS: Cambodia Northwest Provincial Road Improvement (ADF),2648,Location - 4 - GMS: Cambodia Northwest Provincial Road Improvement (ADF)
+301,103.513809,14.182647,GMS: Cambodia Northwest Provincial Road Improvement (ADF),2648,Location - 5 - GMS: Cambodia Northwest Provincial Road Improvement (ADF)
+301,103.685237,14.41259,GMS: Cambodia Northwest Provincial Road Improvement (ADF),2648,Location - 6 - GMS: Cambodia Northwest Provincial Road Improvement (ADF)
+303,100.215594,16.860729,GMS: Highway Expansion (OCR),2656,Location - 1 - GMS: Highway Expansion (OCR)
+303,101.207782,16.750869,GMS: Highway Expansion (OCR),2656,Location - 2 - GMS: Highway Expansion (OCR)
+303,101.354568,13.744635,GMS: Highway Expansion (OCR),2656,Location - 3 - GMS: Highway Expansion (OCR)
+303,102.319458,13.743855,GMS: Highway Expansion (OCR),2656,Location - 4 - GMS: Highway Expansion (OCR)
+304,102.686493,13.619925,GMS Rehabilitation of the Railway in Cambodia (Supplementary) (ADF),2629,Location - 1 - GMS Rehabilitation of the Railway in Cambodia (Supplementary) (ADF)
+304,103.557457,10.703927,GMS Rehabilitation of the Railway in Cambodia (Supplementary) (ADF),2629,Location - 2 - GMS Rehabilitation of the Railway in Cambodia (Supplementary) (ADF)
+304,103.974968,12.483853,GMS Rehabilitation of the Railway in Cambodia (Supplementary) (ADF),2629,Location - 3 - GMS Rehabilitation of the Railway in Cambodia (Supplementary) (ADF)
+304,104.437073,10.560264,GMS Rehabilitation of the Railway in Cambodia (Supplementary) (ADF),2629,Location - 4 - GMS Rehabilitation of the Railway in Cambodia (Supplementary) (ADF)
+304,104.816406,11.56496,GMS Rehabilitation of the Railway in Cambodia (Supplementary) (ADF),2629,Location - 5 - GMS Rehabilitation of the Railway in Cambodia (Supplementary) (ADF)
+305,104.493629,10.376146,GMS: Southern Coastal Corridor (Supplementary) (ADF),2665,Location - 1 - GMS: Southern Coastal Corridor (Supplementary) (ADF)
+305,105,8.768371,GMS: Southern Coastal Corridor (Supplementary) (ADF),2665,Location - 2 - GMS: Southern Coastal Corridor (Supplementary) (ADF)
+305,105.04792,10.069207,GMS: Southern Coastal Corridor (Supplementary) (ADF),2665,Location - 3 - GMS: Southern Coastal Corridor (Supplementary) (ADF)
+305,105.143794,9.178573,GMS: Southern Coastal Corridor (Supplementary) (ADF),2665,Location - 4 - GMS: Southern Coastal Corridor (Supplementary) (ADF)
+305,105.359657,9.61775,GMS: Southern Coastal Corridor (Supplementary) (ADF),2665,Location - 5 - GMS: Southern Coastal Corridor (Supplementary) (ADF)
+306,106.620293,23.905104,Guangxi Southwestern Cities Development Project (OCR),2726,Location - 1 - Guangxi Southwestern Cities Development Project (OCR)
+306,107.36,22.8,Guangxi Southwestern Cities Development Project (OCR),2726,Location - 2 - Guangxi Southwestern Cities Development Project (OCR)
+306,108.35,21.75,Guangxi Southwestern Cities Development Project (OCR),2726,Location - 3 - Guangxi Southwestern Cities Development Project (OCR)
+310,104.17,20.46,LAO: Second Northern GMS Transport Network Improvement Project,2755,Location - 1 - LAO: Second Northern GMS Transport Network Improvement Project
+310,104.22,20.41,LAO: Second Northern GMS Transport Network Improvement Project,2755,Location - 2 - LAO: Second Northern GMS Transport Network Improvement Project
+310,104.38,20.71,LAO: Second Northern GMS Transport Network Improvement Project,2755,Location - 3 - LAO: Second Northern GMS Transport Network Improvement Project
+310,104.45,20.56,LAO: Second Northern GMS Transport Network Improvement Project,2755,Location - 4 - LAO: Second Northern GMS Transport Network Improvement Project
+310,104.49,20.73,LAO: Second Northern GMS Transport Network Improvement Project,2755,Location - 5 - LAO: Second Northern GMS Transport Network Improvement Project
+310,104.61,20.3,LAO: Second Northern GMS Transport Network Improvement Project,2755,Location - 6 - LAO: Second Northern GMS Transport Network Improvement Project
+312,104.711046,20.272399,VIE: Second Northern GMS Transport Network Improvement,2945,Location - 1 - VIE: Second Northern GMS Transport Network Improvement
+312,105.224535,20.349914,VIE: Second Northern GMS Transport Network Improvement,2945,Location - 2 - VIE: Second Northern GMS Transport Network Improvement
+312,105.528732,20.121779,VIE: Second Northern GMS Transport Network Improvement,2945,Location - 3 - VIE: Second Northern GMS Transport Network Improvement
+312,105.844984,19.993873,VIE: Second Northern GMS Transport Network Improvement,2945,Location - 4 - VIE: Second Northern GMS Transport Network Improvement
+313,97.853241,24.016266,Yunnan Integrated Road Network Development (OCR),2954,Location - 1 - Yunnan Integrated Road Network Development (OCR)
+313,98.582878,24.446115,Yunnan Integrated Road Network Development (OCR),2954,Location - 2 - Yunnan Integrated Road Network Development (OCR)
+313,98.685898,24.590586,Yunnan Integrated Road Network Development (OCR),2954,Location - 3 - Yunnan Integrated Road Network Development (OCR)
+314,103.410562,11.670061,GMS Biodiversity Conservation Corridor (ADF),2585,Location - 1 - GMS Biodiversity Conservation Corridor (ADF)
+314,107.04674,12.7802,GMS Biodiversity Conservation Corridor (ADF),2585,Location - 2 - GMS Biodiversity Conservation Corridor (ADF)
+315,106.109957,14.833989,GMS Biodiversity Conservation Corridor (ADF),2586,Location - 3 - GMS Biodiversity Conservation Corridor (ADF)
+315,107.133795,14.562288,GMS Biodiversity Conservation Corridor (ADF),2586,Location - 4 - GMS Biodiversity Conservation Corridor (ADF)
+315,107.326754,15.438392,GMS Biodiversity Conservation Corridor (ADF),2586,Location - 5 - GMS Biodiversity Conservation Corridor (ADF)
+316,106.759633,16.745753,GMS Biodiversity Conservation Corridor (ADF),2587,Location - 6 - GMS Biodiversity Conservation Corridor (ADF)
+316,107.377732,16.246183,GMS Biodiversity Conservation Corridor (ADF),2587,Location - 7 - GMS Biodiversity Conservation Corridor (ADF)
+316,107.452821,15.730337,GMS Biodiversity Conservation Corridor (ADF),2587,Location - 8 - GMS Biodiversity Conservation Corridor (ADF)
+318,102.875,19.0845,Greater Mekong Subregion Nam Ngum 3 Hydropower Project,2698,Location - 1 - Greater Mekong Subregion Nam Ngum 3 Hydropower Project
+325,104.754707,16.548525,Greater Mekong Subregion East-West Economic Corridor Towns Development Project (SF),2681,Location - 1 - Greater Mekong Subregion East-West Economic Corridor Towns Development Project (SF)
+325,106.023773,16.523424,Greater Mekong Subregion East-West Economic Corridor Towns Development Project (SF),2681,Location - 2 - Greater Mekong Subregion East-West Economic Corridor Towns Development Project (SF)
+325,106.426332,16.635763,Greater Mekong Subregion East-West Economic Corridor Towns Development Project (SF),2681,Location - 3 - Greater Mekong Subregion East-West Economic Corridor Towns Development Project (SF)
+328,102.639023,17.976719,Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (LAO/VIE) (SF),2690,Location - 1 - Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (LAO/VIE) (SF)
+330,102.659023,17.976719,Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (LAO/VIE) (SF),2691,Location - 2 - Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (LAO/VIE) (SF)
+331,105.588873,10.558962,Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (LAO/VIE) (SF),2692,Location - 3 - Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (LAO/VIE) (SF)
+331,106.337379,10.364807,Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (LAO/VIE) (SF),2692,Location - 4 - Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (LAO/VIE) (SF)
+333,102.566557,13.650407,GMS Corridor Towns Development Project,2591,Location - 1 - GMS Corridor Towns Development Project
+333,103.212326,13.075084,GMS Corridor Towns Development Project,2591,Location - 2 - GMS Corridor Towns Development Project
+333,103.524405,10.628001,GMS Corridor Towns Development Project,2591,Location - 3 - GMS Corridor Towns Development Project
+333,104.174019,10.605683,GMS Corridor Towns Development Project,2591,Location - 4 - GMS Corridor Towns Development Project
+333,105.291229,11.262858,GMS Corridor Towns Development Project,2591,Location - 5 - GMS Corridor Towns Development Project
+333,105.965134,11.038679,GMS Corridor Towns Development Project,2591,Location - 6 - GMS Corridor Towns Development Project
+334,103.909187,12.53315,Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (CAM) -Piggybacked to L2970,2688,Location - 1 - Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (CAM) -Piggybacked to L2970
+334,104.909325,11.562013,Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (CAM) -Piggybacked to L2970,2688,Location - 2 - Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (CAM) -Piggybacked to L2970
+336,103.909187,12.53315,Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (CAM),2687,Location - 1 - Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (CAM)
+336,104.909325,11.562013,Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (CAM),2687,Location - 2 - Greater Mekong Subregion Flood and Drought Risk Management and Mitigation Project (CAM)
+337,104.079708,22.510384,GMS Corridor Towns Development Project (SF),2598,Location - 1 - GMS Corridor Towns Development Project (SF)
+337,106.203547,21.279217,GMS Corridor Towns Development Project (SF),2598,Location - 2 - GMS Corridor Towns Development Project (SF)
+337,106.353912,11.031527,GMS Corridor Towns Development Project (SF),2598,Location - 3 - GMS Corridor Towns Development Project (SF)
+337,106.779668,16.646354,GMS Corridor Towns Development Project (SF),2598,Location - 4 - GMS Corridor Towns Development Project (SF)
+337,107.081696,16.799831,GMS Corridor Towns Development Project (SF),2598,Location - 5 - GMS Corridor Towns Development Project (SF)
+337,107.918839,21.54977,GMS Corridor Towns Development Project (SF),2598,Location - 6 - GMS Corridor Towns Development Project (SF)
+339,104.493629,10.376146,Greater Mekong Subregion Southern Coastal Corridor Project - Additional Financing,2711,Location - 1 - Greater Mekong Subregion Southern Coastal Corridor Project - Additional Financing
+339,105,8.768371,Greater Mekong Subregion Southern Coastal Corridor Project - Additional Financing,2711,Location - 2 - Greater Mekong Subregion Southern Coastal Corridor Project - Additional Financing
+339,105.04792,10.069207,Greater Mekong Subregion Southern Coastal Corridor Project - Additional Financing,2711,Location - 3 - Greater Mekong Subregion Southern Coastal Corridor Project - Additional Financing
+339,105.143794,9.178573,Greater Mekong Subregion Southern Coastal Corridor Project - Additional Financing,2711,Location - 4 - Greater Mekong Subregion Southern Coastal Corridor Project - Additional Financing
+339,105.359657,9.61775,Greater Mekong Subregion Southern Coastal Corridor Project - Additional Financing,2711,Location - 5 - Greater Mekong Subregion Southern Coastal Corridor Project - Additional Financing
+341,105.569805,10.205822,Central Mekong Delta Region Connectivity Project,2518,Location - 1 - Central Mekong Delta Region Connectivity Project
+341,105.618006,10.246687,Central Mekong Delta Region Connectivity Project,2518,Location - 2 - Central Mekong Delta Region Connectivity Project
+342,106.49,10.63,Greater Mekong Subregion Ben Luc-Long Thanh Expressway Project - Tranche 1,2672,Location - 1 - Greater Mekong Subregion Ben Luc-Long Thanh Expressway Project - Tranche 1
+342,107.01,10.795,Greater Mekong Subregion Ben Luc-Long Thanh Expressway Project - Tranche 1,2672,Location - 2 - Greater Mekong Subregion Ben Luc-Long Thanh Expressway Project - Tranche 1
+343,105.45039,16.691958,Greater Mekong Subregion East-West Economic Corridor Agriculture Infrastructure Project,2678,Location - 1 - Greater Mekong Subregion East-West Economic Corridor Agriculture Infrastructure Project
+343,105.763588,15.703357,Greater Mekong Subregion East-West Economic Corridor Agriculture Infrastructure Project,2678,Location - 2 - Greater Mekong Subregion East-West Economic Corridor Agriculture Infrastructure Project
+344,103.585578,10.60398,Sihanoukville Port Access Road Improvements,2874,Location - 1 - Sihanoukville Port Access Road Improvements
+344,103.726767,10.586153,Sihanoukville Port Access Road Improvements,2874,Location - 2 - Sihanoukville Port Access Road Improvements
+344,103.810414,10.690935,Sihanoukville Port Access Road Improvements,2874,Location - 3 - Sihanoukville Port Access Road Improvements
+345,102.496418,12.92897,GMS: Deepening Connectivity of Southern Economic Corridor ,2654,Location - 1 - GMS: Deepening Connectivity of Southern Economic Corridor 
+345,103.200477,13.106039,GMS: Deepening Connectivity of Southern Economic Corridor ,2654,Location - 2 - GMS: Deepening Connectivity of Southern Economic Corridor 
+345,103.484681,13.23952,GMS: Deepening Connectivity of Southern Economic Corridor ,2654,Location - 3 - GMS: Deepening Connectivity of Southern Economic Corridor 
+345,103.85023,13.319533,GMS: Deepening Connectivity of Southern Economic Corridor ,2654,Location - 4 - GMS: Deepening Connectivity of Southern Economic Corridor 
+346,103.552224,10.628844,Phnom Penh–Sihanoukville Highway Corridor Improvements,2800,Location - 1 - Phnom Penh–Sihanoukville Highway Corridor Improvements
+346,103.81868,10.848671,Phnom Penh–Sihanoukville Highway Corridor Improvements,2800,Location - 2 - Phnom Penh–Sihanoukville Highway Corridor Improvements
+346,104.050598,10.565998,Phnom Penh–Sihanoukville Highway Corridor Improvements,2800,Location - 3 - Phnom Penh–Sihanoukville Highway Corridor Improvements
+346,104.212387,11.272192,Phnom Penh–Sihanoukville Highway Corridor Improvements,2800,Location - 4 - Phnom Penh–Sihanoukville Highway Corridor Improvements
+346,104.656491,10.94932,Phnom Penh–Sihanoukville Highway Corridor Improvements,2800,Location - 5 - Phnom Penh–Sihanoukville Highway Corridor Improvements
+346,104.813419,11.531868,Phnom Penh–Sihanoukville Highway Corridor Improvements,2800,Location - 6 - Phnom Penh–Sihanoukville Highway Corridor Improvements
+347,104.80642,11.808933,Link Road between NR-5 and NR-6 near Kampong Tralach north of Phnom Penh,2759,Location - 1 - Link Road between NR-5 and NR-6 near Kampong Tralach north of Phnom Penh
+347,104.862924,11.872566,Link Road between NR-5 and NR-6 near Kampong Tralach north of Phnom Penh,2759,Location - 2 - Link Road between NR-5 and NR-6 near Kampong Tralach north of Phnom Penh
+347,104.923088,11.890933,Link Road between NR-5 and NR-6 near Kampong Tralach north of Phnom Penh,2759,Location - 3 - Link Road between NR-5 and NR-6 near Kampong Tralach north of Phnom Penh
+348,102.559464,13.661122,Construction of Poipet (Cambodia)–Klong Loeuk (Thailand) Railway Bridge,2528,Location - 1 - Construction of Poipet (Cambodia)–Klong Loeuk (Thailand) Railway Bridge
+349,100.978394,22.774649,Yunnan Pu'er Regional Integrated Road Network Development,2955,Location - 1 - Yunnan Pu'er Regional Integrated Road Network Development
+349,101.11216,23.109844,Yunnan Pu'er Regional Integrated Road Network Development,2955,Location - 2 - Yunnan Pu'er Regional Integrated Road Network Development
+349,101.15485,23.24898,Yunnan Pu'er Regional Integrated Road Network Development,2955,Location - 3 - Yunnan Pu'er Regional Integrated Road Network Development
+349,101.47098,22.92946,Yunnan Pu'er Regional Integrated Road Network Development,2955,Location - 4 - Yunnan Pu'er Regional Integrated Road Network Development
+349,101.843361,22.578703,Yunnan Pu'er Regional Integrated Road Network Development,2955,Location - 5 - Yunnan Pu'er Regional Integrated Road Network Development
+350,97.85921,24.01274,Dali–Ruili Railway,2545,Location - 1 - Dali–Ruili Railway
+350,99.15905,25.118084,Dali–Ruili Railway,2545,Location - 2 - Dali–Ruili Railway
+350,100.153712,25.688764,Dali–Ruili Railway,2545,Location - 3 - Dali–Ruili Railway
+351,100.43306,20.273804,"Further Maintenance and Improvement of the Upper Mekong River Navigation Channel from the PRC (at Landmark 243) and Myanmar to Luang Prabang, in the Lao PDR",2582,"Location - 1 - Further Maintenance and Improvement of the Upper Mekong River Navigation Channel from the PRC (at Landmark 243) and Myanmar to Luang Prabang, in the Lao PDR"
+351,100.521484,20.809011,"Further Maintenance and Improvement of the Upper Mekong River Navigation Channel from the PRC (at Landmark 243) and Myanmar to Luang Prabang, in the Lao PDR",2582,"Location - 2 - Further Maintenance and Improvement of the Upper Mekong River Navigation Channel from the PRC (at Landmark 243) and Myanmar to Luang Prabang, in the Lao PDR"
+351,101.137161,21.690247,"Further Maintenance and Improvement of the Upper Mekong River Navigation Channel from the PRC (at Landmark 243) and Myanmar to Luang Prabang, in the Lao PDR",2582,"Location - 3 - Further Maintenance and Improvement of the Upper Mekong River Navigation Channel from the PRC (at Landmark 243) and Myanmar to Luang Prabang, in the Lao PDR"
+352,101.398362,21.642948,Yuxi–Mohan Railway,2957,Location - 1 - Yuxi–Mohan Railway
+352,101.758703,22.58297,Yuxi–Mohan Railway,2957,Location - 2 - Yuxi–Mohan Railway
+352,102.001542,23.624827,Yuxi–Mohan Railway,2957,Location - 3 - Yuxi–Mohan Railway
+352,102.541229,24.35165,Yuxi–Mohan Railway,2957,Location - 4 - Yuxi–Mohan Railway
+353,105.467346,15.112005,Vang Tao Border–Crossing Point,2944,Location - 1 - Vang Tao Border–Crossing Point
+354,103.715019,18.34304,Mekong Bridge at Bungkan–Paksan,2772,Location - 1 - Mekong Bridge at Bungkan–Paksan
+355,102.713678,17.880667,Thanaleng Border–Crossing Infrastructure Improvement,2927,Location - 1 - Thanaleng Border–Crossing Infrastructure Improvement
+357,104.303886,18.063803,Upgrading of NR8 East–West Transport Route; ASEAN Highway AH15 (Van Lao–Nan Phao),2943,Location - 1 - Upgrading of NR8 East–West Transport Route; ASEAN Highway AH15 (Van Lao–Nan Phao)
+357,104.699028,18.236673,Upgrading of NR8 East–West Transport Route; ASEAN Highway AH15 (Van Lao–Nan Phao),2943,Location - 2 - Upgrading of NR8 East–West Transport Route; ASEAN Highway AH15 (Van Lao–Nan Phao)
+357,105.159294,18.390936,Upgrading of NR8 East–West Transport Route; ASEAN Highway AH15 (Van Lao–Nan Phao),2943,Location - 3 - Upgrading of NR8 East–West Transport Route; ASEAN Highway AH15 (Van Lao–Nan Phao)
+358,100.646712,20.892803,Xiengkok River Port,2951,Location - 1 - Xiengkok River Port
+359,100.106445,20.295904,Ban Mom River Port,2505,Location - 1 - Ban Mom River Port
+360,107.020966,16.300276,Lalay Border–Crossing Point (NR15),2752,Location - 1 - Lalay Border–Crossing Point (NR15)
+361,105.158703,18.388548,Nam Phao Border–Crossing Point (NR8),2789,Location - 1 - Nam Phao Border–Crossing Point (NR8)
+362,105.76281,17.665075,Na Phao Border–Crossing Point (NR12),2784,Location - 1 - Na Phao Border–Crossing Point (NR12)
+363,100.635286,20.891372,Luang Namtha– Xiengkok–Lao–Myanmar Friendship  Bridge: NR17,2763,Location - 1 - Luang Namtha– Xiengkok–Lao–Myanmar Friendship  Bridge: NR17
+364,100.655286,20.891372,Lao–-Myanmar Friendship Bridge over the Mekong at Xianglok,2758,Location - 1 - Lao–-Myanmar Friendship Bridge over the Mekong at Xianglok
+365,101.648742,21.117227,Vientiane–Boten Railway ,2946,Location - 1 - Vientiane–Boten Railway 
+365,101.891118,20.776577,Vientiane–Boten Railway ,2946,Location - 2 - Vientiane–Boten Railway 
+365,102.19738,19.723738,Vientiane–Boten Railway ,2946,Location - 3 - Vientiane–Boten Railway 
+365,102.455886,18.963887,Vientiane–Boten Railway ,2946,Location - 4 - Vientiane–Boten Railway 
+365,102.696412,18.028586,Vientiane–Boten Railway ,2946,Location - 5 - Vientiane–Boten Railway 
+366,98.244942,16.560385,East–West Economic Corridor Eindu–Kawkareik Road Improvement,2557,Location - 1 - East–West Economic Corridor Eindu–Kawkareik Road Improvement
+367,98.505103,16.687257,Mae Sot–Myawaddy Border Crossing and Infrastructure Improvements (with Thailand),2765,Location - 1 - Mae Sot–Myawaddy Border Crossing and Infrastructure Improvements (with Thailand)
+368,94.321678,23.219305,Improvement of Inland Ports,2744,Location - 1 - Improvement of Inland Ports
+368,94.932297,20.134418,Improvement of Inland Ports,2744,Location - 2 - Improvement of Inland Ports
+368,95.126725,22.118354,Improvement of Inland Ports,2744,Location - 3 - Improvement of Inland Ports
+368,95.142953,21.307106,Improvement of Inland Ports,2744,Location - 4 - Improvement of Inland Ports
+368,96.042007,22.014025,Improvement of Inland Ports,2744,Location - 5 - Improvement of Inland Ports
+368,97.208443,24.259636,Improvement of Inland Ports,2744,Location - 6 - Improvement of Inland Ports
+369,100.635286,20.891372,Lao– Myanmar Friendship Bridge over the Mekong River at Xiengkok–Kainglap,2757,Location - 1 - Lao– Myanmar Friendship Bridge over the Mekong River at Xiengkok–Kainglap
+370,99.553334,14.000047,Bang Yai–Kanchanaburi Intercity Motorway (part of the Laem Chabang–Bangkok–Dawei (Myanmar) Corridor,2506,Location - 1 - Bang Yai–Kanchanaburi Intercity Motorway (part of the Laem Chabang–Bangkok–Dawei (Myanmar) Corridor
+370,99.916827,13.793933,Bang Yai–Kanchanaburi Intercity Motorway (part of the Laem Chabang–Bangkok–Dawei (Myanmar) Corridor,2506,Location - 2 - Bang Yai–Kanchanaburi Intercity Motorway (part of the Laem Chabang–Bangkok–Dawei (Myanmar) Corridor
+370,100.456062,13.780955,Bang Yai–Kanchanaburi Intercity Motorway (part of the Laem Chabang–Bangkok–Dawei (Myanmar) Corridor,2506,Location - 3 - Bang Yai–Kanchanaburi Intercity Motorway (part of the Laem Chabang–Bangkok–Dawei (Myanmar) Corridor
+371,98.520726,16.692781,Tak–Mae Sot Highway Improvement ,2924,Location - 1 - Tak–Mae Sot Highway Improvement 
+371,98.828966,16.740991,Tak–Mae Sot Highway Improvement ,2924,Location - 2 - Tak–Mae Sot Highway Improvement 
+371,99.113823,16.841322,Tak–Mae Sot Highway Improvement ,2924,Location - 3 - Tak–Mae Sot Highway Improvement 
+372,101.123991,16.379153,Lomsak–Phetchabun Highway Improvement,2760,Location - 1 - Lomsak–Phetchabun Highway Improvement
+372,101.154887,16.563694,Lomsak–Phetchabun Highway Improvement,2760,Location - 2 - Lomsak–Phetchabun Highway Improvement
+372,101.195578,16.734381,Lomsak–Phetchabun Highway Improvement,2760,Location - 3 - Lomsak–Phetchabun Highway Improvement
+373,103.526108,16.413662,Kalasin–Nakrai–Kamcha I Highway Improvement ,2750,Location - 1 - Kalasin–Nakrai–Kamcha I Highway Improvement 
+373,103.744668,16.69713,Kalasin–Nakrai–Kamcha I Highway Improvement ,2750,Location - 2 - Kalasin–Nakrai–Kamcha I Highway Improvement 
+373,104.047856,16.537878,Kalasin–Nakrai–Kamcha I Highway Improvement ,2750,Location - 3 - Kalasin–Nakrai–Kamcha I Highway Improvement 
+373,104.367983,16.538392,Kalasin–Nakrai–Kamcha I Highway Improvement ,2750,Location - 4 - Kalasin–Nakrai–Kamcha I Highway Improvement 
+374,99.748865,19.602441,Chiang Rai–Chiang Khong Highway Improvement,2522,Location - 1 - Chiang Rai–Chiang Khong Highway Improvement
+374,99.831125,19.876779,Chiang Rai–Chiang Khong Highway Improvement,2522,Location - 2 - Chiang Rai–Chiang Khong Highway Improvement
+374,99.95905,19.495376,Chiang Rai–Chiang Khong Highway Improvement,2522,Location - 3 - Chiang Rai–Chiang Khong Highway Improvement
+374,100.235883,19.798655,Chiang Rai–Chiang Khong Highway Improvement,2522,Location - 4 - Chiang Rai–Chiang Khong Highway Improvement
+374,100.403426,20.20706,Chiang Rai–Chiang Khong Highway Improvement,2522,Location - 5 - Chiang Rai–Chiang Khong Highway Improvement
+375,98.524735,16.694798,Mae Sot–Myawaddy Border Crossing and Infrastructure Improvements (Thailand part),2764,Location - 1 - Mae Sot–Myawaddy Border Crossing and Infrastructure Improvements (Thailand part)
+376,103.71933,18.354137,Mekong Bridge at Bungkan–Paksan ,2773,Location - 1 - Mekong Bridge at Bungkan–Paksan 
+377,100.898027,13.070825,"Tha Laem Chabang Port Development, Phase 3 - Feasibility Study",2925,"Location - 1 - Tha Laem Chabang Port Development, Phase 3 - Feasibility Study"
+378,100.907152,13.094731,Single Rail Transfer Operator Development of Laem Chabang Port,2875,Location - 1 - Single Rail Transfer Operator Development of Laem Chabang Port
+379,106.550293,10.65705,GMS Ben Luc–Long Thanh Expressway (Stage 2),2584,Location - 1 - GMS Ben Luc–Long Thanh Expressway (Stage 2)
+379,106.957253,10.770384,GMS Ben Luc–Long Thanh Expressway (Stage 2),2584,Location - 2 - GMS Ben Luc–Long Thanh Expressway (Stage 2)
+380,105.772263,21.017355,GMS Ha Noi–Lang Son Expressway,2600,Location - 1 - GMS Ha Noi–Lang Son Expressway
+380,106.110573,21.238693,GMS Ha Noi–Lang Son Expressway,2600,Location - 2 - GMS Ha Noi–Lang Son Expressway
+380,106.302727,21.462761,GMS Ha Noi–Lang Son Expressway,2600,Location - 3 - GMS Ha Noi–Lang Son Expressway
+380,106.552696,21.683397,GMS Ha Noi–Lang Son Expressway,2600,Location - 4 - GMS Ha Noi–Lang Son Expressway
+380,106.777527,21.856678,GMS Ha Noi–Lang Son Expressway,2600,Location - 5 - GMS Ha Noi–Lang Son Expressway
+381,104.493629,10.376146,Second GMS Southern Coastal Corridor,2858,Location - 1 - Second GMS Southern Coastal Corridor
+381,105,8.768371,Second GMS Southern Coastal Corridor,2858,Location - 2 - Second GMS Southern Coastal Corridor
+381,105.04792,10.069207,Second GMS Southern Coastal Corridor,2858,Location - 3 - Second GMS Southern Coastal Corridor
+381,105.143794,9.178573,Second GMS Southern Coastal Corridor,2858,Location - 4 - Second GMS Southern Coastal Corridor
+381,105.359657,9.61775,Second GMS Southern Coastal Corridor,2858,Location - 5 - Second GMS Southern Coastal Corridor
+382,102.13333,19.88889,Second GMS Northern Transport Network Improvement (Luang Prabang–Thanh Hoa) (additional financing),2856,Location - 1 - Second GMS Northern Transport Network Improvement (Luang Prabang–Thanh Hoa) (additional financing)
+382,102.777611,20.102287,Second GMS Northern Transport Network Improvement (Luang Prabang–Thanh Hoa) (additional financing),2856,Location - 2 - Second GMS Northern Transport Network Improvement (Luang Prabang–Thanh Hoa) (additional financing)
+382,103.575753,20.051495,Second GMS Northern Transport Network Improvement (Luang Prabang–Thanh Hoa) (additional financing),2856,Location - 3 - Second GMS Northern Transport Network Improvement (Luang Prabang–Thanh Hoa) (additional financing)
+382,104.001651,20.360042,Second GMS Northern Transport Network Improvement (Luang Prabang–Thanh Hoa) (additional financing),2856,Location - 4 - Second GMS Northern Transport Network Improvement (Luang Prabang–Thanh Hoa) (additional financing)
+382,104.548099,20.310786,Second GMS Northern Transport Network Improvement (Luang Prabang–Thanh Hoa) (additional financing),2856,Location - 5 - Second GMS Northern Transport Network Improvement (Luang Prabang–Thanh Hoa) (additional financing)
+383,107.385979,15.549451,National Highway 14D Improvement ,2791,Location - 1 - National Highway 14D Improvement 
+383,107.587331,15.652186,National Highway 14D Improvement ,2791,Location - 2 - National Highway 14D Improvement 
+383,107.804741,15.724602,National Highway 14D Improvement ,2791,Location - 3 - National Highway 14D Improvement 
+383,107.94823,15.834576,National Highway 14D Improvement ,2791,Location - 4 - National Highway 14D Improvement 
+383,108.167346,15.845499,National Highway 14D Improvement ,2791,Location - 5 - National Highway 14D Improvement 
+384,102.915256,21.226042,"Northern East–West Corridor: Son La–Dien Bien–Tay Trang Border Gate (Viet Nam and the Lao PDR) section, to connect with Luang Namtha (Lao PDR) to the Friendship Bridge (Lao PDR–Myanmar) at Xiengkok–-Kainglap",2794,"Location - 1 - Northern East–West Corridor: Son La–Dien Bien–Tay Trang Border Gate (Viet Nam and the Lao PDR) section, to connect with Luang Namtha (Lao PDR) to the Friendship Bridge (Lao PDR–Myanmar) at Xiengkok–-Kainglap"
+384,102.999588,21.401176,"Northern East–West Corridor: Son La–Dien Bien–Tay Trang Border Gate (Viet Nam and the Lao PDR) section, to connect with Luang Namtha (Lao PDR) to the Friendship Bridge (Lao PDR–Myanmar) at Xiengkok–-Kainglap",2794,"Location - 2 - Northern East–West Corridor: Son La–Dien Bien–Tay Trang Border Gate (Viet Nam and the Lao PDR) section, to connect with Luang Namtha (Lao PDR) to the Friendship Bridge (Lao PDR–Myanmar) at Xiengkok–-Kainglap"
+384,103.261738,21.543985,"Northern East–West Corridor: Son La–Dien Bien–Tay Trang Border Gate (Viet Nam and the Lao PDR) section, to connect with Luang Namtha (Lao PDR) to the Friendship Bridge (Lao PDR–Myanmar) at Xiengkok–-Kainglap",2794,"Location - 3 - Northern East–West Corridor: Son La–Dien Bien–Tay Trang Border Gate (Viet Nam and the Lao PDR) section, to connect with Luang Namtha (Lao PDR) to the Friendship Bridge (Lao PDR–Myanmar) at Xiengkok–-Kainglap"
+384,103.628368,21.535984,"Northern East–West Corridor: Son La–Dien Bien–Tay Trang Border Gate (Viet Nam and the Lao PDR) section, to connect with Luang Namtha (Lao PDR) to the Friendship Bridge (Lao PDR–Myanmar) at Xiengkok–-Kainglap",2794,"Location - 4 - Northern East–West Corridor: Son La–Dien Bien–Tay Trang Border Gate (Viet Nam and the Lao PDR) section, to connect with Luang Namtha (Lao PDR) to the Friendship Bridge (Lao PDR–Myanmar) at Xiengkok–-Kainglap"
+384,103.863434,21.341135,"Northern East–West Corridor: Son La–Dien Bien–Tay Trang Border Gate (Viet Nam and the Lao PDR) section, to connect with Luang Namtha (Lao PDR) to the Friendship Bridge (Lao PDR–Myanmar) at Xiengkok–-Kainglap",2794,"Location - 5 - Northern East–West Corridor: Son La–Dien Bien–Tay Trang Border Gate (Viet Nam and the Lao PDR) section, to connect with Luang Namtha (Lao PDR) to the Friendship Bridge (Lao PDR–Myanmar) at Xiengkok–-Kainglap"
+385,107.385979,15.549451,Project Preparatory Technical Assistance for National Highway 14D Improvement ,2825,Location - 1 - Project Preparatory Technical Assistance for National Highway 14D Improvement 
+385,107.587331,15.652186,Project Preparatory Technical Assistance for National Highway 14D Improvement ,2825,Location - 2 - Project Preparatory Technical Assistance for National Highway 14D Improvement 
+385,107.804741,15.724602,Project Preparatory Technical Assistance for National Highway 14D Improvement ,2825,Location - 3 - Project Preparatory Technical Assistance for National Highway 14D Improvement 
+385,107.94823,15.834576,Project Preparatory Technical Assistance for National Highway 14D Improvement ,2825,Location - 4 - Project Preparatory Technical Assistance for National Highway 14D Improvement 
+385,108.167346,15.845499,Project Preparatory Technical Assistance for National Highway 14D Improvement ,2825,Location - 5 - Project Preparatory Technical Assistance for National Highway 14D Improvement 
+386,102.13333,19.88889,Second GMS Northern Transport Network Improvement: Luang Prabang (Lao PDR)–Thanh Hoa (Viet Nam),2857,Location - 1 - Second GMS Northern Transport Network Improvement: Luang Prabang (Lao PDR)–Thanh Hoa (Viet Nam)
+386,102.777611,20.102287,Second GMS Northern Transport Network Improvement: Luang Prabang (Lao PDR)–Thanh Hoa (Viet Nam),2857,Location - 2 - Second GMS Northern Transport Network Improvement: Luang Prabang (Lao PDR)–Thanh Hoa (Viet Nam)
+386,103.575753,20.051495,Second GMS Northern Transport Network Improvement: Luang Prabang (Lao PDR)–Thanh Hoa (Viet Nam),2857,Location - 3 - Second GMS Northern Transport Network Improvement: Luang Prabang (Lao PDR)–Thanh Hoa (Viet Nam)
+386,104.001651,20.360042,Second GMS Northern Transport Network Improvement: Luang Prabang (Lao PDR)–Thanh Hoa (Viet Nam),2857,Location - 4 - Second GMS Northern Transport Network Improvement: Luang Prabang (Lao PDR)–Thanh Hoa (Viet Nam)
+386,104.548099,20.310786,Second GMS Northern Transport Network Improvement: Luang Prabang (Lao PDR)–Thanh Hoa (Viet Nam),2857,Location - 5 - Second GMS Northern Transport Network Improvement: Luang Prabang (Lao PDR)–Thanh Hoa (Viet Nam)
+387,105.338539,20.845873,Proposed Hoa Lac–Hoa Binh City Expressway Public–Private Partnership Feasibility Study,2835,Location - 1 - Proposed Hoa Lac–Hoa Binh City Expressway Public–Private Partnership Feasibility Study
+387,105.410225,20.908121,Proposed Hoa Lac–Hoa Binh City Expressway Public–Private Partnership Feasibility Study,2835,Location - 2 - Proposed Hoa Lac–Hoa Binh City Expressway Public–Private Partnership Feasibility Study
+387,105.503968,20.872669,Proposed Hoa Lac–Hoa Binh City Expressway Public–Private Partnership Feasibility Study,2835,Location - 3 - Proposed Hoa Lac–Hoa Binh City Expressway Public–Private Partnership Feasibility Study
+387,105.556827,20.941398,Proposed Hoa Lac–Hoa Binh City Expressway Public–Private Partnership Feasibility Study,2835,Location - 4 - Proposed Hoa Lac–Hoa Binh City Expressway Public–Private Partnership Feasibility Study
+387,105.580371,20.901735,Proposed Hoa Lac–Hoa Binh City Expressway Public–Private Partnership Feasibility Study,2835,Location - 5 - Proposed Hoa Lac–Hoa Binh City Expressway Public–Private Partnership Feasibility Study
+388,98.209969,14.057683,Feasibility Study for the Rail Link between Laem Chabang Port and Dawei Deep Sea Port,2580,Location - 1 - Feasibility Study for the Rail Link between Laem Chabang Port and Dawei Deep Sea Port
+388,98.282961,15.422417,Feasibility Study for the Rail Link between Laem Chabang Port and Dawei Deep Sea Port,2580,Location - 2 - Feasibility Study for the Rail Link between Laem Chabang Port and Dawei Deep Sea Port
+388,98.639544,14.749483,Feasibility Study for the Rail Link between Laem Chabang Port and Dawei Deep Sea Port,2580,Location - 3 - Feasibility Study for the Rail Link between Laem Chabang Port and Dawei Deep Sea Port
+388,99.051362,14.231905,Feasibility Study for the Rail Link between Laem Chabang Port and Dawei Deep Sea Port,2580,Location - 4 - Feasibility Study for the Rail Link between Laem Chabang Port and Dawei Deep Sea Port
+388,100.898027,13.070825,Feasibility Study for the Rail Link between Laem Chabang Port and Dawei Deep Sea Port,2580,Location - 5 - Feasibility Study for the Rail Link between Laem Chabang Port and Dawei Deep Sea Port
+394,98.225961,14.097502,"Study on Dry Port Development Plan along International Railway Lines Connecting Thailand with Cambodia, the Lao PDR, and Myanmar",2908,"Location - 1 - Study on Dry Port Development Plan along International Railway Lines Connecting Thailand with Cambodia, the Lao PDR, and Myanmar"
+394,99.47216,13.98442,"Study on Dry Port Development Plan along International Railway Lines Connecting Thailand with Cambodia, the Lao PDR, and Myanmar",2908,"Location - 2 - Study on Dry Port Development Plan along International Railway Lines Connecting Thailand with Cambodia, the Lao PDR, and Myanmar"
+394,102.516137,13.68311,"Study on Dry Port Development Plan along International Railway Lines Connecting Thailand with Cambodia, the Lao PDR, and Myanmar",2908,"Location - 3 - Study on Dry Port Development Plan along International Railway Lines Connecting Thailand with Cambodia, the Lao PDR, and Myanmar"
+394,102.601967,13.627111,"Study on Dry Port Development Plan along International Railway Lines Connecting Thailand with Cambodia, the Lao PDR, and Myanmar",2908,"Location - 4 - Study on Dry Port Development Plan along International Railway Lines Connecting Thailand with Cambodia, the Lao PDR, and Myanmar"
+394,102.615213,17.980385,"Study on Dry Port Development Plan along International Railway Lines Connecting Thailand with Cambodia, the Lao PDR, and Myanmar",2908,"Location - 5 - Study on Dry Port Development Plan along International Railway Lines Connecting Thailand with Cambodia, the Lao PDR, and Myanmar"
+394,102.72349,17.917976,"Study on Dry Port Development Plan along International Railway Lines Connecting Thailand with Cambodia, the Lao PDR, and Myanmar",2908,"Location - 6 - Study on Dry Port Development Plan along International Railway Lines Connecting Thailand with Cambodia, the Lao PDR, and Myanmar"
+394,102.732422,17.876694,"Study on Dry Port Development Plan along International Railway Lines Connecting Thailand with Cambodia, the Lao PDR, and Myanmar",2908,"Location - 7 - Study on Dry Port Development Plan along International Railway Lines Connecting Thailand with Cambodia, the Lao PDR, and Myanmar"
+395,106.625558,15.112317,Lao PDR–Viet Nam Power Transmission Interconnection (Hatxan–Pleiku),2753,Location - 1 - Lao PDR–Viet Nam Power Transmission Interconnection (Hatxan–Pleiku)
+395,107.926765,14.044323,Lao PDR–Viet Nam Power Transmission Interconnection (Hatxan–Pleiku),2753,Location - 2 - Lao PDR–Viet Nam Power Transmission Interconnection (Hatxan–Pleiku)
+396,102.712194,18.286166,Nabong 500 kV Substation Transmission Facility ,2785,Location - 1 - Nabong 500 kV Substation Transmission Facility 
+397,99.65,18.275,PRC–Lao PDR–Thailand 600 HVDC Interconnection,2812,Location - 1 - PRC–Lao PDR–Thailand 600 HVDC Interconnection
+397,101.332012,21.894051,PRC–Lao PDR–Thailand 600 HVDC Interconnection,2812,Location - 2 - PRC–Lao PDR–Thailand 600 HVDC Interconnection
+397,101.337433,19.701737,PRC–Lao PDR–Thailand 600 HVDC Interconnection,2812,Location - 3 - PRC–Lao PDR–Thailand 600 HVDC Interconnection
+398,103.728917,15.903293,Reinvestigation of Thailand–Lao PDR–Viet Nam Interconnection,2846,Location - 1 - Reinvestigation of Thailand–Lao PDR–Viet Nam Interconnection
+398,104.754707,16.548525,Reinvestigation of Thailand–Lao PDR–Viet Nam Interconnection,2846,Location - 2 - Reinvestigation of Thailand–Lao PDR–Viet Nam Interconnection
+398,104.926651,17.952097,Reinvestigation of Thailand–Lao PDR–Viet Nam Interconnection,2846,Location - 3 - Reinvestigation of Thailand–Lao PDR–Viet Nam Interconnection
+398,105.219481,15.072709,Reinvestigation of Thailand–Lao PDR–Viet Nam Interconnection,2846,Location - 4 - Reinvestigation of Thailand–Lao PDR–Viet Nam Interconnection
+398,106.565953,15.161239,Reinvestigation of Thailand–Lao PDR–Viet Nam Interconnection,2846,Location - 5 - Reinvestigation of Thailand–Lao PDR–Viet Nam Interconnection
+398,107.332471,15.437743,Reinvestigation of Thailand–Lao PDR–Viet Nam Interconnection,2846,Location - 6 - Reinvestigation of Thailand–Lao PDR–Viet Nam Interconnection
+398,107.983528,15.918622,Reinvestigation of Thailand–Lao PDR–Viet Nam Interconnection,2846,Location - 7 - Reinvestigation of Thailand–Lao PDR–Viet Nam Interconnection
+408,104.476209,16.615747,Low-Carbon Freight Corridors,2761,Location - 1 - Low-Carbon Freight Corridors
+408,105.863981,16.573351,Low-Carbon Freight Corridors,2761,Location - 2 - Low-Carbon Freight Corridors
+408,106.877813,16.786185,Low-Carbon Freight Corridors,2761,Location - 3 - Low-Carbon Freight Corridors
+409,98.759789,14.212385,Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding,2534,Location - 1 - Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding
+409,100.81981,22.015004,Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding,2534,Location - 2 - Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding
+409,103.502124,11.869944,Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding,2534,Location - 3 - Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding
+409,105.36903,17.750697,Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding,2534,Location - 4 - Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding
+409,106.038004,23.211396,Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding,2534,Location - 5 - Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding
+409,106.535846,14.296922,Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding,2534,Location - 6 - Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding
+409,107.496567,12.89141,Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding,2534,Location - 7 - Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding
+409,107.871391,15.209111,Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding,2534,Location - 8 - Core Environment Program and Biodiversity Conservation Corridor Initiative Phase II Regional Technical Assistance – Additional Funding
+410,104.476209,16.615747,Low-Carbon Freight Corridors,2762,Location - 1 - Low-Carbon Freight Corridors
+410,105.863981,16.573351,Low-Carbon Freight Corridors,2762,Location - 2 - Low-Carbon Freight Corridors
+410,106.877813,16.786185,Low-Carbon Freight Corridors,2762,Location - 3 - Low-Carbon Freight Corridors
+415,100.479744,20.309038,Corridor Towns Development Project II,2542,Location - 1 - Corridor Towns Development Project II
+415,101.401993,20.946892,Corridor Towns Development Project II,2542,Location - 2 - Corridor Towns Development Project II
+415,103.524405,10.628001,Corridor Towns Development Project II,2542,Location - 3 - Corridor Towns Development Project II
+415,104.079708,22.510384,Corridor Towns Development Project II,2542,Location - 4 - Corridor Towns Development Project II
+415,104.174019,10.605683,Corridor Towns Development Project II,2542,Location - 5 - Corridor Towns Development Project II
+415,106.203547,21.279217,Corridor Towns Development Project II,2542,Location - 6 - Corridor Towns Development Project II
+415,107.918839,21.54977,Corridor Towns Development Project II,2542,Location - 7 - Corridor Towns Development Project II
+417,100.479744,20.309038,PPTA for Corridor Towns Development Project II,2806,Location - 1 - PPTA for Corridor Towns Development Project II
+417,101.401993,20.946892,PPTA for Corridor Towns Development Project II,2806,Location - 2 - PPTA for Corridor Towns Development Project II
+417,103.524405,10.628001,PPTA for Corridor Towns Development Project II,2806,Location - 3 - PPTA for Corridor Towns Development Project II
+417,104.079708,22.510384,PPTA for Corridor Towns Development Project II,2806,Location - 4 - PPTA for Corridor Towns Development Project II
+417,104.174019,10.605683,PPTA for Corridor Towns Development Project II,2806,Location - 5 - PPTA for Corridor Towns Development Project II
+417,106.203547,21.279217,PPTA for Corridor Towns Development Project II,2806,Location - 6 - PPTA for Corridor Towns Development Project II
+417,107.918839,21.54977,PPTA for Corridor Towns Development Project II,2806,Location - 7 - PPTA for Corridor Towns Development Project II
+419,102.271691,19.561147,GMS Tourism Infrastructure for Inclusive Growth ,2641,Location - 1 - GMS Tourism Infrastructure for Inclusive Growth 
+419,103.634941,11.176162,GMS Tourism Infrastructure for Inclusive Growth ,2641,Location - 2 - GMS Tourism Infrastructure for Inclusive Growth 
+419,104.810799,21.918243,GMS Tourism Infrastructure for Inclusive Growth ,2641,Location - 3 - GMS Tourism Infrastructure for Inclusive Growth 
+419,105.953919,14.832998,GMS Tourism Infrastructure for Inclusive Growth ,2641,Location - 4 - GMS Tourism Infrastructure for Inclusive Growth 
+419,106.419128,21.587864,GMS Tourism Infrastructure for Inclusive Growth ,2641,Location - 5 - GMS Tourism Infrastructure for Inclusive Growth 
+419,106.819107,10.946999,GMS Tourism Infrastructure for Inclusive Growth ,2641,Location - 6 - GMS Tourism Infrastructure for Inclusive Growth 
+420,106.713493,22.869949,Construction of the Sino–Vietnamese Detian–Ban Gioc Waterfalls International Tourism Cooperation Zone ,2529,Location - 1 - Construction of the Sino–Vietnamese Detian–Ban Gioc Waterfalls International Tourism Cooperation Zone 
+421,101.932892,13.913417,GMS Tourism Infrastructure for Inclusive Growth II ,2645,Location - 1 - GMS Tourism Infrastructure for Inclusive Growth II 
+421,103.765531,13.414697,GMS Tourism Infrastructure for Inclusive Growth II ,2645,Location - 2 - GMS Tourism Infrastructure for Inclusive Growth II 
+421,104.943698,11.571452,GMS Tourism Infrastructure for Inclusive Growth II ,2645,Location - 3 - GMS Tourism Infrastructure for Inclusive Growth II 
+421,106.926811,10.858923,GMS Tourism Infrastructure for Inclusive Growth II ,2645,Location - 4 - GMS Tourism Infrastructure for Inclusive Growth II 
+421,107.089211,13.738674,GMS Tourism Infrastructure for Inclusive Growth II ,2645,Location - 5 - GMS Tourism Infrastructure for Inclusive Growth II 
+421,108.274437,14.039746,GMS Tourism Infrastructure for Inclusive Growth II ,2645,Location - 6 - GMS Tourism Infrastructure for Inclusive Growth II 
+432,106.328589,22.857195,Joint PRC–Viet Nam Cross-Border Economic Zones (CBEZs),2749,Location - 1 - Joint PRC–Viet Nam Cross-Border Economic Zones (CBEZs)
+432,106.362317,22.952088,Joint PRC–Viet Nam Cross-Border Economic Zones (CBEZs),2749,Location - 2 - Joint PRC–Viet Nam Cross-Border Economic Zones (CBEZs)
+432,106.70058,21.943006,Joint PRC–Viet Nam Cross-Border Economic Zones (CBEZs),2749,Location - 3 - Joint PRC–Viet Nam Cross-Border Economic Zones (CBEZs)
+432,106.767883,22.101546,Joint PRC–Viet Nam Cross-Border Economic Zones (CBEZs),2749,Location - 4 - Joint PRC–Viet Nam Cross-Border Economic Zones (CBEZs)
+432,107.965003,21.523729,Joint PRC–Viet Nam Cross-Border Economic Zones (CBEZs),2749,Location - 5 - Joint PRC–Viet Nam Cross-Border Economic Zones (CBEZs)
+432,107.975006,21.561671,Joint PRC–Viet Nam Cross-Border Economic Zones (CBEZs),2749,Location - 6 - Joint PRC–Viet Nam Cross-Border Economic Zones (CBEZs)
+433,104.925505,11.588624,Construction of Phnom Penh New Port Special Economic Zone,2527,Location - 1 - Construction of Phnom Penh New Port Special Economic Zone
+434,97.681417,23.837407,Capacity Building for Cross-Border Economic Zones (CBEZ),2512,Location - 1 - Capacity Building for Cross-Border Economic Zones (CBEZ)
+434,97.851963,24.01401,Capacity Building for Cross-Border Economic Zones (CBEZ),2512,Location - 2 - Capacity Building for Cross-Border Economic Zones (CBEZ)
+434,101.673193,21.1842,Capacity Building for Cross-Border Economic Zones (CBEZ),2512,Location - 3 - Capacity Building for Cross-Border Economic Zones (CBEZ)
+434,101.707048,21.2129,Capacity Building for Cross-Border Economic Zones (CBEZ),2512,Location - 4 - Capacity Building for Cross-Border Economic Zones (CBEZ)
+436,101.995739,20.691903,GMS Tourism Infrastructure for Inclusive Growth ,2642,Location - 1 - GMS Tourism Infrastructure for Inclusive Growth 
+436,102.141563,19.884102,GMS Tourism Infrastructure for Inclusive Growth ,2642,Location - 2 - GMS Tourism Infrastructure for Inclusive Growth 
+436,104.81295,17.389631,GMS Tourism Infrastructure for Inclusive Growth ,2642,Location - 3 - GMS Tourism Infrastructure for Inclusive Growth 
+437,102.999588,21.401176,GMS Tourism Infrastructure for Inclusive Growth ,2643,Location - 4 - GMS Tourism Infrastructure for Inclusive Growth 
+437,103.959442,22.482872,GMS Tourism Infrastructure for Inclusive Growth ,2643,Location - 5 - GMS Tourism Infrastructure for Inclusive Growth 
+437,104.652878,10.275307,GMS Tourism Infrastructure for Inclusive Growth ,2643,Location - 6 - GMS Tourism Infrastructure for Inclusive Growth 
+437,105.885612,18.322769,GMS Tourism Infrastructure for Inclusive Growth ,2643,Location - 7 - GMS Tourism Infrastructure for Inclusive Growth 
+437,106.069138,11.30115,GMS Tourism Infrastructure for Inclusive Growth ,2643,Location - 8 - GMS Tourism Infrastructure for Inclusive Growth 
+438,104.174019,10.605683,GMS Tourism Infrastructure for Inclusive Growth ,2644,Location - 9 - GMS Tourism Infrastructure for Inclusive Growth 
+438,104.320363,10.482942,GMS Tourism Infrastructure for Inclusive Growth ,2644,Location - 10 - GMS Tourism Infrastructure for Inclusive Growth 
+439,103.985352,22.502327,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2603,Location - 1 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+439,104.24482,22.380259,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2603,Location - 2 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+439,104.754822,21.973572,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2603,Location - 3 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+439,105.126461,21.43607,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2603,Location - 4 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+439,105.5886,21.309298,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2603,Location - 5 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+439,105.812569,21.084095,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2603,Location - 6 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+440,103.985352,22.502327,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2604,Location - 7 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+440,104.24482,22.380259,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2604,Location - 8 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+440,104.754822,21.973572,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2604,Location - 9 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+440,105.126461,21.43607,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2604,Location - 10 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+440,105.5886,21.309298,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2604,Location - 11 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+440,105.812569,21.084095,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2604,Location - 12 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+441,103.985352,22.502327,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2605,Location - 13 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+441,104.24482,22.380259,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2605,Location - 14 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+441,104.754822,21.973572,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2605,Location - 15 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+441,105.126461,21.43607,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2605,Location - 16 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+441,105.5886,21.309298,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2605,Location - 17 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+441,105.812569,21.084095,GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing),2605,Location - 18 - GMS Kunming-Haiphong Transport Corridor Noi Bai-Lao Cai Highway (Additional Financing)
+449,97.87986,16.74325,Greater Mekong Subregion East-West Economic Corridor Eindu to Kawkareik Road Improvement (Supplementary),2680,Location - 1 - Greater Mekong Subregion East-West Economic Corridor Eindu to Kawkareik Road Improvement (Supplementary)
+449,98.047669,16.59375,Greater Mekong Subregion East-West Economic Corridor Eindu to Kawkareik Road Improvement (Supplementary),2680,Location - 2 - Greater Mekong Subregion East-West Economic Corridor Eindu to Kawkareik Road Improvement (Supplementary)
+449,98.244942,16.560385,Greater Mekong Subregion East-West Economic Corridor Eindu to Kawkareik Road Improvement (Supplementary),2680,Location - 3 - Greater Mekong Subregion East-West Economic Corridor Eindu to Kawkareik Road Improvement (Supplementary)

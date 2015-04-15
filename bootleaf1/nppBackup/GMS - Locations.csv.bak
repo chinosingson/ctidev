@@ -1,0 +1,21 @@
+TempID,ID,Lng,Lat,Project,NID,Counter,LocTxt,LocTitle,Dupe
+1,252,100.153351,25.697758,Yunnan Expressway,6214,1,Location,Location - 1 - Yunnan Expressway,not
+2,252,100.55451,25.45282,Yunnan Expressway,6214,2,Location,Location - 2 - Yunnan Expressway,not
+3,252,101.26067,25.21685,Yunnan Expressway,6214,3,Location,Location - 3 - Yunnan Expressway,not
+4,252,101.540283,25.033356,Yunnan Expressway,6214,4,Location,Location - 4 - Yunnan Expressway,not
+5,253,104.562397,18.260455,Theun Hinboun Hydropower,6219,1,Location,Location - 1 - Theun Hinboun Hydropower,not
+6,254,106.753879,10.823443,Saigon Port,6215,1,Location,Location - 1 - Saigon Port,not
+7,255,105.654039,15.120087,Champassak Road Improvement,6216,1,Location,Location - 1 - Champassak Road Improvement,not
+8,255,105.882759,14.503284,Champassak Road Improvement,6216,2,Location,Location - 2 - Champassak Road Improvement,not
+9,255,105.91378,14.986418,Champassak Road Improvement,6216,3,Location,Location - 3 - Champassak Road Improvement,not
+10,255,105.919991,14.207338,Champassak Road Improvement,6216,4,Location,Location - 4 - Champassak Road Improvement,not
+11,256,108.35,21.75,Fangcheng Port Project,6217,1,Location,Location - 1 - Fangcheng Port Project,not
+12,257,102.949,18.4367,Nam Leuk Hydropower Development,6218,1,Location,Location - 1 - Nam Leuk Hydropower Development,not
+13,258,105.850828,21.032761,Second Road Improvement,6220,1,Location,Location - 1 - Second Road Improvement,not
+14,258,105.910311,22.363453,Second Road Improvement,6220,2,Location,Location - 2 - Second Road Improvement,not
+15,258,106.056038,21.183901,Second Road Improvement,6220,3,Location,Location - 3 - Second Road Improvement,not
+16,258,106.183022,21.286579,Second Road Improvement,6220,4,Location,Location - 4 - Second Road Improvement,not
+17,258,106.261917,22.673513,Second Road Improvement,6220,5,Location,Location - 5 - Second Road Improvement,not
+18,258,106.694382,21.936174,Second Road Improvement,6220,6,Location,Location - 6 - Second Road Improvement,not
+19,258,106.777527,21.856678,Second Road Improvement,6220,7,Location,Location - 7 - Second Road Improvement,not
+20,259,103.81284,13.410666,Siem Reap Airport,6221,1,Location,Location - 1 - Siem Reap Airport,not

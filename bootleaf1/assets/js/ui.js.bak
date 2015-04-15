@@ -1,0 +1,862 @@
+﻿	
+	// UI FUNCTIONS
+
+	// location declarations
+	var controlsAdded = 0;	// 0 - not added; 1 - added;
+	var controlID = 1;
+	var markerCount = 1;
+	var locInfoControlAdded = false;
+
+	//var projectData = "";
+	var projectID = "";
+	var projectTitle = "";
+	//var locationData = "";
+
+	var drawnItems = L.geoJson(null, {
+		pointToLayer : function (feature, latlng) {
+			return L.marker(latlng, {
+				icon : L.icon(yellowMarkerIcon),
+				title : feature.properties.coordinates,
+				riseOnHover : true
+			});
+		},
+		onEachFeature : function (feature, layer){
+			layer.on({
+				click : function(e) {
+					console.log('drawnItems - onEachFeature - onClick');
+					console.log(feature.properties);
+				}
+			});
+		}
+	}); //.addTo(map);
+
+	var drawControl = new L.Control.Draw({
+		position: 'topright',
+		draw: {
+			circle: false,
+			rectangle: false,
+			polygon: false,
+			polyline: false,
+			marker: {
+				icon: L.icon(yellowMarkerIcon),
+				repeatMode: false
+			}
+		},
+		edit: {
+			featureGroup: drawnItems,
+			remove: true
+		}
+	});
+	
+	var geocoderOptions = {
+		position: 'topright',
+		zoomToResult: false,
+		useMapBounds: true,
+		collapseAfterResult: true,
+		expanded: false,
+		maxResults: 50,
+		placeholder: 'Search places or addresses',
+		title: 'Search for a location by name and set a marker'
+	};
+	var geocoderControl = new L.esri.Controls.Geosearch(geocoderOptions);
+	
+	geocoderControl.on('results', function (data) {
+    //results.clearLayers();
+		var i;
+    for (i = data.results.length - 1; i >= 0; i--) {
+        console.log(data.results[i]);
+				var geocodedMarker = {
+						"type": "Feature",
+								"properties" : {
+									"projectID" : projectID,
+									"id" : markerCount,
+									"city" : data.results[i].city,
+									"country" : data.results[i].country,
+									"locality" : data.results[i].name,
+									"region" : data.results[i].region,
+									"subregion" : data.results[i].subregion
+						},
+								"geometry": {
+								"type": "Point",
+										"coordinates": [data.results[i].latlng.lng, data.results[i].latlng.lat]
+						}
+				};
+				//console.log(geocodedMarker);
+				drawnItems.addData(geocodedMarker);
+				markerCount++;
+    }
+	});
+
+	function removeControls(){
+		console.log ('controlsAdded = ' + controlsAdded);
+		if (controlsAdded == 1) {
+			controlsAdded = 0;
+			drawnItems.clearLayers();
+			map.removeControl(drawControl);
+			//map.removeControl(geocoderControl);
+			$('.leaflet-control-layers-selector').prop('disabled', false);
+			geocoderControl.removeFrom(map);
+		}
+		return true;
+	}
+	
+	function saveLocations(projID, projectTitle) {
+		var locationData = getMarkerGeoJSON();
+		console.log('locationData');
+		console.log(locationData);
+		//$("#saving").show();
+		$("#saving").modal('show');
+		$.ajax({
+				url     : "./assets/php-custom/process-location.php", 
+				type    : "POST",
+				cache   : false,
+				//data    : { proj : projectData, locn: locationData },
+				data    : { pid : projID, locn : locationData, op : 'proj', t : projectTitle },
+				success : function (data){
+					editLocationFormState = "hidden";
+					//console.log('load php response');
+					//if (projectOp == 'i'){
+					//	$("#projects-add").empty().html(data);
+					//} else if (projectOp == 'u') {
+					$("#map-location-details").empty().html(data);
+					$("#map-project-details").load("./assets/php-custom/view-project.php?p=" + projID, function (){
+						loadTooltips();
+					});
+					zoomToProjectLocations(projID);
+					if(controlsAdded == 1) {
+						removeControls();
+					}
+					//$("#saving").hide();
+					$("#saving").modal('hide');
+				}
+		});
+	}
+	
+	function saveLocation (locID, projectTitle) {
+		console.log('saveLocation');
+		console.log('locID: ' + locID);
+		$("#saving").show();
+		$("#saving").modal('show');
+		var formEditLocn = $('#form-edit-location');
+		var locationData = JSON.stringify(
+		{"type":"FeatureCollection","features":[{
+			"type": "Feature",
+				"properties": {
+					"id": locID,
+					"ID": $('#form-edit-location #project-id').val(),
+					"municipality" : $('#form-edit-location #location-municipality').val(),
+					"province" : $('#form-edit-location #location-province').val(),
+					"city" : $('#form-edit-location #location-city').val(),
+					"locality" : $('#form-edit-location #location-locality').val(),
+					"region" : $('#form-edit-location #location-region').val(),
+					"subregion" : $('#form-edit-location #location-subregion').val(),
+					"country" : $('#form-edit-location #location-country').val()
+			}/*,
+				"geometry": {
+				"type": "Point",
+						"coordinates": [$('#form-edit-location #location-longitude').val(), $('#form-edit-location #location-latitude').val()]
+			}*/
+		}]});
+		
+		$.ajax({
+			url     : "./assets/php-custom/process-location.php",
+			type    : "POST",
+			cache   : false,
+			data    : { lid : locID, locn : locationData, op : 'locn', t : projectTitle },
+			success : function (data) {
+				$("#map-location-details").empty().html(data);
+				loadTooltips();
+				//$("#saving").hide();
+				$("#saving").modal('hide');
+			}
+		});
+		console.log(locationData);
+	}
+	
+	var editProjectFormState = "hidden";
+	function editProject (projID) {
+		//var hash = location.hash;
+		
+		if (projID) {
+			console.log('edit project ' + projID);
+			//$('#map-project-details').empty().load('./assets/php-custom/edit-project.php' + );
+			$.ajax({
+					url     : "./assets/php-custom/edit-project.php", 
+					type    : "POST",
+					cache   : false,
+					data    : { p : projID },
+					success : function (data){ 
+						console.log('load edit project form');
+						editProjectFormState = "shown";
+						console.log('editProjectFormState: ' + editProjectFormState);
+						$("#map-project-msg").empty();
+						$("#map-project-details").empty().html(data);
+						loadTooltips();
+						$('#form-edit-project').bootstrapValidator(projectValidatorOptions)
+						.on('success.field.bv', function(e, data) {
+								if (data.bv.isValid()) {
+										data.bv.disableSubmitButtons(false);
+								}
+						});
+						sidebar.open('locations');
+						$('#locations').trigger('showpane');
+						$('#mapTabs a[href=\'#map-project-info\']').tab('show'); 
+						$('#map-location-details').empty();
+					}
+			});
+			getViewport();
+			zoomToProjectLocations(projID);
+		} else {
+			console.log('editProject: no project ID!');
+		}
+	}
+	
+	function editLocation (locID, leafletID) {
+		if (locID) {
+			console.log('edit location ' + locID);
+			$.ajax({
+				url     : "./assets/php-custom/edit-location.php",
+				type    : "POST",
+				cache   : false,
+				data    :{ l : locID, 'lid' : leafletID },
+				success : function (data){
+					$("#map-location-details").empty();
+					$("#map-location-details").html(data);
+					loadTooltips();
+				}
+			});
+		} else {
+			console.log('editLocation: no location ID!');
+		}
+	}
+	
+	
+	// submit - Add Project - no locations
+	/*function saveAddProject(){
+		console.log('Add Project - Save'); 
+		var projData = $('form#form-add-project').serialize();
+		$.ajax({
+			type    : "POST",
+			url     : "assets/php-custom/process.php",
+			data    : { proj : projData},
+			success : function (msg) {
+				$("#projects-add").html(msg);
+			},
+			error   : function () {
+				console.log("failure");
+			}
+		});
+	}*/
+
+	function clearMapLayers() {
+		// clear map layers
+		console.log('Clear Map Layers');
+		assetLayerGroup.clearLayers();
+		assetLayerGroup.removeLayer(ctiLayer);
+		markerClusters.clearLayers();
+		markerClusters.removeLayer(ctiProjectLocations);
+		ctiProjectLocations.clearLayers();
+		map.removeLayer(ctiLayer);
+	}
+	
+	// submit - Add Project - with locations
+	function addLocations(projID, projTitle){
+		editLocationFormState = "shown";
+		console.log('Add Project - Locations');
+		console.log('Project ID: ' + projID);
+		//projectData = $('form#form-add-project').serialize();
+		//projectID = $('form#form-add-project #project-id').val();
+		//$('#mapTabs a[href=\'#map-location-details\']').tab('show'); 
+		//$("#map-location-details").load("./assets/php-custom/add-location.php?p="+projID+"&o=a");
+		$.ajax({
+			type    : "POST",
+			url     : "assets/php-custom/add-location.php",	// save project first
+			data    : { p : projID, o : 'a', t : projTitle },
+			success	: function (msg) {
+				$("#map-location-details").empty().html(msg);
+				loadTooltips();
+				$('#mapTabs a[href=\'#map-location-info\']').tab('show'); 
+			}
+		});
+		//loadTooltips();
+		//projectOp = $('form#form-add-project #process-type').val();
+		//console.log(projectData);
+		//console.log(projectOp);
+		//saveAddProject();
+
+		clearMapLayers();
+		drawnItems.addTo(map);
+
+		//markerCount = 1;
+		// prevent button from adding more than 1 draw control
+		addControls();
+		
+	}
+	
+	function addControls(){
+		if (controlsAdded == 0){
+			map.addControl(drawControl);
+			map.addControl(geocoderControl);
+			$('#leaflet-control-layers-group-0 input.leaflet-control-layers-selector').prop('disabled', true);
+			//map.addControl(new locInfoSave());
+			//map.addControl(new locByLatLng());	
+			//map.addControl(locInfoControl);
+			controlsAdded = 1;
+			console.log ('controlsAdded = ' + controlsAdded);
+		} else {
+			console.log ('controlsAdded = ' + controlsAdded);
+		}
+	}
+	
+	var editLocationFormState = "hidden";
+	function editLocations (projID, projTitle) {
+		editLocationFormState = "shown";
+		$('#loading').modal('show');
+		console.log('editLocations ' + projID );
+		//console.log($('form#form-edit-project #project-title').val());
+		//projectData = $('form#form-edit-project').serialize();
+		//projectID = $('form#form-edit-project #project-id').val();
+		//projectOp = $('form#form-edit-project #process-type').val();
+		//console.log(projectData);
+		//console.log(projectID);
+		//console.log(projectOp);
+		clearMapLayers();
+		// load locations by project id
+		var projectArg = "?p=" + projID;
+		var opArg = "";
+		$.getJSON("./assets/php-custom/cti_points_geojson.php" + projectArg, function (data) {
+			drawnItems.addData(data);
+			drawnItems.addTo(map);
+			//console.log(drawnItems.getLayers().length);
+			// get project bounds and zoom in
+			var projCount = drawnItems.getLayers().length;
+			var projMaxzoom;
+			if (projCount > 0) {
+				var projectBounds = drawnItems.getBounds();
+				if (projCount < 5){
+					projMaxzoom = 5;
+				} else {
+					projMaxzoom = 10;
+				}
+				map.fitBounds(projectBounds, {
+					maxZoom : projMaxzoom
+				});
+				getViewport();
+				opArg = "e";
+			} else {
+				console.log('no locations');
+				opArg = "a";
+			}
+			//$("#map-location-details").load("./assets/php-custom/add-location.php?p=" + projID + "&" + opArg);
+			$.ajax({
+				type    : "POST",
+				url     : "assets/php-custom/add-location.php",	// save project first
+				data    : { p : projID, o : opArg, t : projTitle },
+				success	: function (msg) {
+					$("#map-location-details").empty().html(msg);
+					loadTooltips();
+					$('#mapTabs a[href=\'#map-location-info\']').tab('show'); 
+				}
+			});
+
+			// prevent button from adding more than 1 draw control
+			addControls();
+		
+		});
+		$('#loading').modal('hide');
+	}
+	
+		
+	// saveProject (i/u/d, 0/1)
+	// i - insert (add project)
+	// u - update (edit project)
+	// d - delete (delete project)
+	function saveProject(op, loc){
+		var projData; //, processMessage;
+		console.log('op: ' + op);
+		console.log('loc: ' + loc);
+		//$("#saving").show();
+		$("#saving").modal('show');
+		if (op == 'edit'){
+			console.log('Edit Project - ' + op);
+			//$('#form-edit-project #process-type').val(op);
+			projData = $('form#form-edit-project').serialize();
+			projectID = $('form#form-edit-project #project-id').val();
+			projectTitle = $('form#form-edit-project #project-title').val();
+		} else if (op == 'add'){
+			console.log('Add Project - ' + op);
+			//$('#form-add-project #process-type').val(op);
+			projData = $('form#form-add-project').serialize();
+			projectTitle = $('form#form-add-project #project-title').val();
+		} else if (op == 'del') {
+			console.log('Delete Project - ' + op);
+			$('#form-edit-project #process-type').val('d');
+			projData = $('form#form-edit-project').serialize();
+			projectID = $('form#form-edit-project #project-id').val();
+			projectTitle = $('form#form-edit-project #project-title').val();
+		}
+		
+		$.ajax({
+			type    : "POST",
+			url     : "assets/php-custom/process-project.php",	// save project first
+			data    : { proj : projData, locn : loc },	// locn indicates whether to process locations or not
+			success	: function (msg) {
+				console.log(op  + ' project - SUCCESS; Locations: ' + loc);
+				editProjectFormState = "hidden";
+				//console.log('msg: ' + msg);
+				//console.log('projectTitle: ' + projectTitle);
+				//processMessage = msg;
+				if (loc == 1){ // true
+					$("#map-location-msg").html(msg);
+					sidebar.open('locations');
+					$('#locations').trigger('showpane');
+					$('#mapTabs a[href=\'#map-location-info\']').tab('show');
+					if (op == 'edit') {	// if edit project and add/edit locations
+						console.log('edit locations');
+						editLocations (projectID, projectTitle);	// use current project ID and title
+					} else if (op == 'add'){	// if add project and add locations
+						console.log('add locations');
+						addLocations (projectID, projectTitle);
+					} else if (op == 'del'){
+						console.log('delete project');
+						//$("#map-project-msg").empty().html(msg);
+					}
+				} else if (loc == 0) { // false
+					console.log('save project only');
+					console.log(msg);
+					console.log('op: ' + op);
+					if (op != 'del'){
+						console.log('here');
+						$("#map-project-msg").empty().html(msg);
+						$('#map-project-details').empty().load("./assets/php-custom/view-project.php?p=" + projectID);
+						$("#projects-add").empty().load("./assets/php-custom/add-project.php", function() {
+							loadTooltips();
+						});
+						sidebar.open('locations');
+						$('#locations').trigger('showpane');
+						$('#mapTabs a[href=\'#map-project-info\']').tab('show');
+					} else {
+						console.log('delete project');
+						$("#map-project-msg").empty().html(msg);
+						//reloadPanes();
+						//sidebar.open('database')
+						var deleteProjectActionButtons = '<div class="btn-group" role="group">' +
+								'<button type="button" id="del-proj-btn-all-proj" class="btn btn-sm btn-default" onclick="$(\'#del-proj-btn-all-proj\').tooltip(\'destroy\'); reloadPanes();" data-toggle="tooltip" data-placement="top" title="View the list of all projects">View All Projects</button>' +
+							'</div>'+ 
+							'<div class="btn-group" role="group">' +
+								'<button type="button" id="del-proj-btn-add-proj" class="btn btn-sm btn-default" onclick="$(\'#del-proj-btn-add-proj\').tooltip(\'destroy\'); $(\'#projectsTabs a[href=/\'#projects-add/\']\').tab(\'show\'); return false;" data-toggle="tooltip" data-placement="top" title="Add a new project">Add Project</button>' +
+							'</div>';
+						$("#map-project-details").empty().html(deleteProjectActionButtons);
+						loadTooltips();
+						$('#projectsTabs a[href=\'#projects\']').tab('show');
+					}
+				}
+				$('#btn-edit-proj-save').tooltip('hide');
+				//$("#saving").hide();
+				$("#saving").modal('hide');
+			},
+			error		: function () {
+				console.log("Edit Project - Save - FAILED");
+			}
+		});
+
+	}
+	
+	function reloadPanes(){
+		//console.log('Refresh Project List');
+		$('#projects-table tbody#projects-list').empty().load('./assets/php-custom/database-listing.php', function(){
+			console.log('reload project list');
+			loadTooltips ();
+		});
+		//$('#projectsTabs a[href=\'#projects\']').tab('show');
+		//console.log('Reload Add Project Form');
+		$('#projects-add').load('assets/php-custom/add-project.php', function(){
+			loadTooltips();
+			//$('[autofocus]:first').focus();
+			$('#form-add-project').bootstrapValidator(projectValidatorOptions)
+			.on('success.field.bv', function(e, data) {
+					if (data.bv.isValid()) {
+							data.bv.disableSubmitButtons(false);
+					}
+			});
+		});
+		/*$('#form-add-project').each(function(){
+			this.reset();
+		});*/
+		$('#map-project-msg').empty();
+		$('#map-project-details').empty();
+		editProjectFormState = "hidden";
+		/*$('[id^=project-title-').tooltip({
+			placement: 'auto',
+			//title: layer.feature.properties.title,
+			//trigger: 'hover',
+		});*/
+		sidebar.open('database');
+		$('#database').trigger('showpane');
+		$('#projectsTabs a[href=\'#projects\']').tab('show');		
+		/*$('#projects-list [data-toggle="tooltip"]').tooltip({
+			container: 'body',
+			trigger: 'hover'
+		});*/
+		// if(!$('#projectsTabs a[href=\'#projects-edit\']').hasClass('disabled')) {
+			// $('#projectsTabs a[href=\'#projects-edit\']').addClass('disabled');
+			// $('#projectsTabs a[href=\'#projects-edit\']').click();
+		// }
+		//console.log (map.hasLayer('drawControl'));
+
+		/*if (locInfoControlAdded == true){
+			//map.removeControl(locInfoControl);
+			console.log(locInfoControl);
+			locInfoControlAdded = false;
+		}*/
+		$('.leaflet-control-location-info').remove();
+		$('.leaflet-draw.leaflet-bar.leaflet-control #loc-info-save').remove();
+		$('#setPoint').remove();
+		controlID = 1;
+		markerCount = 1;
+
+		// reset map layers and zoom
+		assetLayerGroup.removeLayer(ctiProjectLayer);
+		markerClusters.removeLayer(ctiProjectLocations);
+		map.addLayer(ctiLayer);
+		//var ctiLayerBounds = ctiLayer.getBounds();
+		//var ctiLayerCenter = ctiLayerBounds.getCenter();
+		//console.log(coordsToLatLngs(ctiLayer));
+		//var ctiBounds = map.getBounds();
+		//console.log(map.getZoom());
+		/*map.fitBounds(ctiBounds, {
+			maxzoom : 15
+		});*/
+		//map.setView(new L.LatLng(9.622, 111.137), 5);
+		getViewport();
+		map.setView(map.getCenter(), 4);
+		removeControls();
+		//zoomToProjectLocations(null);
+		//return false;
+	}
+
+	// location functions
+	function getMarkerGeoJSON () {
+			var output = '';
+			drawnItems.eachLayer(function (layer) {
+				console.log(layer);
+				//layer.feature.properties.lat = layer.getLatLng().lat;
+				//layer.feature.properties.lng = layer.getLatLng().lng;
+				layer.feature.geometry.coordinates = [layer.getLatLng().lng,layer.getLatLng().lat];
+				layer.feature.properties.municipality = $('#info-mun-'+layer.feature.properties.id).val();
+				layer.feature.properties.province = $('#info-prov-'+layer.feature.properties.id).val();
+				//layer.feature.properties.country = 'RP';
+				//layer.feature.properties.municipality = 'Puerto Princesa';
+				output += layer.feature.properties.name + ' ' + layer.feature.properties.id + ' ' + layer.feature.geometry.coordinates + ' ' + layer.feature.properties.municipality + '<br/>';
+			});
+			//console.log(layer.feature.geometry.coordinates);
+			//}
+			return JSON.stringify(drawnItems.toGeoJSON());
+	}
+
+
+	function createPoint(e) {
+			var layer = e.layer,
+			mLatLng = layer.getLatLng();
+			console.log(e.layerType + ' ' + mLatLng);
+			// optionally add reverse geocode here
+			// - to automatically fill in details
+			// new geojsonfeature
+			var marker = {
+					"type": "Feature",
+							"properties": {
+								"id": markerCount//,
+								//"city" : data.results[i].city,
+								//"country" : data.results[i].country,
+								//"region" : data.results[i].region,
+								//"subregion" : data.results[i].subregion
+					},
+							"geometry": {
+							"type": "Point",
+									"coordinates": [mLatLng.lng, mLatLng.lat]
+					}
+			};
+			// add geojsonfeature to drawnItems
+			var shortLongitude = parseFloat(mLatLng.lat).toFixed(2);
+			var shortLatitude = parseFloat(mLatLng.lng).toFixed(2);
+			
+			layer.bindPopup('<b>Coordinates</b><br/>Latitude: ' + shortLatitude + '<br/>Longitude: ' + shortLongitude);
+			//markerCount++;
+			drawnItems.addData(marker);
+	}
+	
+	function setLatLng() {
+    var lat = $('input#setLat').val(),
+        lng = $('input#setLng').val();
+        //sLatLng = L.latLng(lat, lng);
+				console.log(lat + ',' + lng);
+    if (drawnItems) {
+        if (lat & lng) {
+					var marker = {
+							"type": "Feature",
+									"properties": {
+										"id": markerCount
+							},
+									"geometry": {
+									"type": "Point",
+											"coordinates": [lng, lat]
+							}
+					};
+					// add geojsonfeature to drawnItems
+					//layer.bindPopup('Marker');
+					//markerCount++;
+					//map.addControl(new locInfoControl());
+					drawnItems.addData(marker);
+        }
+    }
+	}
+	
+	function clearLatLng() {
+    $('input#setLat').val("");
+    $('input#setLng').val("");
+	}
+
+	function viewProject(projID) {
+		//$('#loading').show();
+		$('#loading').modal('show');
+		console.log('load project info from database listing');
+		getViewport();
+		$('#map-project-msg').empty();
+		$('#map-project-details').empty();
+		$('#map-location-msg').empty();
+		editLocationFormState = "hidden";
+		$('#map-location-details').empty();
+		console.log('load view-project.php');
+		/*$('#map-project-details').empty().load('./assets/php-custom/view-project.php?p=' + projID, function(){
+			loadTooltips();
+		});*/
+		
+		$.ajax({
+			url : './assets/php-custom/view-project.php',
+			type : 'post',
+			data : {p : projID},
+			success : function (data){
+				$('#map-project-details').empty().html(data);
+				editProjectFormState = "hidden";
+				zoomToProjectLocations(projID);
+				// focus on Map sidebar tab
+				sidebar.open('locations');
+				$('#locations').trigger('showpane');
+				//markerClusters.addLayer(ctiProjectLocations);
+				// show the project info tab
+				$('#locations').trigger('showpane');
+				$('#mapTabs a[href=\'#map-project-info\']').tab('show');
+				removeControls();
+				//$('#loading').hide();
+				$('#loading').modal('hide');
+			}
+		});
+	}
+	
+	/* MAP EVENTS */
+	
+	/*map.on('draw:drawstart', function (e){
+		console.log('drawstart');
+		//console.log(e);
+		//e.layer.setIcon(L.icon(yellowMarkerIcon));
+	});*/
+	 
+	map.on('draw:created', function (e) {
+		//alert(e.layerType);
+		//console.log(e.layer);
+		createPoint(e);
+		//$('#layers').html(drawnItems);
+	});
+
+	map.on('draw:drawstop', function (e) {
+		console.log('drawstop');
+		//$('#map-location-details').append('123456');
+		//map.addControl(new locInfoControl());
+		//locInfoControlAdded = true;
+		markerCount++;
+	});
+
+	map.on('draw:deletestop', function (e) {
+		$.each(drawnItems._layers, function (index, layer) {
+			$('#loc-info-'+layer.feature.properties.id).show();
+		});
+	});
+
+
+	drawnItems.on('layerremove', function (e) {
+		// remove loc-info box
+		$('#loc-info-'+e.layer.feature.properties.id).hide();
+	});
+	
+	/* TAB EVENTS */
+	function focusOnProjectTitleInput(){
+		$('#project-title').focus();
+	}
+	
+	$('#tab-projects-add').on('shown.bs.tab', focusOnProjectTitleInput);
+	$('#tab-map-project-info').on('shown.bs.tab', focusOnProjectTitleInput);
+	
+	// FIX THIS LATER
+	/*function confirmLeaveEditLocations(){
+		console.log('confirmLeaveEditLocations');
+		//console.log('tab-map-project-info')
+		if(controlsAdded == 1 && editLocationFormState == "shown"){
+			$('#confirm-leave-edit-locations').modal('show');
+		}
+	}
+	
+	$('#tab-map-project-info').on('show.bs.tab', confirmLeaveEditLocations);
+	$('#tab-map-legend').on('show.bs.tab', confirmLeaveEditLocations);
+	$('#tab-map-filter').on('show.bs.tab', confirmLeaveEditLocations);
+	
+	
+	function confirmLeaveEditProject(e){
+		console.log('confirmLeaveEditProject');
+		//console.log('tab-map-location-info');
+		console.log(e.type);
+		//console.log('editProjectFormState: ' + editProjectFormState);
+		if (e.type == 'click' && editProjectFormState == 'shown'){
+			//console.log('show confirm modal');
+			$('#confirm-leave-edit-project').modal('show');
+			console.log('back from confirm-leave-edit-project modal');
+		} else {
+			console.log('no confirm modal');
+		}
+	}
+	
+	$('#tab-map-location-info').on('click', confirmLeaveEditProject);
+
+	//$('#tab-map-legend').on('show.bs.tab', confirmLeaveEditProject);
+	$('#tab-map-legend').on('click', confirmLeaveEditProject);
+	//$('#mapTabs a[href=\'#map-legend\']').tab('show')
+
+
+	$('#tab-map-filter').on('click', confirmLeaveEditProject);*/
+	
+	
+	$('#tab-projects-list').on('shown.bs.tab', function(e){
+		$('#projects-search').focus();
+	});
+	
+	$('#tab-projects-list').on('click', function(e){
+		$('#projectsTabs a[href=\'#projects\']').tab('show');
+		return false;
+	});
+	
+	function setHeight(pane){
+		console.log(pane);
+		var paneHeight = $(pane).height();
+		console.log('old: ' + paneHeight);
+		if (paneHeight+100 < 200) {
+			paneHeight = 200;
+		} else {
+			paneHeight += 100;
+		}
+		console.log('new: ' + paneHeight);
+		console.log(sidebar.isOpen());
+		$('#sidebar').css('height', paneHeight);
+	}
+	/*$("button#setLatLng").on('click', function () {
+		console.log('setLatLng');
+	});*/
+	
+	$('li#sidebar-li-login').on('click', function (){
+		if ($('li#sidebar-li-login').hasClass('active')){
+			$('#sidebar-panes').css({'background-color': '#d0e6f4'});
+		}
+	});
+	
+	$('li#sidebar-li-database').on('click', function (){
+		if ($('li#sidebar-li-database').hasClass('active')){
+			$('#sidebar-panes').css('background-color', '#ccecc7');
+		} else {
+			$('#sidebar-panes').css('background-color', '#ffffff');
+		}
+	});
+	
+	$('#database').bind('showpane', function(){
+		console.log('database shown');
+		$('#sidebar-panes').css('background-color', '#ccecc7');
+	});
+	
+	$('li#sidebar-li-map').on('click', function (){
+		if ($('li#sidebar-li-map').hasClass('active')){
+			$('#sidebar-panes').css('background-color', '#f7e5d7');
+		} else {
+			$('#sidebar-panes').css('background-color', '#ffffff');
+		}
+	});
+	
+	$('#locations').bind('showpane', function (){
+		console.log('map shown');
+		$('#sidebar-panes').css('background-color', '#f7e5d7');
+	});
+	
+	$('li#sidebar-li-monitor').on('click', function (){
+		if ($('li#sidebar-li-monitor').hasClass('active')){
+			$('#sidebar-panes').css('background-color', '#f5f0d2');
+		} else {
+			$('#sidebar-panes').css('background-color', '#ffffff');
+		}
+	});
+	
+	$('li#sidebar-li-help').on('click', function (){
+		if ($('li#sidebar-li-help').hasClass('active')){
+			$('#sidebar-panes').css('background-color', '#dddddd');
+		} else {
+			$('#sidebar-panes').css('background-color', '#ffffff');
+		}
+	});
+	
+	$('li#sidebar-li-about').on('click', function (){
+		if ($('li#sidebar-li-about').hasClass('active')){
+			$('#sidebar-panes').css('background-color', '#dddddd');
+		} else {
+			$('#sidebar-panes').css('background-color', '#ffffff');
+		}
+	});
+	
+	
+	$('#loading').modal({
+    backdrop: 'static',
+    keyboard: false
+	});
+
+	$('#saving').modal({
+    backdrop: 'static',
+    keyboard: false
+	});
+	
+	
+	// LOGIN FUNCTIONS
+	
+	$('#login-submit').on('click', function(){
+		console.log('Log In');
+		var u =  $('#user-login #inputUserName').val();
+		var p = $('#user-login #inputPassword').val();
+		console.log(u+'|'+p);
+		$.ajax({
+			url     : './assets/userfrosting/api/process_login.php',
+			type    : "POST",
+			cache   : false,
+			data    : { username : u, password: p },
+			success : function (data) {
+				$('#login-screens').empty().html(data);
+			}
+		});
+	});
+	
+	$('#btn-log-out').on('click', function(){
+		console.log('Log out');
+		$.ajax({
+			url: './assets/userfrosting/account/logout.php',
+			type: 'post',
+			data: {},
+			success: function(data){
+				$('#login-screens').empty().html(data);
+			}
+			
+			});
+	});
+	
+	

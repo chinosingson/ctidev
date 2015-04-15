@@ -1,0 +1,53 @@
+<?php
+
+# Connect to MySQL database
+$conn = new PDO('mysql:host=localhost;dbname=cti2','root','');
+
+if (@!$user) $user = "admin";
+$projID = $_REQUEST['p'];
+$editsql = 'SELECT proj.* FROM projects AS proj WHERE proj.ID='.$projID;
+
+# Try query or error
+$rs = $conn->query($editsql);
+if (!$rs) {
+    echo 'An SQL error occured.\n';
+    exit;
+}
+//sidebarClick('+L.stamp(layer)+')
+//echo '<tr style="cursor: pointer;" onclick="sidebarClick('.$data['ID'].'); return false;" >
+//$projectID = $data['ID'];
+//$projectTitle = $data['title'];
+//print_r($data);
+
+while ($data = $rs->fetch(PDO::FETCH_ASSOC)) : ?>
+							<h4><?=$data['title']?>  
+							<!--a href="#"><i class="glyphicon glyphicon-pencil" onclick="$('#projectsTabs a[href=\'#projects-edit\']').tab('show'); $('a#link-projects-edit').empty().append('<i class=\'glyphicon glyphicon-pencil\'></i>&nbsp;Edit'); editProject(<?php echo $projID?>); return false; " title="Edit this project"></i></a--></h4>
+							<!--div class="btn-group">
+								<button class="btn btn-sm btn-primary" type="button">View Locations</button>
+								<button class="btn btn-sm" type="button">Edit Project</button>
+								<button class="btn btn-sm" type="button">View All Projects</button>
+							</div-->
+							<div class="btn-group" role="group" aria-label="...">
+								<button type="button" class="btn btn-sm btn-default" onclick="zoomToProjectLocations(<?=$data['ID']?>); " >View Locations</button>
+								<button type="button" class="btn btn-sm btn-default" onclick="editProject(<?=$data['ID']?>); return false; ">Edit Project</button>
+								<button type="button" class="btn btn-sm btn-default" onclick="zoomToProjectLocations(); sidebar.open('database'); $('#projectsTabs a[href=\'#projects\']').tab('show'); return false;">View All Projects</button>
+							</div><br/><br/>
+							<!--div class="row" id="project-functions">View Locations | Edit Project | View All Projects</div-->
+							<table class="table table-striped table-condensed">
+								<tbody class='list'>
+									<tr><td>Major Goals</td><td><?=$data['goals'] ?></td></tr>
+									<tr><td>Start</td><td><?=substr($data['start'],0,10)?></td></tr>
+									<tr><td>End</td><td><?=substr($data['end'],0,10)?></td></tr>
+									<tr><td>Funder</td><td><?=$data['funder']?></td></tr>
+									<tr><td>Amount&nbsp;(USD)</td><td><?=$data['amount']?></td></tr>
+									<tr><td>Implementer</td><td><?=$data['implementer']?></td></tr>
+									<tr><td>Principal Contact</td><td><?=$data['contact']?></td></tr>
+									<tr><td>Position</td><td><?=$data['position']?></td></tr>
+									<tr><td>Email</td><td><?=$data['email']?></td></tr>
+									<tr><td>Phone</td><td><?=$data['phone']?></td></tr>
+									<tr><td>Website</td><td><a href="http://<?=$data['website']?>" target="_blank"><?=$data['website']?></a></td></tr>
+									<tr><td>Remarks</td><td><?=$data['remarks']?></td></tr>
+								</tbody>
+							</table>
+
+<?php endwhile; ?>

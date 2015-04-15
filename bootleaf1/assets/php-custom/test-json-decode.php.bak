@@ -1,0 +1,20 @@
+﻿<?php
+$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
+
+$json = '{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Test Marker","id":1,"lat":10.12570928243104,"lng":119.00115966796875,"country":"RP","municipality":"Puerto Princesa"},"geometry":{"type":"Point","coordinates":[119.00115966796875,10.12570928243104]}}]}
+';
+
+$json = urldecode('process-type=i&table-name=projects&data%5Buser%5D=admin&data%5Bupdated%5D=&data%5Btitle%5D=TEST&data%5Bstart%5D=&data%5Bend%5D=&data%5Bfunder%5D=a&data%5Bamount%5D=&data%5Bcontact%5D=b&data%5Bposition%5D=c&data%5Bemail%5D=&data%5Bphone%5D=&data%5Bwebsite%5D=&data%5Bremarks%5D=');
+
+echo $json;
+
+?><pre><?php
+//var_dump(json_decode($json));
+//var_dump(json_decode($json, true));
+
+$aryJsonData = json_decode($json, true);
+
+//print_r($aryJsonData['features'][0]['properties']);
+print_r($aryJsonData);
+
+?></pre>

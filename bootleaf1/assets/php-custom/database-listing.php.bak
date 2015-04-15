@@ -1,0 +1,57 @@
+<?php
+
+	include_once('db.php');
+	include_once('../UserFrosting/models/config.php');
+//@session_start();
+
+	//echo "<pre>";
+	//echo print_r($_SESSION,1)."<br/>";
+	//echo @print_r($loggedInUser,1);
+	$currUserInfo = @fetchUser($loggedInUser->user_id);
+	//echo @print_r($currUserInfo,1)."<br/>";
+	//echo "</pre>";
+	if (isset($currUserInfo) && @in_array($currUserInfo['primary_group_id'],array(1,2))) {
+		$editPerm = true;
+	} else {
+		$editPerm = false;
+	}
+
+if(!is_null(@$_REQUEST['s'])) {
+	$search = $_REQUEST['s'];
+	//echo $search."<br/>";
+	$projsql = "SELECT ID, title FROM projects WHERE status='P' AND title LIKE '%".addslashes($search)."%' ORDER BY updated DESC";
+} else {
+	$projsql = "SELECT ID, title FROM projects WHERE status='P' ORDER BY updated DESC";
+}
+//echo $projsql;
+
+# Try query or error
+$rs = $conn->query($projsql);
+if (!$rs) {
+    echo 'An SQL error occured.\n';
+    exit;
+}
+
+$projectCount = $rs->rowCount();
+
+?><div class="sidebar-table" id="projects-table-container">
+								<table class="table table-hover" id="projects-table">
+									<tbody class="list" id="projects-list">
+<tr>
+	<td class="container">
+		<div class="col-xs-12 project-title-container">Displaying <b><?=$projectCount?></b> project(s).</div></td>
+</tr><?php while ($row = $rs->fetch(PDO::FETCH_ASSOC)) {
+//sidebarClick('+L.stamp(layer)+')
+//echo '<tr style="cursor: pointer;" onclick="sidebarClick('.$row['ID'].'); return false;" >
+$projectID = $row['ID'];
+$projectTitle = $row['title']; ?>
+<tr style="cursor: pointer">
+	<td class="container">
+		<div class="col-xs-10 project-title-container" onclick="viewProject('<?php echo $projectID?>'); zoomToProjectLocations('<?php echo $projectID?>'); return false;" ><span class="project-title" id="project-title-<?php echo $projectID?>" data-toggle="tooltip" data-placement="auto" title="<?php echo $projectTitle?>"><?php echo $projectTitle?></span></div>
+		<?php if ($editPerm) { ?><div class="pull-right project-title-edit"><a href="#" onclick="editProject(<?php echo $projectID?>); return false; " data-toggle="tooltip" title="Edit this project"><span class="myicon-sm myicon-edit"></i></a></div><?php } ?>
+	</td>
+</tr>
+<?php } ?>
+									</tbody>
+								</table>
+							</div>

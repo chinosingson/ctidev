@@ -1,0 +1,523 @@
+﻿<?php
+
+	require_once('assets/php-custom/db.php');
+	require_once('assets/UserFrosting/models/config.php');
+	//session_unset();
+	//session_start();
+	//session_name("ctisession");
+	//echo session_name();
+	//echo session_id();
+	//$_GET['SID'] = session_id();
+	//$_SESSION['user'] = "admin";
+	//$_SESSION['role'] = "administrator";
+	//$_SESSION['perm'] = array('view','edit','delete');
+	//$_SESSION['perm'] = array('view');
+	
+	//session_write_close();
+	$currUserInfo = @fetchUser($loggedInUser->user_id);
+	if (isset($currUserInfo) && @in_array($currUserInfo['primary_group_id'],array(1,2,5))) {
+		$editPerm = true;
+	} else {
+		$editPerm = false;
+	}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>CTI Mapping Tool</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="assets/bootstrap-3.2.0-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/leaflet-0.7.3/leaflet.css" />
+		<link rel="stylesheet" href="assets/leaflet-draw/leaflet.draw.css" />
+		<link rel="stylesheet" href="assets/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.css" />
+    <link rel="stylesheet" href="assets/Leaflet.markercluster-master/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="assets/Leaflet.markercluster-master/dist/MarkerCluster.Default.css" />
+		
+		<link rel="stylesheet" href="assets/bootstrapvalidator-dist-0.5.2/dist/css/bootstrapValidator.css"/>
+		<link rel="stylesheet" href="assets/bootstrapvalidator-dist-0.5.2/dist/css/bootstrapValidator.min.css"/>		
+		
+    <link rel="stylesheet" href="assets/sidebar-v2-gh-pages/css/leaflet-sidebar.css" />
+    <link rel="stylesheet" href="assets/css/app.css" />
+
+    <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
+		
+    <!--link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon-76.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon-120.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon-152.png" />
+    <link rel="icon" sizes="196x196" href="assets/img/favicon-196.png" />
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" /-->
+		
+</head>
+<!--body onload="sidebar.open('login'); return true;"-->
+<body>
+	<!-- NAVBAR -->
+	<div class="navbar navbar-inverse navbar-fixed-top" id="cti-app-navbar-inverse" role="navigation">
+		<div class="navbar-header">
+			<!--button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button-->
+			<!--a class="navbar-brand" href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onClick="console.log('CTI icon click'); map.invalidateSize(); return false;"><i class="fa fa-th-list"style="color: white"></i></a-->
+			<!--h2 class="navbar-brand" id="cti-app-title">CTI Mapping Tool</h2-->
+			<div id="logo-container" style="border: 0px dotted gray; margin-left: 8px; height: 49px"><img src="assets/img/cti-logo-sm.png" id="logo" alt="CTI Project Map Tool" /></div>
+		</div>
+		<div class="navbar-collapse collapse" id="cti-app-navbar-collapse">
+			<div class="navbar-right">
+				<div class="social">
+					<ul>
+						<li><a href="http://www.coraltriangleinitiative.org/" target="_blank" data-toggle="tooltip" data-placement="auto" title="Coral Triangle Initiative"><img src="assets/img/cti_logo.png" style="height: 32px" /></a></li>
+						<li><a href="http://www.facebook.com/sharer/sharer.php?u=<?=urlencode('http://www.ctimap.org')?>" target="_blank"><i class="fa fa-lg fa-facebook" data-toggle="tooltip" data-placement="auto" title="Share on Facebook"></i></a></li>
+						<li><a href="http://twitter.com/share?url=<?=urlencode('http://www.ctimap.org')?>" target="_blank"><i class="fa fa-lg fa-twitter" data-toggle="tooltip" data-placement="auto" title="Share on Twitter"></i></a></li>
+						<li><a href="https://plus.google.com/share?url=<?=urlencode('http://www.ctimap.org')?>" target="_blank"><i class="fa fa-lg fa-google-plus" data-toggle="tooltip" data-placement="auto" title="Share on Google+"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div><!--/.navbar-collapse -->
+		
+	</div>
+	<!-- NAVBAR -->
+	
+	<!-- SIDEBARS - LEFT -->
+	<div id="sidebar" class="sidebar collapsed">
+		<!-- Nav tabs -->
+		<a href="#" id="sidebarCollapse" class="pull-right" style="display: none" data-toggle="tooltip" data-placement="left" title="Collapse the sidebar"><span class="myicon myicon-sidebar-close"></span></a><br/>
+		<ul class="sidebar-tabs" id="#sidebar-tabs" role="tablist"><!-- onclick="setHeight('div.sidebar-pane#login')"-->
+			<li id="sidebar-li-login"><a href="#login" role="tab" data-toggle="tooltip" data-placement="right" title="Log In" id="sidebar-tabs-login"><span class="myicon myicon-login"></span></a></li>
+			<li id="sidebar-li-database"><a href="#database" role="tab" data-toggle="tooltip" data-placement="right" title="Database" id="sidebar-tabs-database"><span class="myicon myicon-database"></span></a></li>
+			<li id="sidebar-li-map"><a href="#locations" role="tab" data-toggle="tooltip" data-placement="right" title="Map" id="sidebar-tabs-map"><span class="myicon myicon-map"></span></a></li>
+			<li id="sidebar-li-monitor"><a href="#monitor" role="tab" data-toggle="tooltip" data-placement="right" title="Monitor" id="sidebar-tabs-monitor"><span class="myicon myicon-monitor"></span></a></li>
+			<li id="sidebar-li-help"><a href="#help" role="tab" data-toggle="tooltip" data-placement="right" title="Help" id="sidebar-tabs-help"><span class="myicon myicon-help"></span></a></li>
+			<li id="sidebar-li-about"><a href="#about" role="tab" data-toggle="tooltip" data-placement="right" title="About" id="sidebar-tabs-about"><span class="myicon myicon-about"></span></a></li>
+		</ul>
+		<!-- Tab panes -->
+		<div class="sidebar-content active" id="sidebar-panes">
+			<!-- SIDEBAR - LOGIN -->
+			<div class="sidebar-pane" id="login">
+				<h2>Log In</h2>
+				<div id="login-screens-msg"></div>
+				<div id="login-screens"><?php include_once('assets/php-custom/login.php');?>
+				</div>
+			</div>
+			<!-- SIDEBAR - LOGIN -->
+			
+			<!-- SIDEBAR - DATABASE -->
+			<div class="sidebar-pane" id="database">
+				<h2>Database</h2>
+				<!-- SIDEBAR - DATABASE - NAV TABS -->
+				<ul class="nav nav-tabs" id="projectsTabs" role="tablist">
+					<li id="tab-projects-list" class="active"><a href="#projects" role="tab" data-toggle="tab" onclick="$('#projectsTabs a[href=\'#projects\']').tab('show'); return false;"><span class="myicon-sm myicon-search"></span>&nbsp;Search</a></li>
+					<?php if (($editPerm) || (in_array($currUserInfo['primary_group_id'],array(2,5)))) { ?><li id="tab-projects-add"><a href="#projects-add" role="tab" data-toggle="tab" onclick="$('#projectsTabs a[href=\'#projects-add\']').tab('show'); return false;"><span class="myicon-sm myicon-plus"></span>&nbsp;Add</a></li><?php } ?>
+					<li id="tab-projects-download"><a href="#projects-download" role="tab" data-toggle="tab" onclick="$('#projectsTabs a[href=\'#projects-download\']').tab('show'); return false;"><span class="glyphicon glyphicon-save"></span>&nbsp;Download</a></li>
+				</ul>
+				<!-- SIDEBAR - DATABASE - NAV TABS -->
+				<!-- SIDEBAR - DATABASE - TAB PANES -->
+				<div class="tab-content">
+					<!-- SIDEBAR - DATABASE - PANE - PROJECTS -->
+					<div class="tab-pane active" id="projects">
+						<div class="container-fluid">
+							<div class="row" id="projects-search-container">
+								<div class="col-xs-9">
+									<input type="text" class="form-control search input-sm" placeholder="Search" id="projects-search" />
+								</div>
+								<div class="col-xs-3">
+									<button class="btn btn-sm btn-block btn-default" id="projects-search-clear" data-toggle="tooltip" title="Clear search terms">Clear</button>
+								</div>
+							</div>
+							<div class="row" id="projects-listing-container">
+							<?php include('./assets/php-custom/database-listing.php'); ?>
+							</div>
+						</div>
+					</div>
+					<!-- SIDEBAR - DATABASE - PANE - PROJECTS -->
+					<!-- SIDEBAR - DATABASE - PANE - PROJECTS - ADD -->
+					<div class="tab-pane" id="projects-add"><?php include('assets/php-custom/add-project.php'); ?></div>
+					<!-- SIDEBAR - DATABASE - PANE - PROJECTS - ADD -->
+					<!-- SIDEBAR - DATABASE - PANE - PROJECTS - DOWNLOAD -->
+					<div class="tab-pane" id="projects-download">
+						<h4>Download</h4>
+						<h5><b>Projects</b></h5>
+						<h5>The CTI Project Database can be downloaded as a Comma-Separated Values (CSV) file, for filtering or sorting outside of the mapping tool.</h5>
+						<div class="well container-fluid">
+							<div class="row">
+							<div class="col-xs-2"><a href="assets/php-custom/download-csv.php" data-toggle="tooltip" data-placement="auto" title="Download the CTI Project Database"><h2 class="glyphicon glyphicon-save"></h2></a></div>
+							<div class="col-xs-10"><h5><a href="assets/php-custom/download-csv.php" data-toggle="tooltip" data-placement="auto" title="Download the CTI Project Database">CTI Project Database</a></h5>
+							CSV, project details only.</div>
+							</div>
+						</div>
+
+						<h5><b>Locations</b></h5>
+						<h5>Locations related to CTI Projects are available as a Keyhole Markup Language (KML) file, for visualizing location data as a Google Map.</h5>
+						<div class="well container-fluid">
+							<div class="row">
+								<div class="col-xs-2"><a href="assets/php-custom/download-kml.php" data-toggle="tooltip" data-placement="auto" title="Download CTI Locations"><h2 class="glyphicon glyphicon-save"></h2></a></div>
+								<div class="col-xs-10"><h5><a href="assets/php-custom/download-kml.php" data-toggle="tooltip" data-placement="auto" title="Download CTI Locations">CTI Locations</a></h5>
+							KML</div>
+							</div>
+						</div>
+						
+					</div>
+					<!-- SIDEBAR - DATABASE - PANE - PROJECTS - DOWNLOAD -->
+				</div>
+			</div>
+			<!-- SIDEBAR - DATABASE -->
+			<!-- SIDEBAR - MAP -->
+			<div class="sidebar-pane" id="locations">
+				<h2>Map</h2>
+				<!-- SIDEBAR - MAP - NAV TABS -->
+				<ul class="nav nav-tabs" id="mapTabs">
+					<li id="tab-map-legend" class="active" ><a href="#map-legend" role="tab" data-toggle="tab"><span class="myicon-sm myicon-legend"></span>&nbsp;Legend</a></li>
+					<li id="tab-map-filter"><a href="#map-filter" role="tab" data-toggle="tab"><span class="myicon-sm myicon-filter"></span>&nbsp;Filter</a></li>
+					<li id="tab-map-project-info"><a href="#map-project-info" role="tab" data-toggle="tab"><span class="myicon-sm myicon-project"></span>&nbsp;Project</a></li>
+					<li id="tab-map-location-info"><a href="#map-location-info" role="tab" data-toggle="tab"><span class="myicon-sm myicon-location"></span>&nbsp;Location</a></li>
+				</ul>
+				<!-- SIDEBAR - MAP - NAV TABS -->
+				<!-- SIDEBAR - MAP - TAB PANES -->
+				<div class="tab-content">
+					<div class="tab-pane active" id="map-legend">
+						<h4>Legend</h4>
+						<div class="container-fluid" id="legend-table">
+							<div class="row">
+								<div class="col-xs-2 text-center legend-icon"><img src="assets/img/map-pin-yellow.png" /></div>
+								<h5 class="col-xs-10 legend-caption">Project Location</h5>
+							</div>
+							<div class="row">
+								<div class="col-xs-2 text-center legend-icon"><img src="assets/img/marker-red.png" /></div>
+								<h5 class="col-xs-10 legend-caption i">100 or more locations</h5>
+							</div>
+							<div class="row">
+								<div class="col-xs-2 text-center legend-icon"><img src="assets/img/marker-orange.png" /></div>
+								<h5 class="col-xs-10 legend-caption">11 to 99 locations</h5>
+							</div>
+							<div class="row">
+								<div class="col-xs-2 text-center legend-icon"><img src="assets/img/marker-yellow.png" /></div>
+								<h5 class="col-xs-10 legend-caption">2 to 10 locations</h5>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="map-filter">
+						<form role="form" id="form-map-filter">
+							<div class="form-group" id="filter-goals">
+								<h4><span data-toggle="tooltip" data-placement="right" title="Filter locations by goal">Goals</span></h4>
+								<div class="checkbox"><label class="control-label"><input type="checkbox" name="g[]" value="1" id="project-goal-1">1. Seascapes</label></div>
+								<div class="checkbox"><label class="control-label"><input type="checkbox" name="g[]" value="2" id="project-goal-2">2. Ecosystems Approach to Fisheries Management (EAFM)</label></div>
+								<div class="checkbox"><label class="control-label"><input type="checkbox" name="g[]" value="3" id="project-goal-3">3. Marine Protected Areas</label></div>
+								<div class="checkbox"><label class="control-label"><input type="checkbox" name="g[]" value="4" id="project-goal-4">4. Climate Change Adaptation</label></div>
+								<div class="checkbox"><label class="control-label"><input type="checkbox" name="g[]" value="5" id="project-goal-5">5. Threatened Species</label></div>
+							</div><!-- /form-group -->
+							<div class="form-group" id="filter-country">
+								<h4><span data-toggle="tooltip" data-placement="right" title="Filter locations by country">Country</span></h4>
+								<select name="c[]" class="form-control input-sm" id="filter-country-dropdown" >
+									<option class="input-sm" disabled selected>Choose a country</option>
+									<option disabled>---------------</option>
+									<option value="Indonesia">Indonesia</option>
+									<option value="Malaysia">Malaysia</option>
+									<!--option value="Papua New Guinea">Papua New Guinea</option-->
+									<option value="Philippines">Philippines</option>
+									<!--option value="Solomon Islands">Solomon Islands</option>
+									<option value="Timor-Leste">Timor-Leste</option-->
+								</select>
+							</div>
+							<!--div class="form-group" id="filter-donor-group">
+								<h4>Donor Group</h4>
+								<select name="donor-group" id="filter-donor-group-dropdown">
+									<option>Group 1</option>
+									<option>Group 2</option>
+									<option>Group 3</option>
+									<option>Group 4</option>
+								</select>
+							</div>
+							<div class="form-group" id="filter-implementer-group">
+								<h4>Implementer Group</h4>
+								<select name="implementer-group" id="filter-implementer-group-dropdown">
+									<option>Group 1</option>
+									<option>Group 2</option>
+									<option>Group 3</option>
+									<option>Group 4</option>
+								</select>
+							</div-->
+							<div class="form-group">
+								<!--button id="filter-do-filter" type="button" class="btn btn-sm" >Filter</button-->
+								<input  id="filter-clear-filter" type="reset" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="right" title="Reset filter" />
+							</div>
+						</form>
+						<div id="filter-params"></div>
+					</div>
+					<div class="tab-pane" id="map-project-info">
+						<div id="map-project-msg"></div>
+						<div id="map-project-details">
+							<h4>No project selected</h4>
+							<h5>Select a project from the <a href="#" onclick="reloadPanes(); return false;">Database</a> or click on a marker on the map.</h5>
+						</div>
+						<!--div id="map-project-info-buttons"></div-->
+					</div>
+					<div class="tab-pane" id="map-location-info">
+						<div id="map-location-msg"></div>
+						<div id="map-location-details">
+							<h4>No project selected</h4>
+							<h5>Select a project from the <a href="#" onclick="reloadPanes(); return false;">Database</a> or click on a marker on the map.</h5>
+						</div>
+					</div>
+				</div>
+				<!-- SIDEBAR - MAP - TAB PANES -->
+			</div>
+			<!-- SIDEBAR - MAP -->
+			<!-- SIDEBAR - MONITOR -->
+			<div class="sidebar-pane" id="monitor">
+				<h2>Monitor</h2>
+				<h5>This window displays a summary of the CTI project portfolio in the form of easy-to-browse interactive indicator charts.</h5>
+				<div class="form-group form-group-sm">
+					<select id="monitorType" class="form-control input-sm dropdown">
+						<option disabled selected>Select a Chart</option>
+						<option disabled>---------------</option>
+						<option disabled>- All Countries</option>
+						<option value="cti-chart-0-number-of-projects-per-goal.js">-- # of Projects per Goal</option>
+						<option value="cti-chart-1-percent-of-projects-per-goal.js">-- % of Projects per Goal</option>
+						<option value="cti-chart-2-number-of-projects-per-country.js">-- # of Projects per Country</option>
+						<option disabled>---------------</option>
+						<option disabled>- Individual Countries</option>
+						<option disabled># of Projects per Goal</option>
+						<option value="cti-chart-31-number-of-projects-per-goal-RP.js">-- Philippines</option>
+						<option value="cti-chart-32-number-of-projects-per-goal-IND.js">-- Indonesia</option>
+						<option value="cti-chart-33-number-of-projects-per-goal-MAL.js">-- Malaysia</option>
+						<option disabled>% of Projects per Goal</option>
+						<option value="cti-chart-41-percent-of-projects-per-goal-RP.js">-- Philippines</option>
+						<option value="cti-chart-42-percent-of-projects-per-goal-IND.js">-- Indonesia</option>
+						<option value="cti-chart-43-percent-of-projects-per-goal-MAL.js">-- Malaysia</option>
+					</select>
+					<br/>
+					<div id="chartContainer" class="chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+				</div>
+			</div>
+			<!-- SIDEBAR - MONITOR -->
+			<!-- SIDEBAR - HELP -->
+			<div class="sidebar-pane" id="help">
+				<h2>Help</h2>
+				<h5>This mapping tool is designed to be intuitive for users. To discover the functions of this application, simply hover the mouse cursor over the various buttons or tabs. For more extensive help, you may download the User's Guide below.</h5>
+				<div class="well container-fluid">
+					<div class="row">
+					<div class="col-xs-2"><a href="assets/files/CTI Mapping Tool - User's Guide.pdf" data-toggle="tooltip" data-placement="auto" title="Download the User's Guide"><h2 class="glyphicon glyphicon-file"></h2></a></div>
+					<div class="col-xs-10"><h5><a href="assets/files/CTI Mapping Tool - User's Guide.pdf" data-toggle="tooltip" data-placement="auto" title="Download the User's Guide">CTI Mapping Tool User's Guide</a></h5>
+					PDF, 4.36 MB</div>
+					</div>
+				</div>
+			</div>
+			<!-- SIDEBAR - HELP -->
+			<!-- SIDEBAR - ABOUT -->
+			<div class="sidebar-pane" id="about">
+				<h2>About</h2>
+				<div>
+					<p>The Coastal and Marine Resources Management in the Coral Triangle - Southeast Asia (CTI-SEA) Project Mapping Tool is a database and an interactive map of development activities in the Coral Triangle - all in one web-based application.</p>
+					<h4>Objective</h4>
+					<p>It aims to provide a monitoring platform that will help the six countries belonging to the multilateral partnership Coral Triangle Initiative on Coral Reefs, Fisheries and Food Security (CTI-CFF) coordinate their activities and resources amongst each other. The tool is also geared to assist decision-makers from the National Coordinating Committees (NCC), donors, non-government organizations, and national agencies monitor the achievement of the five goals in the Regional Plan of Action of the CTI-CFF. </p>
+					<h4>Innovation</h4>
+					<p>The main innovation of the CTI SEA Project Mapping Tool is its "cloud-collaboration" function. This means that users can actively contribute to keeping the project database up-to-date and growing instead of just "consuming" information.</p>
+					<h4>Stakeholders</h4>
+					<p>The CTI SEA Project Mapping Tool was designed to serve the needs of the Regional Secretariat (Interim Regional Secretariat) and the National Coordinating Committees (NCC) of the six Coral Triangle countries, namely Indonesia, Malaysia, Papua New Guinea, Philippines, Solomon Islands, and Timor-Leste in priority-setting and strategic planning.</p>
+					<h4>Contact</h4>
+					<p><b>Pavit Ramachandran, Senior Environment Specialist</b><br/>
+					Environment, Natural Resources and Agriculture Division, <br/>
+					Southeast Asia Department, Asian Development Bank<br/>
+					Email: <a href="mailto:pramachandran@adb.org">pramachandran@adb.org</a><br/>
+					Phone: +66 2 263 5300 ext 5347</p>
+					<p><b>Mr. Guillermo L. Morales, Team Leader</b><br/>
+					Coastal and Marine Resources Management in the Coral Triangle-Southeast Asia (CTI-SEA) (ADB RETA 7813)<br/>
+					Email 1: <a href="mailto:glmorales@primexinc.org">glmorales@primexinc.org</a><br/>
+					Email 2: <a href="mailto:ctisoutheastasia@gmail.com">ctisoutheastasia@gmail.com</a><br/>
+					Phone: +63 2 633 9052</p>
+					<h4>Disclaimer</h4>
+					<p>Although CTI-SEA will strive to keep information on this database complete, it does not guarantee the accuracy, reliability, or currency of the information in this CTI Project Mapping Tool.  Most of the information contained in the database were provided to the CTI-SEA by participants of meetings and workshops related to the Coral Triangle Initiative through questionnaires and Excel sheets. Others were taken from websites of funding agencies and organisations. The project assigns the geographic points for the project sites unless organizations provide specific geographic points. CTI-SEA welcomes receiving updated information and amending what is currently provided.</p>
+					<p>CTI-SEA reserves the right to alter, amend, vary, or otherwise change any information on the CTI Project Mapping Tool at any time, without notice. It accepts no responsibility for the results of any actions taken on the basis of information on this mapping tool, nor for the accuracy or completeness of any material contained herein. The project has provided log-ins for stakeholder representatives authorized by the National Coordinating Committees (NCCs) and they are in charge of updating the information. Users are advised to confirm information on each project through the contact person identified.</p>
+					<p>The tool may contain links to external organizations and other relevant information. In providing such links, the CTI-SEA does not accept responsibility for, nor endorse the content of any linked site.</p>
+				</div>
+			</div>
+			<!-- SIDEBAR - ABOUT -->
+			
+		</div>
+	</div>
+	<!-- SIDEBARS - LEFT -->
+	
+	<!-- MODALS -->
+	<!-- SAVING -->
+	<div id="saving" class="modal fade js-loading-bar" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="progress progress-popup progress-striped active">
+						<div class="progress-bar progress-bar-warning animate" style="width: 100%">Processing...</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- LOADING -->
+	<div id="loading" class="modal fade js-loading-bar" tabindex="-1" role="dialog" aria-hidden="true">
+	 <div class="modal-dialog">
+		 <div class="modal-content">
+			 <div class="modal-body">
+				<div class="progress progress-popup progress-striped active">
+					<div class="progress-bar progress-bar-info animate" style="width: 100%">Loading...</div>
+				</div>
+			 </div>
+		 </div>
+	 </div>
+	</div>		
+	
+	<!-- CONFIRM - Save project with or without location -->
+	<div class="modal fade" id="confirmSaveWithLocations" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Save Project</h4>
+				</div>
+				<div class="modal-body">
+					Do you want to save this project with locations?
+				</div>
+				<div class="modal-footer">
+					<div class="container-fluid">
+						<div class="row"><div class="btn-group col-sm-3">
+							<button type="button" class="btn btn-default btn-xs btn-block">Yes</button>
+						</div>
+						<div class="col-sm-9 text-left vcenter">Add locations</div></div>
+						<div class="row"><div class="btn-group col-sm-3">
+							<button type="button" class="btn btn-default btn-xs btn-block">No</button>
+						</div>
+						<div class="col-sm-9 text-left vcenter">Just save basic info</div></div>
+						<div class="row"><div class="btn-group col-sm-3">
+							<button type="button" class="btn btn-primary btn-xs btn-block" data-dismiss="modal">Cancel</button>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+	
+	<!-- MODAL - CONFIRM PROJECT DELETE -->
+	<div class="modal fade" id="confirm-delete-project" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class='alert alert-danger'>
+					<b>Are you sure you want to delete this project?</b><br/>
+					This operation cannot be undone.
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default btn-sm" onclick="saveProject('del', 0); $('#confirm-delete-project').modal('hide'); return false;">Yes</button>
+					<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">No</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- MODAL - CONFIRM LEAVE EDIT PROJECT -->
+	<div class="modal fade" id="confirm-leave-edit-project" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header"><h4 class="modal-title">Edit Project Details</h4></div>
+				<div class="modal-body">
+					<div class='alert alert-danger'>
+					<b>You are about to leave the edit project tab!</b><br/>
+					Any unsaved changes will be lost.
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default btn-sm" onclick="$('#mapTabs a[href=\'#map-project-info\']').tab('show'); return false;" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-default btn-sm" onclick="saveProject('edit', false); $('#confirm-leave-edit-project').modal('hide'); return false;">Save Changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- MODAL - CONFIRM LEAVE EDIT LOCATIONS -->
+	<div class="modal fade" id="confirm-leave-edit-locations" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header"><h4 class="modal-title">Edit Project Locations</h4></div>
+				<div class="modal-body">
+					<div class='alert alert-danger'>
+					<b>You are about to leave the edit locations tab!</b><br/>
+					Any unsaved changes will be lost.
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default btn-sm" onclick="$('#mapTabs a[href=\'#map-location-info\']').tab('show'); return false;" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-default btn-sm" onclick="saveLocations(projectID); $('#confirm-leave-edit-locations').modal('hide'); return false;">Save Changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- MODALS -->
+	
+		
+		<!--div id="sidebar-right" class="sidebar collapsed">
+        <ul class="sidebar-tabs" role="tablist">
+            <li><a href="#home" role="tab"><i class="fa fa-bars"></i></a></li>
+            <li><a href="#profile" role="tab"><i class="fa fa-user"></i></a></li>
+            <li><a href="#messages" role="tab"><i class="fa fa-envelope"></i></a></li>
+            <li><a href="#settings" role="tab"><i class="fa fa-gear"></i></a></li>
+        </ul>
+		</div-->
+
+    <div id="map" class="sidebar-map"></div>
+
+    <!--a href="https://github.com/Turbo87/sidebar-v2/"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a-->
+
+		<!-- JQUERY -->
+    <script src="assets/jquery/jquery-1.11.1.js"></script>
+    <script src="assets/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>
+    <!--script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.2/typeahead.bundle.min.js"></script-->
+    <!--script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script-->
+    <!--script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script-->
+
+		<!-- LEAFLET -->
+    <script src="assets/leaflet-0.7.3/leaflet.js"></script>
+    <script src="assets/sidebar-v2-gh-pages/js/leaflet-sidebar.js"></script>
+		<script src="assets/leaflet-draw/leaflet.draw.js"></script>
+    <script src="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js"></script>
+    <script src="assets/leaflet-activearea/L.activearea.js"></script>
+		<!--script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
+    <script src="http://matchingnotes.com/javascripts/leaflet-google.js"></script-->
+		<!--script src="//cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.js"></script-->
+
+		<!-- LEAFLET ESRI GEOCODER -->
+    <script src="assets/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet.js"></script>
+    <script src="assets/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.js"></script>
+
+		<!-- MAPBOX -->
+		<!--script src='//api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script-->
+    <script src="assets/Leaflet.markercluster-master/dist/leaflet.markercluster.js"></script>
+    <!--script src="//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.js"></script-->
+		
+		<!-- BOOTSTRAP VALIDATOR -->
+		<script type="text/javascript" src="assets/bootstrapvalidator-dist-0.5.2/dist/js/bootstrapValidator.js"></script>
+		<script type="text/javascript" src="assets/js/validator.js"></script>
+		
+
+		<!-- HIGHCHARTS -->
+		<script src="http://code.highcharts.com/highcharts.js"></script>
+		<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+		<!-- CUSTOM -->
+    <script src="assets/js/appcti.js"></script>
+    <script src="assets/js/ui.js"></script>
+
+	</body>
+</html>

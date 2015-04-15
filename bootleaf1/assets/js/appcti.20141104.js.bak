@@ -1,0 +1,609 @@
+var map, ctiSearch = [];
+var assetLayerGroup = new L.LayerGroup();
+var sidebar = L.control.sidebar('sidebar').addTo(map);
+var ctiLayer = L.geoJson(null);
+var highlight = L.geoJson(null);
+
+/* Single marker cluster layer to hold all clusters */
+var markerClusters = new L.MarkerClusterGroup({
+  spiderfyOnMaxZoom: true,
+  showCoverageOnHover: false,
+  zoomToBoundsOnClick: true,
+  disableClusteringAtZoom: 16
+});
+
+var ctiProjectLayer = L.geoJson(null);
+var ctiProjectLocations = L.geoJson(null, {
+	pointToLayer: function (feature, latlng) {
+		return L.marker(latlng, {
+			icon: L.icon({
+			iconUrl: "./assets/img/marker-icon.png",
+			iconSize: [25, 41],
+			iconAnchor: [12, 28],
+			popupAnchor: [0, -25]
+			}),
+			title: feature.properties.coordinates,
+			riseOnHover: true
+		});
+	},
+	onEachFeature: function (feature, layer){
+		if (feature.properties){ 
+			//console.log('zoomToProject '+feature.geometry.coordinates[1]+' '+feature.geometry.coordinates[0]);
+			highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
+			//highlight.clearLayers().addLayer(L.circleMarker([feature.properties.latitude, feature.properties.longitude], {
+				stroke: false,
+				fillColor: "#00FFFF",
+				fillOpacity: 0.7,
+				radius: 10
+			}));
+			
+			/*layer.on({
+				click: function (e) {
+					//console.log('infoDetails ' + feature.geometry.coordinates[1] + ' ' + feature.geometry.coordinates[0]);
+				}
+			});*/
+
+		}
+	}
+	
+});
+
+function getViewport() {
+  if (sidebar.isOpen()) {
+    map.setActiveArea({
+      position: "absolute",
+      top: "0px",
+      left: $(".sidebar").css("width"),
+      right: "0px",
+      height: $("#map").css("height")
+    });
+  } else {
+    map.setActiveArea({
+      position: "absolute",
+      top: "0px",
+      left: "0px",
+      right: "0px",
+      height: $("#map").css("height")
+    });
+  }
+}
+
+/*$(document).ready(function () {
+	$('[rel=tooltip]').tooltip({
+		container: 'body'
+	});
+	if (document.body.clientWidth <= 767) {
+		$('#sidebar').toggle();
+		//$('a.toggle i').toggleClass('icon-chevron-left icon-chevron-right');
+	}
+  //getViewport();
+});*/
+
+/*function sidebarClick(id) {
+  //If sidebar takes up entire screen, hide it and go to the map
+  if (document.body.clientWidth <= 767) {
+    sidebar.hide();
+    getViewport();
+  }
+	map.addLayer(ctiLayer);
+  var layer = markerClusters.getLayer(id);
+  markerClusters.zoomToShowLayer(layer, function() {
+    map.setView([layer.getLatLng().lat, layer.getLatLng().lng], 18);
+    layer.fire("click");
+  });
+}*/
+
+function zoomToProjectLocations(projectID) {
+  /* If sidebar takes up entire screen, hide it and go to the map */
+  /*if (document.body.clientWidth <= 767) {
+    sidebar.hide();
+    getViewport();
+  }*/
+
+	//console.log('zoom to project ID '+projectID);
+	// clear map layers
+	assetLayerGroup.clearLayers();
+	markerClusters.clearLayers();
+	ctiProjectLocations.clearLayers();
+	map.removeLayer(ctiLayer);
+	
+	// create new layer for this project
+	//$.getJSON("./assets/PHP-Database-GeoJSON-master/simple_points/cti_points_geojson.php?p="+projectID, function(data) {
+	var filterURL = "../assets/php-custom/filter.php?p[]=" + projectID;
+	console.log('zoom to project ID ' + projectID + '|' + filterURL);
+	$.getJSON(filterURL, function (data) {
+		ctiProjectLocations.addData(data);
+		// get the bounds of all locations in the project
+		var projectBounds = ctiProjectLocations.getBounds();
+		// get the center of all locations in the project based on the bounds
+		// and set it as the map's center
+		//var projectCenter = projectBounds.getCenter();
+		//map.setView(projectCenter,5);
+		map.fitBounds(projectBounds, {
+			maxzoom: 10,
+			animate: true
+		});
+		assetLayerGroup.addLayer(ctiProjectLayer);
+		
+		markerClusters.addLayer(ctiProjectLocations);
+	});
+}
+
+
+
+
+/* Basemap Layers */
+var mapquestOSM = L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+	reuseTiles: true,
+  subdomains: ["otile1", "otile2", "otile3", "otile4"],
+  attribution: 'Tiles courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
+});
+var mapquestOAM = L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg", {
+  maxZoom: 18,
+	reuseTiles: true,
+  subdomains: ["oatile1", "oatile2", "oatile3", "oatile4"],
+  attribution: 'Tiles courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a>. Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency'
+});
+var mapquestHYB = L.layerGroup([L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg", {
+  maxZoom: 18,
+	reuseTiles: true,
+  subdomains: ["oatile1", "oatile2", "oatile3", "oatile4"]
+}), L.tileLayer("http://{s}.mqcdn.com/tiles/1.0.0/hyb/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+	reuseTiles: true,
+  subdomains: ["oatile1", "oatile2", "oatile3", "oatile4"],
+  attribution: 'Labels courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA. Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency'
+})]);
+
+/* Overlay Layers */
+
+/*var ctiBounds = L.geoJson(null, {
+  style: function (feature) {
+    return {
+      color: "black",
+      fill: false,
+      opacity: 1,
+      clickable: false
+    };
+  },
+  onEachFeature: function (feature, layer) {
+    ctiSearch.push({
+      name: layer.feature.properties.title,
+      source: "CTI",
+      id: L.stamp(layer),
+      bounds: layer.getBounds()
+    });
+  }
+});
+$.getJSON("data/ctibounds.geojson", function (data) {
+  //ctiBounds.addData(data);
+});*/
+
+
+
+
+var ctilocations = L.geoJson(null, {
+	pointToLayer: function (feature, latlng) {
+		return L.marker(latlng, {
+		  icon: L.icon({
+			iconUrl: "assets/img/marker-icon.png",
+			iconSize: [25, 41],
+			iconAnchor: [12, 28],
+			popupAnchor: [0, -25]
+		  }),
+		  title: feature.properties.coordinates,
+		  riseOnHover: true
+		});
+	},
+	onEachFeature: function (feature, layer) {
+		if (feature.properties) {
+      //var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>" + "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>" + "<tr><th>Address</th><td>" + feature.properties.ADRESS1 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
+			var projStart, projEnd, startDate, endDate, website, websiteLink, locationInfo;
+			projStart = feature.properties.start;
+			projEnd = feature.properties.end;
+			if (projStart) {
+				startDate = projStart.substring(0, 10);
+			} else {
+				startDate = "";
+			}
+
+			if (projEnd) {
+				endDate = projEnd.substring(0, 10);
+			} else {
+				projEnd = "";
+			}
+
+			website = feature.properties.website;
+			if (website) {
+				websiteLink = "<a href='" + website + "'>" + website + "</a>";
+			} else {
+				websiteLink = "";
+			}
+
+			locationInfo = "<div><h4>" + feature.properties.title + "</h4>" +
+			"<table class='table table-striped table-condensed'>" + 
+			"<tbody class='list'>" +
+			"<tr><td>Major Goals</td><td>" + feature.properties.goals + "</td></tr>" +
+			"<tr><td>Start</td><td>" + startDate + "</td></tr>" +
+			"<tr><td>End</td><td>" + endDate + "</td></tr>" +
+			"<tr><td>Funder</td><td>" + feature.properties.funder + "</td></tr>" +
+			"<tr><td>Amount&nbsp;(USD)</td><td>" + feature.properties.amount + "</td></tr>" +
+			"<tr><td>Implementer</td><td>" + feature.properties.implementer + "</td></tr>" +
+			"<tr><td>Principal Contact</td><td>" + feature.properties.contact + "</td></tr>" +
+			"<tr><td>Position</td><td>" + feature.properties.position + "</td></tr>" +
+			"<tr><td>Email</td><td>" + feature.properties.email + "</td></tr>" +
+			"<tr><td>Phone</td><td>" + feature.properties.phone + "</td></tr>" +
+			"<tr><td>Website</td><td>" + websiteLink + "</td></tr>" +
+			"<tr><td>Remarks</td><td>" + feature.properties.remarks + "</td></tr>" +
+			"</tbody>" +
+			"</table></div>";
+
+      layer.on({
+        click: function (e) {
+          //$("#feature-title").html(feature.properties.nid);
+          //$("#featureModal").modal("show");
+					//sidebar.hide();
+					//sidebarMap.show();
+					//sidebarMonitor.hide();
+          $("#map-project-info-details").html(locationInfo);
+					sidebar.open('locations');
+					$("#mapTabs a[href='#map-project-info']").tab('show');
+					//console.log('infoDetails '+feature.geometry.coordinates[1]+' '+feature.geometry.coordinates[0]);
+          highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
+          //highlight.clearLayers().addLayer(L.circleMarker([feature.properties.latitude, feature.properties.longitude], {
+            stroke: false,
+            fillColor: "#00FFFF",
+            fillOpacity: 0.7,
+            radius: 10
+          }));
+        }
+      });
+		}
+	}
+	
+});
+//$.getJSON("data/ctilocation.geojson", function(data) {
+//$.getJSON("./assets/PHP-Database-GeoJSON-master/simple_points/cti_points_geojson.php", function(data) {
+$.getJSON("assets/php-custom/filter.php", function (data) {
+	//if (data) alert("1");
+	ctilocations.addData(data);
+	var ctiBounds = ctilocations.getBounds();
+			// get the center of all locations in the project based on the bounds
+			// and set it as the map's center
+			//var projectCenter = projectBounds.getCenter();
+			//map.setView(projectCenter,5);
+	map.fitBounds(ctiBounds, {
+		maxzoom: 5
+	});
+	map.addLayer(ctiLayer);
+	assetLayerGroup.addLayer(ctiLayer);
+});
+
+
+function editProject (projID) {
+	//var hash = location.hash;
+	console.log('edit project ' + projID);
+	$.ajax({
+			url     : "./assets/php-custom/database-edit-project.php", 
+      type    : "POST",
+      cache   : false,
+      data    : { p : projID },
+			success : function (data){ $("#display-edit-project").empty().html(data); }
+	});
+}
+	
+
+	/*var posting = $.post('assets/php-custom/database-edit-project.php', {p:projID}).done(function() {
+    console.log( "second success" );
+  })
+  .fail(function() {
+    console.log( "error: "+error );
+  })
+  .always(function() {
+    console.log( "finished" );
+	});
+	
+	posting.done(function( data ) {
+		//console.log(data);
+    //var content = $( data ).find( "#projects-edit" );
+    $( "#project-forms" ).empty().html( data );
+  });*/
+	
+	/*,function(data){
+			console.log(data);
+	});*/
+
+
+//$('#sidebar-tabs-login').tooltip({ placement: 'right'});
+
+//
+// DATABASE Sidebar Listing - PROJECTS
+var ctiProjLayer = L.geoJson(null);
+var ctiProjects = L.geoJson(null, {
+	onEachFeature: function (feature, layer) {
+		//layer.bindPopup(feature.properties.coordinates);
+		// Project Details
+    if (feature.properties) {
+			//console.log(L.stamp(layer));
+			
+			// <i class="fa fa-chevron-right pull-right">
+			//data-toggle="tooltip" data-placement="top" title="'+layer.feature.properties.title+'"
+			var projectsContent = '<tr style="cursor: pointer;" onclick="sidebarClick('+L.stamp(layer)+'); return false;" >' +
+			'<td class="container">' +
+			'<div class="col-xs-10"><span class="project-title" rel="tooltip" id="project-title-'+
+			L.stamp(layer)+
+			'" data-toggle="tooltip" title="'+layer.feature.properties.title+'">'+L.stamp(layer)+'|'+layer.feature.properties.title+'</span></div>' +
+			'<div class="col-xs-2 pull-right"><a href="#">Edit</a></div>' +
+			'</td></tr>';
+      $("#projects tbody").append(projectsContent);
+			//console.log("project-title-"+L.stamp(layer));
+			$("#project-title-"+L.stamp(layer)).tooltip({
+				placement: 'auto'//,
+				//title: layer.feature.properties.title,
+				//trigger: 'hover',
+			});
+      /*ctiSearch.push({
+        name: layer.feature.properties.title,
+        //address: layer.feature.properties.nid_rendered,
+        source: "CTI",
+        id: L.stamp(layer),
+        lat: layer.feature.geometry.coordinates[1],
+        lng: layer.feature.geometry.coordinates[0]
+      });*/
+    }
+  } 
+});
+// DATABASE Sidebar Listing - PROJECTS
+
+/*$.getJSON("http://localhost/ctidev/bootleaf1/assets/PHP-Database-GeoJSON-master/simple_points/cti_projects_geojson.php", function(data) {
+	//if (data) alert("1");
+	ctiProjects.addData(data);
+	//map.addLayer(ctiProjLayer);
+});*/
+
+//var cticenter = ctilocations.getCenter();
+
+
+// CTI Map Center (approx)
+map = L.map ("map", {
+	zoom: 10,
+	//center: [9.622, 111.137],
+	//center: ctilocations.getCenter,
+	layers: [mapquestOSM, ctiLayer, markerClusters],
+	zoomControl: true,
+	attributionControl: false
+});
+
+/* Layer control listeners that allow for a single markerClusters layer */
+map.on("overlayadd", function(e) {
+  if (e.layer === ctiLayer) {
+    markerClusters.addLayer(ctilocations);
+  }
+	if (e.layer === ctiProjLayer) {
+		markerClusters.addLayer(ctiProjects);
+	}
+	/*if (e.layer === ctiProjectLayer){
+		markerClusters.addLayer(ctiProjectLocations);
+	}*/
+});
+
+map.on("overlayremove", function(e) {
+  if (e.layer === ctiLayer) {
+    markerClusters.removeLayer(ctilocations);
+  }
+	if (e.layer === ctiProjLayer) {
+		markerClusters.removeLayer(ctiProjects);
+	}
+	/*if (e.layer === ctiProjectLayer) {
+		markerClusters.removeLayer(ctiProjectLocations);
+	}*/
+});
+
+/* Clear feature highlight when map is clicked */
+map.on("click", function(e) {
+  highlight.clearLayers();
+});
+
+/* Attribution control */
+function updateAttribution(e) {
+  $.each(map.layers, function(index, layer) {
+    if (layer.getAttribution) {
+      $("#attribution").html((layer.getAttribution()));
+    }
+  });
+}
+map.on("layeradd", updateAttribution);
+map.on("layerremove", updateAttribution);
+
+var attributionControl = L.control({
+  position: "bottomright"
+});
+attributionControl.onAdd = function (map) {
+  var div = L.DomUtil.create("div", "leaflet-control-attribution");
+  div.innerHTML = "Prototyped by DigSol Team";
+  return div;
+};
+map.addControl(attributionControl);
+
+/* var ctiAllLocations = L.Control.extend({
+	options: {
+		position: 'topleft'
+	},
+	onAdd: function (map) {
+		var container = L.DomUtil.create('div', 'cti-all-locations');
+		container.innerHTML = "All";
+		return container;
+	}
+}); */
+
+//map.addControl(new ctiAllLocations());
+
+
+/*var zoomControl = L.control.zoom({
+  position: "bottomright"
+}).addTo(map);*/
+
+/* GPS enabled geolocation control set to follow the user's location */
+/*var locateControl = L.control.locate({
+  position: "topleft",
+  drawCircle: true,
+  follow: true,
+  setView: true,
+  keepCurrentZoomLevel: true,
+  markerStyle: {
+    weight: 1,
+    opacity: 0.8,
+    fillOpacity: 0.8
+  },
+  circleStyle: {
+    weight: 1,
+    clickable: false
+  },
+  icon: "icon-direction",
+  metric: false,
+  strings: {
+    title: "My location",
+    popup: "You are within {distance} {unit} from this point",
+    outsideMapBoundsMsg: "You seem located outside the boundaries of the map"
+  },
+  locateOptions: {
+    maxZoom: 18,
+    watch: true,
+    enableHighAccuracy: true,
+    maximumAge: 10000,
+    timeout: 10000
+  }
+}).addTo(map);*/
+
+
+/*var sidebar = L.control.sidebar("sidebar", {
+  closeButton: true,
+  position: "left"
+}).on("shown", function () {
+  getViewport();
+}).on("hidden", function () {
+  getViewport();
+}).addTo(map);*/
+
+/* Larger screens get expanded layer control and visible sidebar */
+if (document.body.clientWidth <= 767) {
+  var isCollapsed = true;
+} else {
+  var isCollapsed = false;
+  //sidebar.show();
+}
+
+var baseLayers = {
+  "Street Map": mapquestOSM,
+  "Satellite": mapquestOAM,
+  "Satellite + Street": mapquestHYB
+};
+
+var groupedOverlays = {
+  "CTI Locations": {
+    "<i class='fa fa-map-marker'></i>&nbsp;Projects": ctiLayer
+  }/*,
+  "Reference": {
+	//"CTI Boundaries": ctiBounds
+  }*/
+};
+
+
+var layerControl = L.control.groupedLayers(baseLayers, groupedOverlays, {
+  collapsed: isCollapsed
+}).addTo(map);
+
+/* Highlight search box text on click */
+$("#searchbox").click(function () {
+  $(this).select();
+});
+
+/* Typeahead search functionality */
+$(document).one("ajaxStop", function () {
+  /* Fit map to bounds */
+  //map.fitBounds(ctiBounds.getBounds());
+  $("#loading").hide();
+
+  var ctiBH = new Bloodhound({
+	name: "CTI",
+    datumTokenizer: function (d) {
+      return Bloodhound.tokenizers.whitespace(d.name);
+    },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    local: ctiSearch,
+    limit: 10
+  });
+
+  var geonamesBH = new Bloodhound({
+    name: "GeoNames",
+    datumTokenizer: function (d) {
+      return Bloodhound.tokenizers.whitespace(d.name);
+    },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+      url: "http://api.geonames.org/searchJSON?username=bootleaf&featureClass=P&maxRows=5&countryCode=US&name_startsWith=%QUERY",
+      filter: function (data) {
+        return $.map(data.geonames, function (result) {
+          return {
+            name: result.name + ", " + result.adminCode1,
+            lat: result.lat,
+            lng: result.lng,
+            source: "GeoNames"
+          };
+        });
+      },
+      ajax: {
+        beforeSend: function (jqXhr, settings) {
+          settings.url += "&east=" + map.getBounds().getEast() + "&west=" + map.getBounds().getWest() + "&north=" + map.getBounds().getNorth() + "&south=" + map.getBounds().getSouth();
+          $("#searchicon").removeClass("fa-search").addClass("fa-refresh fa-spin");
+        },
+        complete: function (jqXHR, status) {
+          $('#searchicon').removeClass("fa-refresh fa-spin").addClass("fa-search");
+        }
+      }
+    },
+    limit: 10
+  });
+  geonamesBH.initialize();
+  ctiBH.initialize();
+
+  /* instantiate the typeahead UI */
+  $("#searchbox").typeahead({
+    minLength: 3,
+    highlight: true,
+    hint: false
+  }, {
+		name: "CTI",
+		displayKey: "name",
+		source: ctiBH.ttAdapter(),
+		templates: {
+			header: "<h4 class='typeahead-header'>CTI</h4>"
+		}
+	}, {
+    name: "GeoNames",
+    displayKey: "name",
+    source: geonamesBH.ttAdapter(),
+    templates: {
+      header: "<h4 class='typeahead-header'><img src='assets/img/globe.png' width='25' height='25'>&nbsp;GeoNames</h4>"
+    }
+  }).on("typeahead:selected", function (obj, datum) {
+		if (datum.source === "CTI") {
+			map.fitBounds(datum.bounds);
+		}
+    if (datum.source === "GeoNames") {
+      map.setView([datum.lat, datum.lng], 14);
+    }
+    if ($(".navbar-collapse").height() > 50) {
+      $(".navbar-collapse").collapse("hide");
+    }
+  }).on("typeahead:opened", function () {
+    $(".navbar-collapse.in").css("max-height", $(document).height() - $(".navbar-header").height());
+    $(".navbar-collapse.in").css("height", $(document).height() - $(".navbar-header").height());
+  }).on("typeahead:closed", function () {
+    $(".navbar-collapse.in").css("max-height", "");
+    $(".navbar-collapse.in").css("height", "");
+  });
+  $(".twitter-typeahead").css("position", "static");
+  $(".twitter-typeahead").css("display", "block");
+});
