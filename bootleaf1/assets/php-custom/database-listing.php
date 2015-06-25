@@ -11,6 +11,10 @@
 	//echo @print_r($currUserInfo,1)."<br/>";
 	//echo "</pre>";
 	if (isset($currUserInfo) && @in_array($currUserInfo['primary_group_id'],array(1,2,5))) {
+	// group ids
+	// 1 - contributor, can edit and delete own content
+	// 5 - editor, can edit and delete all content
+	// 2 - administrator	
 		$editPerm = true;
 	} else {
 		$editPerm = false;

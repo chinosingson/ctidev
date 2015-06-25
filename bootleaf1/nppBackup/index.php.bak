@@ -118,7 +118,7 @@
 				<!-- SIDEBAR - DATABASE - NAV TABS -->
 				<ul class="nav nav-tabs" id="projectsTabs" role="tablist">
 					<li id="tab-projects-list" class="active"><a href="#projects" role="tab" data-toggle="tab" onclick="$('#projectsTabs a[href=\'#projects\']').tab('show'); return false;"><span class="myicon-sm myicon-search"></span>&nbsp;Search</a></li>
-					<?php if (($editPerm) || (in_array($currUserInfo['primary_group_id'],array(2,5)))) { ?><li id="tab-projects-add"><a href="#projects-add" role="tab" data-toggle="tab" onclick="$('#projectsTabs a[href=\'#projects-add\']').tab('show'); return false;"><span class="myicon-sm myicon-plus"></span>&nbsp;Add</a></li><?php } ?>
+					<?php if (($editPerm) || (in_array($currUserInfo['primary_group_id'],array(1,2,5)))) { ?><li id="tab-projects-add"><a href="#projects-add" role="tab" data-toggle="tab" onclick="$('#projectsTabs a[href=\'#projects-add\']').tab('show'); return false;"><span class="myicon-sm myicon-plus"></span>&nbsp;Add</a></li><?php } ?>
 					<li id="tab-projects-download"><a href="#projects-download" role="tab" data-toggle="tab" onclick="$('#projectsTabs a[href=\'#projects-download\']').tab('show'); return false;"><span class="glyphicon glyphicon-save"></span>&nbsp;Download</a></li>
 				</ul>
 				<!-- SIDEBAR - DATABASE - NAV TABS -->
@@ -326,12 +326,12 @@
 					<h4>Stakeholders</h4>
 					<p>The CTI SEA Project Mapping Tool was designed to serve the needs of the Regional Secretariat (Interim Regional Secretariat) and the National Coordinating Committees (NCC) of the six Coral Triangle countries, namely Indonesia, Malaysia, Papua New Guinea, Philippines, Solomon Islands, and Timor-Leste in priority-setting and strategic planning.</p>
 					<h4>Contact</h4>
-					<p>Pavit Ramachandran, Senior Environment Specialist<br/>
+					<p><b>Pavit Ramachandran, Senior Environment Specialist</b><br/>
 					Environment, Natural Resources and Agriculture Division, <br/>
 					Southeast Asia Department, Asian Development Bank<br/>
 					Email: <a href="mailto:pramachandran@adb.org">pramachandran@adb.org</a><br/>
 					Phone: +66 2 263 5300 ext 5347</p>
-					<p>Mr. Guillermo L. Morales, Team Leader<br/>
+					<p><b>Mr. Guillermo L. Morales, Team Leader</b><br/>
 					Coastal and Marine Resources Management in the Coral Triangle-Southeast Asia (CTI-SEA) (ADB RETA 7813)<br/>
 					Email 1: <a href="mailto:glmorales@primexinc.org">glmorales@primexinc.org</a><br/>
 					Email 2: <a href="mailto:ctisoutheastasia@gmail.com">ctisoutheastasia@gmail.com</a><br/>

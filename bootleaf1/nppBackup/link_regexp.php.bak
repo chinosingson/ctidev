@@ -1,0 +1,18 @@
+﻿<?php
+
+$regexp = "<a\s[^>]*href=(\"??)([^\" >]*?)\\1[^>]*>(.*)<\/a>";
+    //$link_value = $row[$style_options['input_link']]->raw;
+    $link_value = "http://gmsprogram.org/dev/projects/east-west-corridor-project-264";
+		echo $link_value."<br/>";
+    if (preg_match("/$regexp/siU", htmlspecialchars_decode($link_value, ENT_QUOTES), $matches)) {
+        $link_value = $matches[2];
+    }
+		echo $link_value."<br/>";
+		if (url_is_external($link_value) || valid_url($link_value, TRUE)) {
+      $link = $link_value;
+    }
+    else {
+      $link = $base_root . $link_value;
+    }
+		echo $link_value."<br/>";
+?>

@@ -1,0 +1,108 @@
+﻿
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+  var infowindow;
+(function () {
+
+  google.maps.Map.prototype.markers = new Array();
+    
+  /*google.maps.Map.prototype.addMarker = function(marker) {
+    this.markers[this.markers.length] = marker;
+  };
+    
+  google.maps.Map.prototype.getMarkers = function() {
+    return this.markers
+  };
+    
+  /*google.maps.Map.prototype.clearMarkers = function() {
+    if(infowindow) {
+      infowindow.close();
+    }
+    
+    for(var i=0; i<this.markers.length; i++){
+      this.markers[i].set_map(null);
+    }
+  };*/
+})();
+  
+  function initialize() {
+    var latlng = new google.maps.LatLng(50.9406645, 6.9599115);
+    var myOptions = {
+      zoom: 12,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+      //mapTypeId: google.maps.MapTypeId.SATELLITE
+    };
+    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    
+    var a = new Array();
+    var t =  new Object();
+    t.name = "test0"
+    t.lat =  50.9407745
+    t.lng =  6.9599200
+    a[0] = t;
+  
+    var t =  new Object();
+    t.name = "test1"
+    t.lat =  50.9507745
+    t.lng =  6.9699200
+    a[1] = t;
+    
+    var t =  new Object();
+    t.name = "test2"
+    t.lat =  50.9307745
+    t.lng =  6.9499200
+    a[2] = t;
+
+   
+    for (var i = 0; i < a.length; i++) {
+        var latlng = new google.maps.LatLng(a[i].lat, a[i].lng);
+        map.addMarker(createMarker(a[i].name,latlng));
+     }
+    console.log(map.getMarkers());    
+    
+    console.log(map.getMarkers());    
+  }
+  
+  function createMarker(name, latlng) {
+    var marker = new google.maps.Marker({position: latlng, map: map});
+    google.maps.event.addListener(marker, "click", function() {
+      if (infowindow) infowindow.close();
+      infowindow = new google.maps.InfoWindow({content: name});
+      infowindow.open(map, marker);
+    });
+    return marker;
+  }
+
+</script>
+</head>
+<body onload="initialize()">
+ <div id="map_canvas" style="width:50%; height:240px;float:left;"></div>
+ <div id="sense" style="float:left;width:160px;height:240px;padding-left:10px;">
+ 	<script type="text/javascript"><!--
+	google_ad_client = "pub-9193153897929025";
+	/* 120x240, Erstellt 14.11.10 */
+	google_ad_slot = "1521852511";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//-->
+	</script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+ </div>
+ <br style="clear: both;"/>
+ <button onclick="map.clearMarkers();">clear</button><br />
+ 
+ <h1>Google Maps Api 3.0 - Marker clearing Sample</h1>
+ Clear Markers
+ This shows how to remove all the markers from the map, using a few utility functions to achieve the equivalent of the v2's clearOverlays method.
+ 
+ <h1>notices</h1>
+ 11.10.2009 - I found a <a href="http://stackoverflow.com/questions/1544739/google-maps-api-v3-how-to-remove-all-markers/1544885#1544885">extension/improvement on stackoverflow</a>
+</body>
+
+</html>

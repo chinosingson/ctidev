@@ -1,0 +1,15 @@
+﻿<img src="https://chart.googleapis.com/chart?chs=250x100&chd=t:60,40&cht=p&chl=Hello|World" />
+
+
+<img src="http://maps.google.com/staticmap?key=ABQIAAAAXU-Dfe413Z95tTm2puFfeBTJ_lRpSdYTUGQZoJSau7xuivzxWhQkWuEd6HYqSIKpzlvqd0rJT-gYxw&amp;size=500x300&amp;maptype=roadmap&amp;format=png&amp;sensor=false&amp;hl=de&amp;markers=25.697758,100.153351|25.45282,100.55451&amp;center=25.697758,100.153351&amp;span=0.0087,0.006732" alt="http://maps.google.com/staticmap?key=ABQIAAAAXU-Dfe413Z95tTm2puFfeBTJ_lRpSdYTUGQZoJSau7xuivzxWhQkWuEd6HYqSIKpzlvqd0rJT-gYxw&amp;size=300x300&amp;maptype=roadmap&amp;format=gif&amp;sensor=false&amp;hl=de&amp;markers=25.697758,100.153351,red&amp;center=25.697758,100.1533518&amp;span=0.0087,0.006732">
+<br/>
+
+<img src="https://maps.googleapis.com/maps/api/staticmap?size=480x480&markers=
+icon:http://gmsprogram.org/dev/sites/default/files/images/markers/transport.png|25.697758,100.153351|
+25.45282,100.55451|
+25.21685,101.26067|
+25.033356,101.540283">
+
+<img src="https://maps.googleapis.com/maps/api/staticmap?size=480x480&markers=
+icon:http://chart.apis.google.com/chart?chst=d_map_pin_icon%26chld=cafe%257C996600%7C
+224+West+20th+Street+NY%7C75+9th+Ave+NY%7C700+E+9th+St+NY">

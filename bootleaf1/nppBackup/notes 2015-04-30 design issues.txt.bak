@@ -1,0 +1,35 @@
+﻿Overall design
+- Buttons
+  - DONE Apply one background color, for example, the 'Go' and 'Reset' buttons in the main map Filter should be colored same as the navigation bar buttons
+
+  - Apply hover state background color to all buttons
+    - DONE for Dashboard, Go, Reset buttons
+- Fonts
+  - DONE Revert to Lato or Open Sans - Source Sans Pro
+  - DONE Rethink relative font sizes. For example, elements such as the Project Name and other headings should be prominent but not as large as the Site Title. (Mike)
+- Map Markers
+  - DONE Reduce size (Mike)
+
+Navigation Bar
+- DONE Site Title ('GMS PROGRAM') - adjust font size such that it is the same height as the logo
+- DONE Add a shadow on the bottom, but only for the main map
+- ONGOING -PAUL Spacing between the labels (Portfolio: and Projects:) and proximate elements should be consistent
+- Search - Paul is working on the dropdown issue
+note: more elements to be added, so be ready to adjust
+
+Main Map [gmsprogram.org/dev]
+- Filter
+  - DONE position closer to top of map
+  - remove border on 'Go' and 'Reset' buttons
+
+Project Page [http://gmsprogram.org/dev/projects/east-west-corridor-project-264]
+- Project Name
+  - DONE Reduce the font size such that it is smaller than the Site Title in the navigation bar
+  - Implement a shadow on the bottom of the container (same for About, Contact and Disclaimer pages)
+- DONE Project Website - "Launch" link text should be color white and underlined (inside td.project-website-link). Add a hover state color.
+- DONE Create function button icons (Mike)
+  - DONE Edit, Print Factsheet, Back to Portfolio View
+  - DONE Upload Picture
+  - Apply same hover color to these buttons
+- DONE Content under headings should not go beyond the edge of the white line
+- Decrease space under map and above details etc...

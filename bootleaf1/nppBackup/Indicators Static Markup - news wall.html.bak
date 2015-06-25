@@ -1,0 +1,56 @@
+﻿<table id="outcomes-section-div" class="outcome-table-section">
+    <tr>
+        <td width="30%" style="background:#178ad2;">
+             <h5>10,678.68</h5>
+             <p>Total Roads built or upgraded (km)<sup>1</sup></p>
+        </td>
+        <td width="25%" style="background:#9278ba;">
+              <h5>6,773.99</h5>
+              <p>Expressways and national highways built or upgraded (km)</p>
+        </td>
+        <td width="15%" style="background:#a25462;">
+            <h5>3,827.77</h5>
+            <p>Urban streets rehabilated (km)<sup>2</sup></p>
+        </td>
+    </tr>
+</table>
+<table id="outcomes-section-div" class="outcome-table-section">
+    <tr>
+        <td width="30%"  style="background:#64994b;">
+            <h5>1,340</h5>
+            <p>Provincial, district and rural roads built or upgraded (km)</p>
+        </td>
+        <td width="30%" style="background:#afb363;">
+             <h5>1,100</h5>
+                  <p>Number of Airports rehabilitated<sup>2</sup></p>
+        </td>
+        <td width="20%" style="background:#b8b185;">  <h5>1,100</h5>
+                  <p>Railways constructed and/or upgraded( km)</p></td>
+        <td width="15%" style="background:#e2bb3c;">  <h5>964</h5>
+                  <p>Transmission lines installed and/or upgraded (km)</p></td>
+        <td width="5%" style="background:#e08254;"> <h5>80</h5>
+                  <p>Number of bridges built or rehabilitated<sup>3</sup></p></td>
+      </tr>
+</table><table  id="outcomes-section-div" class="outcome-table-section">
+    <tr>
+        <td width="25%" style="background:#7c569a;"> <h5>79.92</h5>
+                  <p>Number of tunnels built<sup>3</sup></p></td>
+        <td width="25%" style="background:#a25462;"><h5>75</h5>
+                  <p>Number of tourism piers built</p></td>
+        <td width="15%" style="background:#e08254;"> <h5>4</h5>
+                  <p>Installed energy capacity installed (MW)</p></td>
+        <td width="15%" style="background:#3bb6a3;"> <h5>2.55</h5>
+                  <p>Runways rehabiltated (km)</p></td>
+        <td width="20%" style="background:#178ad2;"><h5>2</h5>
+                  <p>Distribution lines installed and/or upgraded (km)</p></td>
+    </tr>
+</table><table  id="outcomes-section-div" class="outcome-table-section">
+		<tr>
+			<td id="even-block-last" colspan="2">
+						Includes projects ending up to 2022.
+						<sup>1</sup> Figure includes expressways/national highways/urban roads/provincial/district/ and rural roads built or upgraded in Transport and other sectors, i.e., Industry and Trade, Agriculture, Natural Resources and Rural Development, and others.
+						<sup>2</sup> Figure includes outputs from other sectors, i.e., Industry and Trade (Tourism)
+						<sup>3</sup> Figures include Road and railway transports
+			</td>
+		</tr>
+</table>

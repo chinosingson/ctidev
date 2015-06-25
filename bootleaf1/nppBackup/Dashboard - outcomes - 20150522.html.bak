@@ -1,0 +1,71 @@
+﻿<div id="outcomes-new-styles" class="container-fluid">
+        <div class="row">
+            <div id="column-one" class="col-xs-12 col-md-5">
+                <div>
+               <h1>10,678.68</h1>
+               <p>Total Roads built or upgraded (km)<sup>1</sup></p>
+             </div>
+            </div>
+            <div id="column-two" class="col-xs-6 col-md-4">
+                <h1>6,773.99</h1>
+                <p>Total Roads built or upgraded (km)1</p>
+            </div>
+
+            <div id="column-three" class="col-xs-6 col-md-3">
+                <h1>3,827.77</h1>
+                <p>Urban streets rehabilated (km)<sup>2</sup></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="column-four" class="col-xs-12 col-md-3">
+               <h1>1,340</h1>
+               <p>Provincial, district and rural roads built or upgraded (km)</p>
+            </div>
+            <div id="column-five" class="col-xs-7 col-md-3">
+                <h1>1,100</h1>
+                <p>Number of Airports rehabilitated<sup>2</sup></p>
+            </div>
+             <div id="column-six" class="col-xs-5 col-md-2">
+                <h1>1,100</h1>
+                <p>Railways constructed and/or upgraded(km)</p>
+            </div>
+             <div id="column-seven" class="col-xs-6 col-md-2">
+                <h1>964</h1>
+                <p>Transmission lines installed and/or upgraded (km)</p>
+            </div>
+             <div id="column-eight" class="col-xs-6 col-md-2">
+                <h1>80</h1>
+                <p>Number of bridges built or rehabilitated<sup>3</sup></p>
+            </div>
+        </div>
+         
+        <div class="row">
+            <div id="column-nine" class="col-xs-12 col-md-3">
+               <h1>79.92</h1>
+               <p>Number of tunnels built<sup>3</sup></p>
+            </div>
+            <div id="column-ten" class="col-xs-7 col-md-3">
+                <h1>75</h1>
+                <p>Number of tourism piers built</p>
+            </div>
+             <div id="column-eleven" class="col-xs-5 col-md-2">
+                <h1>4</h1>
+                <p>Installed energy capacity installed (MW)</p>
+            </div>
+             <div id="column-tweleve" class="col-xs-6 col-md-2">
+                <h1>2.55</h1>
+                <p>Runways rehabiltated(km)</p>
+            </div>
+             <div id="column-thirteen" class="col-xs-6 col-md-2">
+                <h1>2</h1>
+                <p>Distribution lines installed and/or upgraded (km)</p>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-md-12" id="paragraph-outcomes-2">
+            <p>Includes projects ending up to 2022<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore<br>magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<Br> consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        </div>
+        </div>
+    </div>

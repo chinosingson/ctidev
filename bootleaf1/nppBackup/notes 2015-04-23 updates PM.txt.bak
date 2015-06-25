@@ -1,0 +1,30 @@
+﻿Main Map
+- Filter behaviors *
+  - link to project page if project has no locations [DONE] – if project has no locations we will show the map but at maximum zoom (GMS) and with a note that this project has no locations. That way the user can click edit and add some if there are (and we just don’t know). If we leave map out of these projects, we wont have the chance to harvest this information from the crowd.
+  - what to display when filter parameters returns no results [Ongoing]  - just a message that says ‘no results’
+ 
+Project Page *
+- Map
+  - display a note and full GMS map when project has no locations [DONE]
+  - Sector markers [DONE]
+- Photos - display link to upload photos – cant see the link that asks for upload
+- Add/Edit locations – use drupal standard for now, I will point out that this is a placeholder while you are working on the miniforms. Focus on this next week, get the design ready and smooth by Friday with Paul
+- Add/Edit outputs – same as above
+- Add/Edit impacts – same as above
+ 
+Dashboard *
+- Charts [DONE] – okay. Search function for displaying other indicators will be done in May. For now, before deadline, please arrange the legend below and optimize use of space (margins, padding) – ask Paul to help.
+- photos [Ongoing] – ok. I guess this will be done with Paul
+- outcomes – needed by 30 April. just put 10 lines (for 10 indicators) for now. Will check with Ed what he has on this so far. Hardcoded anyways, so updating this last minute should be easy.
+ 
+Other Items
+- Global search – have it by deadline, better even by mon/tue for presentation to director. They would want to search for projects and if we cant find half because the search doesn’t extent over all relevant fields in the db, it will look weird. Shouldn’t take too much time I guess.
+- Social media bar – already there?
+
+After 30 April
+- Portfolio Download - CSV or KMZ *  - Can be done after 30th April. Perhaps make that an entire box (‘Download’) in addition to the 3 we have now in the dashboard, to highlight this. Not sure how best to arrange the 4 then, depends on their contents extent. Try out with Paul.
+- Static pages – Will probably come in slightly after 30 April. Not super important to have on time (text needs to be written) but just implement when it comes. Need to get Pinsuda to review the text that goes there
+  - About [DONE]
+  - Disclaimer [DONE]
+  - Contact [DONE]
+- PDF Export – this can be done in May but add the button for it already.

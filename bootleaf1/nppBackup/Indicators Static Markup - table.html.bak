@@ -1,0 +1,78 @@
+﻿<table id="outcomes-section-div" class="table table-bordered">
+          <tr id="odd-block">
+              <td>Total Roads built or upgraded (km)<sup>1</sup></td>
+              <td id="details-outcomes-section">10,678.68</td>
+          </tr>
+          <tr id="even-block">
+              <td>Expressways and national highways built or updgraded (km)</td>
+              <td id="details-outcomes-section">3,827.77</td>
+          </tr>
+          <tr id="odd-block">
+              <td>Urban Street Rehabilitated (km)<sup>2</sup></td>
+              <td id="details-outcomes-section">76.92</td>
+          </tr>
+           <tr id="even-block">
+              <td>Provincial, district, and rural roads built or upgraded (km)</td>
+              <td id="details-outcomes-section">6,773.99</td>
+          </tr>
+           <tr id="odd-block">
+              <td>Number of Airports rehabilitated</td>
+              <td id="details-outcomes-section">24</td>
+          </tr>
+            <tr id="even-block">
+              <td>Runways rehabilitated (km)</td>
+              <td id="details-outcomes-section">2.55</td>
+          </tr>
+           <tr id="odd-block">
+              <td>Railways constructed and/or upgraded (km)</td>
+              <td id="details-outcomes-section">1,100</td>
+          </tr>
+          <tr id="even-block">
+              <td>Number of bridges built or rehabilitated<sup>3</sup></td>
+              <td id="details-outcomes-section">80</td>
+          </tr>
+           <tr id="odd-block">
+              <td>Number of tunnels built<sup>3</sup></td>
+              <td id="details-outcomes-section">75</td>
+          </tr>
+          <tr id="even-block">
+              <td>Number of tourism piers built</td>
+              <td id="details-outcomes-section">2</td>
+          </tr>
+             <tr id="odd-block">
+              <td>Installed energy capacity installed (MW)</td>
+              <td id="details-outcomes-section">1,340</td>
+          </tr>
+           <tr id="even-block">
+              <td>Transmission lines installed and/or upgraded (km)</td>
+              <td id="details-outcomes-section">964</td>
+          </tr>
+           <tr id="odd-block">
+              <td>Distribution lines installed and/or upgraded (km)</td>
+              <td id="details-outcomes-section">1,100</td>
+          </tr>
+          <tr id="even-block">
+              <td>Upgraded water management infrastructure (km)</td>
+              <td id="details-outcomes-section">220.8</td>
+          </tr>
+           <tr id="odd-block">
+              <td>Number of solid waste management facilities</td>
+              <td id="details-outcomes-section">2</td>
+          </tr>
+           <tr id="even-block">
+              <td>Number of materials recovery facilities</td>
+              <td id="details-outcomes-section">4</td>
+          </tr>
+           <tr id="odd-block">
+              <td>Number of waste water management facilities</td>
+              <td id="details-outcomes-section">6</td>
+          </tr>
+          <tr>
+            <td id="even-block-last" colspan="2">
+                  Includes projects ending up to 2022.
+                  <sup>1</sup> Figure includes expressways/national highways/urban roads/provincial/district/ and rural roads built or upgraded<br> in Transport and other sectors, i.e., Industry and Trade, Agriculture, Natural Resources and Rural Development, and others.
+                  <sup>2</sup> Figure includes outputs from other sectors, i.e., Industry and Trade (Tourism)
+                  <sup>3</sup> Figures include Road and railway transports
+            </td>
+          </tr>
+      </table>

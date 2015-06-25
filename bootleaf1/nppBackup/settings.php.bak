@@ -212,13 +212,20 @@
  *   );
  * @endcode
  */
-$databases = array(
-     'driver' => 'mysql',
-     'database' => 'drupal',
-     'username' => 'root',
-     'password' => '',
-     'host' => 'localhost',
-     'prefix' => '',
+$databases = array (
+  'default' => 
+  array (
+    'default' => 
+    array (
+      'database' => 'gms',
+      'username' => 'root',
+      'password' => '',
+      'host' => 'localhost',
+      'port' => '',
+      'driver' => 'mysql',
+      'prefix' => '',
+    ),
+  ),
 );
 
 /**
@@ -232,7 +239,7 @@ $databases = array(
  * After finishing the upgrade, be sure to open this file again and change the
  * TRUE back to a FALSE!
  */
-$update_free_access = TRUE;
+$update_free_access = FALSE;
 
 /**
  * Salt for one-time login links and cancel links, form tokens, etc.
@@ -251,7 +258,7 @@ $update_free_access = TRUE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = '';
+$drupal_hash_salt = 'exvmRB8y7CvkzbwyM6Z49J4wc1dGyJ3m3HXrXQkXSFo';
 
 /**
  * Base URL (optional).
@@ -572,3 +579,6 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
+
+ini_set('mbstring.http_input', 'pass');
+ini_set('mbstring.http_output', 'pass');

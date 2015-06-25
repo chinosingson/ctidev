@@ -1,8 +1,15 @@
-<?php @session_start(); ?><h4>Add a Project</h4>
+<?php 
+
+	//session_start(); 
+	//require_once('../assets/UserFrosting/models/config.php');
+	$currUser = fetchUser($loggedInUser->user_id);
+	//echo print_r($currUser['user_name']);
+?>
+<h4>Add a Project</h4>
 <form name="form-add-project" id="form-add-project">
 	<input type="hidden" id="process-type" name="process-type" value="i" />
 	<input type="hidden" id="table-name" name="table-name" value="projects" />
-	<input type="hidden" id="author" name="data[user]" value="<?=$user?>" />
+	<input type="hidden" id="author" name="data[user]" value="<?=$currUser['user_name'] ?>" />
 	<input type="hidden" id="updated" name="data[updated]" />
 	<div class="form-horizontal" role="form" style="overflow-x: hidden">
 		<div class="form-group form-group-sm row">

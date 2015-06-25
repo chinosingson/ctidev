@@ -1,0 +1,302 @@
+﻿.page-maps-projects #navbar {
+	box-shadow: 0px 0px 30px #000 !important;
+	z-index: 1;
+}
+
+#project-title-container {
+	position: relative;
+	box-shadow: 0px 0px 30px #000 !important;
+	z-index: 1;
+	margin-bottom: 0px !important;
+}
+
+body.node-type-project a.project-number-link {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+body.node-type-project div.list-spacer { display: none !important; }
+
+body.page-search #search-page-results-container,
+body.node-type-project #project-info-container,
+body.page-node-edit #project-info-container,
+body.page-dashboard #dashboard-page,
+body.page-user .main-container .region-content,
+body.page-about .main-container .region-content,
+body.page-contact .main-container .region-content,
+body.page-disclaimer .main-container .region-content
+{
+	overflow-y: scroll;
+}
+
+body.page-maps-projects #navbar,
+body.page-maps-projects-ipgv #navbar,
+body.page-dashboard #navbar,
+body.page-user #navbar,
+body.page-about #navbar,
+body.page-contact #navbar,
+body.page-disclaimer #navbar,
+body.page-search #navbar {
+	margin-bottom: 0px !important;
+}
+
+body.page-maps-projects footer.footer,
+body.page-maps-projects-ipgv footer.footer,
+body.page-dashboard footer.footer,
+body.page-user footer.footer,
+body.page-about footer.footer,
+body.page-contact footer.footer,
+body.page-disclaimer footer.footer,
+body.node-type-project footer.footer,
+body.page-node-edit footer.footer,
+body.page-search footer.footer {
+	position: absolute;
+	width: 100%;
+}
+
+body.page-user h2.page-header {
+	margin-top: 0px !important;
+}
+body.page-dashboard h2.page-header,
+body.page-dashboard #panel-bootstrap-region-center h2.pane-title 
+{
+	margin-top: 0px !important;
+	padding-bottom: 25px !important;
+}
+
+header#navbar {
+	z-index: 2;
+}
+
+#maps-no-locations {
+	background-color: rgba(138,147,152,0.5);
+  position: absolute;
+  padding: 10px 10px;
+  color: #ffffff;
+  z-index: 0;
+  top: 0 !important;
+  width: 100%;
+  height: 100%;
+	text-shadow: 0 0 10px #000000, 0 0 10px #000000;
+}
+
+#project-no-locations {
+	background-color: rgba(138,147,152,0.5);
+  position: absolute;
+  padding: 10px 10px;
+  color: #ffffff;
+  z-index: 1;
+  top: 0 !important;
+  width: 100%;
+  height: 100%;
+	text-shadow: 0 0 10px #000000, 0 0 10px #000000;
+}
+
+
+
+body.page-dashboard table.outcome-table-section {
+	margin-bottom: 0px;
+}
+
+/*div#projects-per-country-block-1 > div > div {
+	border: 1px dashed red;
+	height: 500px !important;
+}*/
+
+body.page-dashboard #mini-panel-dashboard_charts .chart-container .pane-content {
+	padding-top: 0px;
+}
+
+#dashboard-charts h2.pane-title {
+	background:none !important;
+	font-weight: 400 !important;
+	color: #0cbbfa !important;
+	margin-bottom: 0px !important;
+	font-size:26px !important;
+}
+
+
+
+#search-page-results-container{margin-left:23px;}
+
+
+
+@media (max-width:767px){
+
+#search-page-results-container{margin-left:0px !important;}
+
+
+}
+
+body.node-type-project div.list-spacer { display: none !important; }
+
+body.node-type-project .carousel-caption {
+	position: absolute;
+  height: 80px;
+  bottom: 0px;
+  left: 0px;
+  margin-left: 0px !important;
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+}
+
+body.node-type-project .carousel-caption p {
+color: #fff;
+  font-size: 10pt !important;
+  text-align: left !important;
+  vertical-align: top;
+  margin-top: -15px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.carousel-inner>.item>a>img {
+  width: 100%;
+}
+
+#project-photos .carousel-control.right,
+#project-photos .carousel-control.left,
+.page-dashboard .carousel-control.right,
+.page-dashboard .carousel-control.left
+ {
+	width: 55px;
+	height: 100%;
+	top: 0;
+	margin-right: 0px !important;
+	margin-left: 0px !important;
+}
+
+#project-photos .carousel-control.right,
+#project-photos .carousel-control.left {
+	background-position: 50% 50%;
+}
+
+.page-dashboard .carousel-control.right,
+.page-dashboard .carousel-control.left {
+	background-position: 50% 150px;
+}
+
+.form-group {
+	margin-bottom: 5px;
+}
+
+body.page-node-edit.node-type-project > .form-wrapper.form-group > .form-item.form-group,
+body.page-node-edit.node-type-project > .form-wrapper.form-group {
+	display: table-row;
+	width: 100%;
+}
+
+body.page-user .form-item > label,
+body.page-node-add.page-node-add-project .form-item > label,
+body.page-node-edit.node-type-project .form-item > label {
+	/*border: 1px dotted red;*/
+	/*display: table-cell;*/
+	/*width: 45%;*/
+	/*float: left;*/
+	color: #80dcfc;
+	white-space: nowrap;
+	min-width: 130px;
+	font-size: 13pt;
+}
+
+.date-year {
+	display: inline !important;
+}
+
+body.page-user .form-item > .form-control,
+body.page-node-add.page-node-add-project .form-item > input.form-control,
+body.page-node-add.page-node-add-project .form-item > div > input.form-control,
+body.page-node-edit.node-type-project .form-item > input.form-control,
+body.page-node-edit.node-type-project .form-item > div > input.form-control
+ {
+	/*float: left;*/
+	/*border: 1px dotted green;*/
+	display: table-cell;
+	width: 55%;
+	height: 30px;
+	padding: 4px 4px 4px 8px;
+}
+
+body.page-node-add.page-node-add-project .form-item > div.date-year > .form-control,
+body.page-node-edit.node-type-project .form-item > div.date-year > .form-control,
+body.page-node-edit.node-type-project .form-item > select.form-control,
+body.page-node-add.page-node-add-project .form-item > select.form-control,
+body.page-node-add.page-node-add-project .form-item > div > select.form-control,
+body.page-node-edit.node-type-project .form-item > div > select.form-control {
+	display: table-cell;
+	width: 55%;
+	height: 30px;
+	padding: 4px 4px 4px 4px;
+}
+
+body.page-node-edit.node-type-project .form-item > textarea.form-control,
+body.page-node-add.page-node-add-project .form-item > textarea.form-control,
+body.page-node-add.page-node-add-project .form-item > div > textarea.form-control,
+body.page-node-edit.node-type-project .form-item > div > textarea.form-control {
+	display: table-cell;
+	width: 100%;
+	padding: 4px 4px 4px 4px;
+}
+
+
+#edit-field-photos-und-table td,
+#edit-field-photos-und {
+	border: none;
+  background-color:#3b444c;
+  color:#ffffff;
+}
+
+#edit-field-photos-und .panel-body 
+{
+	padding: 0px 0px 0px 0px;
+}
+
+body.page-node-add.page-node-add-project #edit-title,
+body.page-node-edit.node-type-project #edit-title {
+	font-size: 30px;
+	line-height: 32px !important;
+	font-weight: 600 !important;
+	display: table-cell;
+	width: 100%;
+	float: left;
+	height: 37px;
+	padding: 0px 0px 0px 4px;
+	margin: 10px 0px 5px 15px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+table#field-outputs-values, table#field-impact-stories-values {
+	width: 100%;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+table#field-impact-stories-values td,
+table#field-outputs-values td, {
+	background-color: #3b444c;
+}
+
+
+#project-page .project-info legend,
+#edit-field-project-number,
+#edit-field-project-year-start,
+#edit-field-project-year-end,
+.tabledrag-toggle-weight-wrapper,
+#field-impact-stories-values .field-label,
+#field-outputs-values .field-label,
+td.field-multiple-drag, tr.draggable > td > a.tabledrag-handle,
+#edit-field-photos-und-table .text-format-wrapper,
+#edit-field-photos-und-table thead {
+	display: none;
+}
+
+#edit-field-photos-und-0-image-field-caption-format
+
+/*#edit-field-photos-und-table > tbody > tr.draggable.odd > td:nth-child(1) > div > div.image-widget-data > div.form-type-textfield.form-item-field-photos-und-0-alt.form-item.form-group*/
+
+#edit-field-photos-und-table > tbody > tr.draggable.odd > td:nth-child(1) > div > div.image-widget-data > div.form-type-textfield.form-item-field-photos-und-0-alt.form-item.form-group,
+.image-widget-data span.file-size + .form-type-textfield {
+    border: 0px solid pink !important;
+		display: none;
+}

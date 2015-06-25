@@ -1,0 +1,8 @@
+﻿<div class="pane-content">
+<div class="download-text"><a href="/dev/download/kml" class="download-link"><img style="float:left;display:block;margin-right:20px;margin-top:6px;margin-bottom:30px;" src="sites/default/files/images/buttons/kml.png"><p><span style="font-weight:700; font-size:18px;color:#80dcfc;">Download KML</span><br>A Keyhole Markup Language file is used to display geographic data in Google Maps.</p>
+</a></div>
+<div style="clear:both;"><div><br>
+<div class="download-text"><a href="/dev/download/kml" class="download-link"><img style="float:left;display:block;margin-right:20px;margin-top:6px;margin-bottom:50px;" src="sites/default/files/images/buttons/csv.png"><p><span style="font-weight:700; font-size:18px;color:#80dcfc;">Download CSV</span><br>A Comma-Separated Values file stores tabular data as plain text, for viewing in Microsoft Excel.</p>
+</a>
+</div>
+</div>

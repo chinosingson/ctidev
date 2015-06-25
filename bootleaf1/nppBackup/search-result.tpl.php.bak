@@ -1,0 +1,4 @@
+<?php $node = $variables['result']['node'];
+	if (isset($node->field_project_number)){ $project_number = " (".$node->field_project_number[LANGUAGE_NONE][0]['value'].")"; } 
+ ?>
+<li class="search-result"><h3 class="title search-result-title"><a href="<?php print $url ?>" class="search-result-link"><?php print $title ?><?php print $project_number; ?></a></h3></li>

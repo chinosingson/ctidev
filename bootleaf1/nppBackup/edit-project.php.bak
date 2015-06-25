@@ -1,10 +1,11 @@
 <?php
 
 	include_once('db.php');
+	require_once('../UserFrosting/models/config.php');
 
-	@session_start();
+	//@session_start();
 
-	if (@!$user) $user = "admin";
+	//if (!$user) $user = "admin";
 	$projID = $_REQUEST['p'];
 	$editsql = 'SELECT proj.* FROM projects AS proj WHERE proj.ID='.$projID;
 
@@ -19,13 +20,19 @@
 	//$projectID = $data['ID'];
 	//$projectTitle = $data['title'];
 	//print_r($data);
+	//echo print_r($currUserInfo,1);
+	//echo $loggedInUser;
+	$user = fetchUser($loggedInUser->user_id)
 
-	while ($data = $rs->fetch(PDO::FETCH_ASSOC)) : ?>
+	while ($data = $rs->fetch(PDO::FETCH_ASSOC)) : 
+		if (!isset($data['user'])) $currUser = $user['name'];
+		else $currUser = $data['user'];
+	?>
 							<h4>Edit <?=htmlentities($data['title'])?></h4>
 							<form name="form-edit-project" id="form-edit-project">
 								<input type="hidden" id="process-type" name="process-type" value="u" />
 								<input type="hidden" id="table-name" name="table-name" value="projects" />
-								<input type="hidden" id="author" name="data[user]" value="<?=data['user']?>" />
+								<input type="hidden" id="author" name="data[user]" value="<?=$currUser?>" />
 								<input type="hidden" id="updated" name="data[updated]" />
 								<input type="hidden" id="project-id" name="data[ID]" value="<?=$projID?>" />
 								<div class="form-horizontal" role="form" style="overflow-x: hidden">

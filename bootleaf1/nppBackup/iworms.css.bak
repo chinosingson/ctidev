@@ -1,0 +1,54 @@
+﻿body, html {	width: 100%;	margin: 0px;	font-family: 'Oxygen', arial, sans-serif;	font-weight: 300; }
+
+body, html, .navbar-default, .panel, .panel-collapse, .list-group-item { background-color: #333333 !important; }
+.panel, .panel-default, .panel-collapse, .panel-body { border: 0px !important; }
+.panel-body, .thumbnail .caption { color: #eeeeee;}
+.panel-body.media { padding-right: 15px !important; padding-left: 15px !important; }
+.panel-body { padding-right: 0px !important; padding-left: 0px !important; }
+.panel-heading { background-color: #3c3c3c !important; border-top-left-radius: 0px; border-top-right-radius: 0px; }
+
+h5, h4 a, h3 { font-family: 'Changa One', arial, sans-serif; 	font-size: 150%; }
+h3 { font-size: 130%; margin-top: 0px; }
+h5 { font-size: 120%; margin-top: 0px; }
+.list-group-item { border: 1px solid #3c3c3c; }
+.thumbnail { background-color: #3c3c3c; border: 0px; }
+
+#gig-list-group .list-group-item .gig-date { float: left !important; width: 20px; font-weight: 700; margin-right: 20px !important; text-align: center; }
+#gig-list-container { padding-left: 0px;}
+
+#main-container {	width: 100%; padding: 0px; }
+
+#header {	box-shadow: 0px 0px 30px #000 !important;	z-index: 1;	position: relative; }
+
+a.navbar-brand, h4 {	font-family: 'Changa One', arial, sans-serif;	font-size: 200%;	color: #ffffff !important; }
+a.navbar-brand { padding-top: 12px; }
+.navbar { margin-bottom: 0px;	border-radius: 0px;	border: 0px;}
+.navbar-logo { margin-left: 10px;  margin-right: 20px; }
+.navbar-logo img { height: 65px !important; max-height: 65px; }
+.navbar-toggle { float: left; margin-left: 15px; }
+#navbar-container { padding-left: 0px !important; }
+
+
+#bs-example-navbar-collapse-1 { border: 0px; }
+#bs-example-navbar-collapse-1	ul li {	text-transform:uppercase; }
+#bs-example-navbar-collapse-1	ul li a { color: #dddddd; font-weight: 700; height: 65px; vertical-align: middle; padding-top: 20px; }
+#bs-example-navbar-collapse-1	ul li a:hover { color: #ffffff; background-color: #666666; }
+
+#collapseFour .panel-body { padding: 0px; }
+
+#collapseFour .panel-body .embed-responsive { margin-bottom: 15px; }
+
+@media (min-width:800px){
+	#carousel-example-generic { height: 500px; }
+	#carousel-example-generic .item { height: 500px; }
+	#carousel-example-generic .item img{ position: relative; top: -10%;	}
+}
+
+
+@media (max-width:768px){
+	.navbar-header a.navbar-brand { margin-left: auto !important; margin-right: auto !important; }
+	.navbar-logo { position: relative; left: 28%; }
+	.navbar-toggle { margin-top: 15px; }
+	#navbar-container { padding-left: 15px !important; }
+	#bs-example-navbar-collapse-1	ul li a { height: 40px; padding-top: 10px; }
+}

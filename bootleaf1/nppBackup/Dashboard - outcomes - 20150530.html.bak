@@ -1,0 +1,71 @@
+﻿ <div class="row" id="outcomes-new-styles">
+            <div id="column-one" class="col-xs-12 col-md-5">
+               <h1>10,678.68</h1>
+               <p>Total Roads built or upgraded (km)<sup>1</sup></p>
+            </div>
+            <div id="column-two" class="col-xs-12 col-md-4">
+                <h1>6,773.99</h1>
+                <p>Provincial, district, and rural roads built or upgraded (km)><sup>1</sup></p>
+            </div>
+
+            <div id="column-three" class="col-xs-12 col-md-3">
+                <h1>3,827.77</h1>
+                <p>Expressways and national highways built or updgraded (km)</p>
+            </div>
+        </div>
+
+        <div class="row" id="outcomes-new-styles">
+            <div id="column-four" class="col-xs-12 col-md-3">
+               <h1>1,340</h1>
+               <p>Installed energy capacity installed, MW</p>
+            </div>
+            <div id="column-five" class="col-xs-12 col-md-3">
+                <h1>1,100</h1>
+                <p>Railways constructed or/and upgraded (km)</p>
+            </div>
+             <div id="column-six" class="col-xs-12 col-md-2">
+                <h1>1,100</h1>
+                <p>Distribution lines installed and/or upgraded (km)</p>
+            </div>
+             <div id="column-seven" class="col-xs-12 col-md-2">
+                <h1>964</h1>
+                <p>Transmission lines installed and/or upgraded (km)</p>
+            </div>
+             <div id="column-eight" class="col-xs-12 col-md-2">
+                <h1>80</h1>
+                <p>Number of bridges built or rehabilitated<sup>3</sup></p>
+            </div>
+        </div>
+         
+        <div class="row" id="outcomes-new-styles">
+            <div id="column-nine" class="col-xs-12 col-md-3">
+               <h1>76.92</h1>
+               <p>Urban streets rehabilitated (km)<sup>2</sup></p>
+            </div>
+            <div id="column-ten" class="col-xs-12 col-md-3">
+                <h1>75</h1>
+                <p>Number of tunnels built<sup>3</sup></p>
+            </div>
+             <div id="column-eleven" class="col-xs-12 col-md-2">
+                <h1>4</h1>
+                <p>Number of Airports rehabilitated<sup>2</sup></p>
+            </div>
+             <div id="column-tweleve" class="col-xs-12 col-md-2">
+                <h1>2.55</h1>
+                <p>Runways rehabiltated(km)</p>
+            </div>
+             <div id="column-thirteen" class="col-xs-12 col-md-2">
+                <h1>2</h1>
+                <p>Number of tourism piers built</p>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-md-12" id="paragraph-outcomes-2">
+            <p>Includes projects ending up to 2022
+                <sup>1</sup>Figure includes expressways/nationalhighways/urban roads/provincial/district/and rural roads built or upgrade in transport and other sectors,ie. industry and Trade Agriculture,Natrural Resources and Rural Development and others.
+                <sup>2</sup>Figure includes outputs from other sectors,ie. industry and Trade (Tourism)
+                <sup>3</sup>Figures include Road and railway transports
+            </p>
+        </div>
+        </div>
+    </div>

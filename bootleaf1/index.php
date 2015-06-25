@@ -12,7 +12,6 @@
 	//$_SESSION['role'] = "administrator";
 	//$_SESSION['perm'] = array('view','edit','delete');
 	//$_SESSION['perm'] = array('view');
-	
 	//session_write_close();
 	$currUserInfo = @fetchUser($loggedInUser->user_id);
 	if (isset($currUserInfo) && @in_array($currUserInfo['primary_group_id'],array(1,2,5))) {
@@ -118,7 +117,7 @@
 				<!-- SIDEBAR - DATABASE - NAV TABS -->
 				<ul class="nav nav-tabs" id="projectsTabs" role="tablist">
 					<li id="tab-projects-list" class="active"><a href="#projects" role="tab" data-toggle="tab" onclick="$('#projectsTabs a[href=\'#projects\']').tab('show'); return false;"><span class="myicon-sm myicon-search"></span>&nbsp;Search</a></li>
-					<?php if (($editPerm) || (in_array($currUserInfo['primary_group_id'],array(2,5)))) { ?><li id="tab-projects-add"><a href="#projects-add" role="tab" data-toggle="tab" onclick="$('#projectsTabs a[href=\'#projects-add\']').tab('show'); return false;"><span class="myicon-sm myicon-plus"></span>&nbsp;Add</a></li><?php } ?>
+					<?php if (($editPerm) || (in_array($currUserInfo['primary_group_id'],array(1,2,5)))) { ?><li id="tab-projects-add"><a href="#projects-add" role="tab" data-toggle="tab" onclick="$('#projectsTabs a[href=\'#projects-add\']').tab('show'); return false;"><span class="myicon-sm myicon-plus"></span>&nbsp;Add</a></li><?php } ?>
 					<li id="tab-projects-download"><a href="#projects-download" role="tab" data-toggle="tab" onclick="$('#projectsTabs a[href=\'#projects-download\']').tab('show'); return false;"><span class="glyphicon glyphicon-save"></span>&nbsp;Download</a></li>
 				</ul>
 				<!-- SIDEBAR - DATABASE - NAV TABS -->
